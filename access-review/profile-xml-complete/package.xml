@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types><members>Admin</members><members>Hubspot</members><members>Leads, Accounts and Opportunity Creation Marketing Team</members><members>Mobileum - Finance Full Access</members><members>Mobileum - Finance User Limited</members><members>Mobileum - Marketing User</members><members>Mobileum - Product Management User</members><members>Mobileum - Product Management</members><members>Mobileum - Sales Head</members><members>Mobileum - Sales User - STDM - APAC</members><members>Mobileum - Sales User</members><members>Mobileum - Super Sales User</members><members>Mobileum Read Only</members><members>Mobileum Salesops Team Profile</members><members>Mobileum- Finance Full Access</members><members>Quote Creation Team Member</members><members>Read Only1</members><name>Profile</name></types>
+  <types><members>*</members><name>CustomObject</name></types>
+  <types><members>*</members><name>ApexClass</name></types>
+  <types><members>*</members><name>ApexPage</name></types>
+  <types><members>*</members><name>CustomApplication</name></types>
+  <types><members>*</members><name>CustomTab</name></types>
+  <types><members>*</members><name>Layout</name></types>
+  <types><members>*</members><name>Flow</name></types>
+  <types><members>*</members><name>CustomPermission</name></types>
+  <types><members>*</members><name>CustomMetadata</name></types>
+  <types><members>*</members><name>ExternalDataSource</name></types>
+  <version>67.0</version>
+</Package>

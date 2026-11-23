@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Branch_layout</fullName>
+    <fields>Bank__c</fields>
+    <fields>Branch_Name__c</fields>
+    <fields>Name</fields>
+    <fields>Branch_Contact_number__c</fields>
+    <fields>City__c</fields>
+    <label>Branch layout</label>
+</CompactLayout>

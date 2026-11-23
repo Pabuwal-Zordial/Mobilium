@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aging_Bucket__c</fullName>
+    <label>Aging Bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Current</fullName>
+                <default>false</default>
+                <label>Current</label>
+            </value>
+            <value>
+                <fullName>0-30 Overdue</fullName>
+                <default>false</default>
+                <label>0-30 Overdue</label>
+            </value>
+            <value>
+                <fullName>31-60 overdue</fullName>
+                <default>false</default>
+                <label>31-60 overdue</label>
+            </value>
+            <value>
+                <fullName>61-90 overdue</fullName>
+                <default>false</default>
+                <label>61-90 overdue</label>
+            </value>
+            <value>
+                <fullName>91-180 Overdue</fullName>
+                <default>false</default>
+                <label>91-180 Overdue</label>
+            </value>
+            <value>
+                <fullName>181-360 Overdue</fullName>
+                <default>false</default>
+                <label>181-360 Overdue</label>
+            </value>
+            <value>
+                <fullName>&gt;360 Overdue</fullName>
+                <default>false</default>
+                <label>&gt;360 Overdue</label>
+            </value>
+            <value>
+                <fullName>-None-</fullName>
+                <default>false</default>
+                <label>-None-</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

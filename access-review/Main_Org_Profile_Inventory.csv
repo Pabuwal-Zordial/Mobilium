@@ -1,0 +1,106 @@
+Profile,Custom,User License,Active Users,Inactive Users,Metadata File
+Accounts Creation Only,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Accounts Creation Only.profile-meta.xml
+Admin,false,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Admin.profile-meta.xml
+Analytics Cloud Integration User,false,Analytics Cloud Integration User,1,0,access-review/main-env-all-profiles/profiles/Analytics Cloud Integration User.profile-meta.xml
+Analytics Cloud Security User,false,Analytics Cloud Integration User,1,0,access-review/main-env-all-profiles/profiles/Analytics Cloud Security User.profile-meta.xml
+Anypoint Integration,false,Identity,0,0,access-review/main-env-all-profiles/profiles/Anypoint Integration.profile-meta.xml
+Chatter External User,false,Chatter External,0,0,access-review/main-env-all-profiles/profiles/Chatter External User.profile-meta.xml
+Chatter Free User,false,Chatter Free,0,0,access-review/main-env-all-profiles/profiles/Chatter Free User.profile-meta.xml
+Chatter Moderator User,false,Chatter Free,0,0,access-review/main-env-all-profiles/profiles/Chatter Moderator User.profile-meta.xml
+ContractManager,false,Salesforce,0,0,access-review/main-env-all-profiles/profiles/ContractManager.profile-meta.xml
+Customer Community Login User,false,Customer Community Login,0,0,access-review/main-env-all-profiles/profiles/Customer Community Login User.profile-meta.xml
+Guest License User,false,Guest User License,0,0,access-review/main-env-all-profiles/profiles/Guest License User.profile-meta.xml
+Hubspot,true,Salesforce,1,0,access-review/main-env-all-profiles/profiles/Hubspot.profile-meta.xml
+Identity User,false,Identity,0,0,access-review/main-env-all-profiles/profiles/Identity User.profile-meta.xml
+InActive Users,true,Salesforce,0,69,access-review/main-env-all-profiles/profiles/InActive Users.profile-meta.xml
+"Leads, Accounts and Opportunity Creation Marketing Team",true,Salesforce,8,10,access-review/main-env-all-profiles/profiles/Leads%2C Accounts and Opportunity Creation Marketing Team.profile-meta.xml
+MarketingProfile,false,Salesforce,0,0,access-review/main-env-all-profiles/profiles/MarketingProfile.profile-meta.xml
+Minimum Access - API Only Integrations,false,Salesforce Integration,1,0,access-review/main-env-all-profiles/profiles/Minimum Access - API Only Integrations.profile-meta.xml
+Minimum Access - Salesforce,false,Salesforce,0,1,access-review/main-env-all-profiles/profiles/Minimum Access - Salesforce.profile-meta.xml
+Mobileum - BDM User,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - BDM User.profile-meta.xml
+Mobileum - Finance Full Access,true,Salesforce,1,1,access-review/main-env-all-profiles/profiles/Mobileum - Finance Full Access.profile-meta.xml
+Mobileum - Finance User Limited,true,Salesforce,2,1,access-review/main-env-all-profiles/profiles/Mobileum - Finance User Limited.profile-meta.xml
+Mobileum - Marketing User,true,Salesforce,3,4,access-review/main-env-all-profiles/profiles/Mobileum - Marketing User.profile-meta.xml
+Mobileum - O&M,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - O%26M.profile-meta.xml
+Mobileum - PM - EI,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - PM - EI.profile-meta.xml
+Mobileum - Product Management User,true,Salesforce,6,14,access-review/main-env-all-profiles/profiles/Mobileum - Product Management User.profile-meta.xml
+Mobileum - Product Management,true,Salesforce,1,1,access-review/main-env-all-profiles/profiles/Mobileum - Product Management.profile-meta.xml
+Mobileum - Read Only,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Read Only.profile-meta.xml
+Mobileum - Revenue Team User,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Revenue Team User.profile-meta.xml
+Mobileum - Sales & Marketing Head,true,Salesforce,0,1,access-review/main-env-all-profiles/profiles/Mobileum - Sales %26 Marketing Head.profile-meta.xml
+Mobileum - Sales Head,true,Salesforce,20,10,access-review/main-env-all-profiles/profiles/Mobileum - Sales Head.profile-meta.xml
+Mobileum - Sales User - Africa - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Africa - AM.profile-meta.xml
+Mobileum - Sales User - Africa - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Africa - AM1.profile-meta.xml
+Mobileum - Sales User - Africa,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Africa.profile-meta.xml
+Mobileum - Sales User - Canada - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Canada - AM.profile-meta.xml
+Mobileum - Sales User - Canada - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Canada - TAM.profile-meta.xml
+Mobileum - Sales User - EECIS - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - EECIS - AM.profile-meta.xml
+Mobileum - Sales User - EECIS - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - EECIS - AM1.profile-meta.xml
+Mobileum - Sales User - EECIS - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - EECIS - TAM.profile-meta.xml
+Mobileum - Sales User - EECIS - TAM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - EECIS - TAM1.profile-meta.xml
+Mobileum - Sales User - Europe - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Europe - AM.profile-meta.xml
+Mobileum - Sales User - Europe - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Europe - AM1.profile-meta.xml
+Mobileum - Sales User - Europe - AM2,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Europe - AM2.profile-meta.xml
+Mobileum - Sales User - Europe - AM3,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Europe - AM3.profile-meta.xml
+Mobileum - Sales User - Europe - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Europe - TAM.profile-meta.xml
+Mobileum - Sales User - Europe - TAM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - Europe - TAM1.profile-meta.xml
+Mobileum - Sales User - LATAM - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - LATAM - AM.profile-meta.xml
+Mobileum - Sales User - LATAM - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - LATAM - AM1.profile-meta.xml
+Mobileum - Sales User - LATAM - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - LATAM - TAM.profile-meta.xml
+Mobileum - Sales User - LATAM - TAM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - LATAM - TAM1.profile-meta.xml
+Mobileum - Sales User - MENA - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - MENA - AM.profile-meta.xml
+Mobileum - Sales User - MENA - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - MENA - AM1.profile-meta.xml
+Mobileum - Sales User - MENA - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - MENA - TAM.profile-meta.xml
+Mobileum - Sales User - MENA - TAM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - MENA - TAM1.profile-meta.xml
+Mobileum - Sales User - NAMR - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - NAMR - AM.profile-meta.xml
+Mobileum - Sales User - NAMR - LATAM - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - NAMR - LATAM - AM1.profile-meta.xml
+Mobileum - Sales User - NAMR - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - NAMR - TAM.profile-meta.xml
+Mobileum - Sales User - NAMR - TAM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - NAMR - TAM1.profile-meta.xml
+Mobileum - Sales User - NASA - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - NASA - AM.profile-meta.xml
+Mobileum - Sales User - NASA - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - NASA - AM1.profile-meta.xml
+Mobileum - Sales User - NASA - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - NASA - TAM.profile-meta.xml
+Mobileum - Sales User - SAARC - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - SAARC - AM.profile-meta.xml
+Mobileum - Sales User - SAARC - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - SAARC - TAM.profile-meta.xml
+Mobileum - Sales User - SEAO - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - SEAO - AM.profile-meta.xml
+Mobileum - Sales User - SEAO - AM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - SEAO - AM1.profile-meta.xml
+Mobileum - Sales User - SEAO - TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - SEAO - TAM.profile-meta.xml
+Mobileum - Sales User - STDM - APAC,true,Salesforce,1,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - STDM - APAC.profile-meta.xml
+Mobileum - Sales User - STDM - EUR,true,Salesforce,0,1,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - STDM - EUR.profile-meta.xml
+Mobileum - Sales User - STDM - GRWTH,true,Salesforce,0,1,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - STDM - GRWTH.profile-meta.xml
+Mobileum - Sales User - STDM - MENA,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - STDM - MENA.profile-meta.xml
+Mobileum - Sales User - STDM - NAMR,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User - STDM - NAMR.profile-meta.xml
+Mobileum - Sales User Limited,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User Limited.profile-meta.xml
+Mobileum - Sales User v1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User v1.profile-meta.xml
+Mobileum - Sales User-AE-SGM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-AE-SGM.profile-meta.xml
+Mobileum - Sales User-Africa-GM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-Africa-GM.profile-meta.xml
+Mobileum - Sales User-EECIS-GM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-EECIS-GM.profile-meta.xml
+Mobileum - Sales User-LATAM-SGM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-LATAM-SGM.profile-meta.xml
+Mobileum - Sales User-MENA-SGM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-MENA-SGM.profile-meta.xml
+Mobileum - Sales User-NAEC-SGM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-NAEC-SGM.profile-meta.xml
+Mobileum - Sales User-NASA-SGM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-NASA-SGM.profile-meta.xml
+Mobileum - Sales User-SSA-SGM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Sales User-SSA-SGM.profile-meta.xml
+Mobileum - Sales User,true,Salesforce,163,140,access-review/main-env-all-profiles/profiles/Mobileum - Sales User.profile-meta.xml
+Mobileum - SCM User,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - SCM User.profile-meta.xml
+Mobileum - Security - AM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - Security - AM.profile-meta.xml
+Mobileum - SM - Security,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - SM - Security.profile-meta.xml
+Mobileum - SM User,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum - SM User.profile-meta.xml
+Mobileum - Super Sales User,true,Salesforce,2,0,access-review/main-env-all-profiles/profiles/Mobileum - Super Sales User.profile-meta.xml
+Mobileum - Support Head,true,Salesforce,0,1,access-review/main-env-all-profiles/profiles/Mobileum - Support Head.profile-meta.xml
+Mobileum Read Only,true,Salesforce,2,11,access-review/main-env-all-profiles/profiles/Mobileum Read Only.profile-meta.xml
+Mobileum Salesops Team Profile,true,Salesforce,3,0,access-review/main-env-all-profiles/profiles/Mobileum Salesops Team Profile.profile-meta.xml
+Mobileum Support Head 09292021,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum Support Head 09292021.profile-meta.xml
+Mobileum System Admin,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum System Admin.profile-meta.xml
+Mobileum- Finance Full Access,true,Salesforce,29,20,access-review/main-env-all-profiles/profiles/Mobileum- Finance Full Access.profile-meta.xml
+Mobileum-Sales User-Africa-TAM,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum-Sales User-Africa-TAM.profile-meta.xml
+Mobileum-Sales User-Africa-TAM1,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Mobileum-Sales User-Africa-TAM1.profile-meta.xml
+Quote Creation Team Member,true,Salesforce,9,0,access-review/main-env-all-profiles/profiles/Quote Creation Team Member.profile-meta.xml
+Read Only Custom profile,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Read Only Custom profile.profile-meta.xml
+Read Only,true,Salesforce,0,1,access-review/main-env-all-profiles/profiles/Read Only.profile-meta.xml
+Read Only1,true,Salesforce,9,102,access-review/main-env-all-profiles/profiles/Read Only1.profile-meta.xml
+Sales Insights Integration User,false,Sales Insights Integration User,1,0,access-review/main-env-all-profiles/profiles/Sales Insights Integration User.profile-meta.xml
+Salesforce API Only System Integrations,true,Salesforce Integration,0,0,access-review/main-env-all-profiles/profiles/Salesforce API Only System Integrations.profile-meta.xml
+SolutionManager,false,Salesforce,0,0,access-review/main-env-all-profiles/profiles/SolutionManager.profile-meta.xml
+Standard Platform User - Subcontractor,true,Salesforce Platform,65,16,access-review/main-env-all-profiles/profiles/Standard Platform User - Subcontractor.profile-meta.xml
+Standard,false,Salesforce,0,0,access-review/main-env-all-profiles/profiles/Standard.profile-meta.xml
+StandardAul,false,Salesforce Platform,0,0,access-review/main-env-all-profiles/profiles/StandardAul.profile-meta.xml
+System Admin Certinia,true,Salesforce,0,0,access-review/main-env-all-profiles/profiles/System Admin Certinia.profile-meta.xml

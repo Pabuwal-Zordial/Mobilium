@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This permission set is specifically for Nitin to be able to see admin tabs for product setup and READ ONLY. System admin will still remain responsible for product setup.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>See CPQ Admin Tabs</label>
+    <license>Salesforce</license>
+</PermissionSet>

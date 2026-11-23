@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Clone of the standard FF Group - Accounting - Mgmt Accountant permission set group, specifically for the Finance user</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FF Group - Accounting - Finance - Custom</label>
+    <permissionSets>DIAB_MB_Finance</permissionSets>
+    <permissionSets>c2g__Accounting</permissionSets>
+    <permissionSets>c2g__AccountingLightningApp</permissionSets>
+    <permissionSets>c2g__AccountingReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBilling</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAPI</permissionSets>
+    <permissionSets>c2g__AccountingandBillingReadAccess</permissionSets>
+    <permissionSets>c2g__ActionViewsReportingIntegration</permissionSets>
+    <permissionSets>c2g__BillingLightningApp</permissionSets>
+    <permissionSets>c2g__FFAIntegrations</permissionSets>
+    <permissionSets>fferpcore__AsyncApiProcess</permissionSets>
+    <permissionSets>ffr__ActionViewsReportingDataviews</permissionSets>
+    <permissionSets>ffr__ActionViewsReportingInquiryTemplates</permissionSets>
+    <permissionSets>ffr__ActionViewsReportingRun</permissionSets>
+    <permissionSets>ffr__ActionViewsReportingSummarizationTemplates</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

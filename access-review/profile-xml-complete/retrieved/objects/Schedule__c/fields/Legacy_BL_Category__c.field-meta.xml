@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legacy_BL_Category__c</fullName>
+    <label>Legacy BL Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BL Analytics Big Data</fullName>
+                <default>false</default>
+                <label>BL Analytics Big Data</label>
+            </value>
+            <value>
+                <fullName>BL Analytics existing</fullName>
+                <default>false</default>
+                <label>BL Analytics existing</label>
+            </value>
+            <value>
+                <fullName>BL Analytics Travel</fullName>
+                <default>false</default>
+                <label>BL Analytics Travel</label>
+            </value>
+            <value>
+                <fullName>BL CEM IBM</fullName>
+                <default>false</default>
+                <label>BL CEM IBM</label>
+            </value>
+            <value>
+                <fullName>BL Globe Touch</fullName>
+                <default>false</default>
+                <label>BL Globe Touch</label>
+            </value>
+            <value>
+                <fullName>BL IPCOM</fullName>
+                <default>false</default>
+                <label>BL IPCOM</label>
+            </value>
+            <value>
+                <fullName>BL MFS</fullName>
+                <default>false</default>
+                <label>BL MFS</label>
+            </value>
+            <value>
+                <fullName>BL Risk</fullName>
+                <default>false</default>
+                <label>BL Risk</label>
+            </value>
+            <value>
+                <fullName>BL RoamFix</fullName>
+                <default>false</default>
+                <label>BL RoamFix</label>
+            </value>
+            <value>
+                <fullName>BL Roaming</fullName>
+                <default>false</default>
+                <label>BL Roaming</label>
+            </value>
+            <value>
+                <fullName>BL Roaming Analytics Big Data</fullName>
+                <default>false</default>
+                <label>BL Roaming Analytics Big Data</label>
+            </value>
+            <value>
+                <fullName>BL Security</fullName>
+                <default>false</default>
+                <label>BL Security</label>
+            </value>
+            <value>
+                <fullName>BL Test Factory</fullName>
+                <default>false</default>
+                <label>BL Test Factory</label>
+            </value>
+            <value>
+                <fullName>BL Testing</fullName>
+                <default>false</default>
+                <label>BL Testing</label>
+            </value>
+            <value>
+                <fullName>BL Unclassified Share</fullName>
+                <default>false</default>
+                <label>BL Unclassified Share</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

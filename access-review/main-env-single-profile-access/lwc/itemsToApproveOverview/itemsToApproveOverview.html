@@ -1,0 +1,36 @@
+<template>
+	<template if:false={pendingForApprovalRecords}>
+		<lightning-card title={title}>
+			<p class="slds-p-horizontal_small slds-align_absolute-center slds-m-bottom_xx-large">No approval requests need your attention right now.</p>
+		</lightning-card>
+	</template>
+	<template if:true={pendingForApprovalRecords}>
+		<template if:true={isLoading}>
+			<div class="slds-p-around_x-large">
+				<lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+			</div>
+		</template>
+		<lightning-card title={title}>
+			<div class="slds-m-around--medium">
+				<template for:each={pendingForApprovalRecords} for:item="record">
+					<lightning-tile key={record.workItemId}
+						data-id={record.workItemId}
+						label={record.recordName}
+						href={record.relatedToLink}
+						actions={actions}
+						onactiontriggered={handleTileAction}
+						class="slds-m-top--x-large">
+					<p class="slds-truncate" title={record.tileOverviewText}>{record.tileOverviewText}</p>
+					</lightning-tile>
+				</template>
+			</div>
+			<div slot="footer">
+				<a href="#" class="slds-text-link_reset">
+					<span class="slds-text-link" onclick={viewAll}>View All</span>
+				</a>
+			</div>
+		</lightning-card>
+	</template>
+
+	<c-items-to-approve-comments-modal title={modalTitle} current-action={currentAction} onconfirm={handleConfirmModal} onclose={handleCloseModal}></c-items-to-approve-comments-modal>
+</template>

@@ -1,0 +1,18 @@
+<!--
+/*************************************************************************************
+Name                    projectSelectionEvent
+Developed By            West Monroe Partners
+Purpose                 The event details are provided below:
+				Type = Application - other components (child) should subscribe to
+				the same
+				We will set an attribute - project ID and register the value
+Created date            2/1/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0			SS		2/21/2017		Refer component header
+*************************************************************************************/
+-->
+<aura:event type="APPLICATION" access="global">
+	<aura:attribute name="projectId" type="String" />
+</aura:event>

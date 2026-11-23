@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DIAB_MB_Minimum_Resource_Hours_Per_Week__c</fullName>
+    <description>Define the minimum hours to log per week for each resource</description>
+    <inlineHelpText>Define the minimum number of hours to be logged per week for each resource, expressed as a percentage (e.g., 100% or 50%)</inlineHelpText>
+    <label>Minimum Resource Hours Per Week</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Yr_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Last Yr Opportunity</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>PO Received, Closed, PO &amp; Signed Contract, Finance Review, Won &amp; Closed</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Churn Opportunity Details (Last Yr Opportunity)</relationshipLabel>
+    <relationshipName>Last_Year_Opportunity_Data</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Restrict_Project_Name_Edit</name>
+    </customPermissions>
+    <description>Sales User/Sales Head POC. Preserves the Project Name restriction only for the former Sales User cohort.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Project Name Restriction</label>
+</PermissionSet>

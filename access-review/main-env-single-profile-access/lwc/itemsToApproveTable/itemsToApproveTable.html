@@ -1,0 +1,16 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<lightning-card>
+		<lightning-datatable
+			key-field="recordId"
+			data={pendingForApprovalRecords}
+			columns={columns}
+			onrowaction={handleRowAction}
+			sorted-by={sortBy}
+			sorted-direction={sortDirection}
+			onsort={doSorting}
+			hide-checkbox-column>
+		</lightning-datatable>
+	</lightning-card>
+	<c-items-to-approve-comments-modal title={modalTitle} current-action={currentAction} onconfirm={handleConfirmModal} onclose={handleCloseModal}></c-items-to-approve-comments-modal>
+</template>

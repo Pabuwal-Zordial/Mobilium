@@ -1,0 +1,187 @@
+// Seed Offerings, Offering Products, Account Plans, and demo Spending/Opportunity links
+
+System.debug('Starting White Space Analysis Seed Script...');
+
+// 1. Seed Offerings
+Map<String, Offering__c> offeringMap = new Map<String, Offering__c>();
+List<Offering__c> offeringsToUpsert = new List<Offering__c>{
+    new Offering__c(Name = 'Network Analytics', Offering_Code__c = 'OFF-NET-01', Product_Family__c = 'Network', Sort_Order__c = 1, Active__c = true, Description__c = 'Advanced network analytics, roaming insights, and performance testing.'),
+    new Offering__c(Name = 'Security', Offering_Code__c = 'OFF-SEC-01', Product_Family__c = 'Security', Sort_Order__c = 2, Active__c = true, Description__c = 'Telecom cybersecurity, fraud mitigation, and threat intelligence.'),
+    new Offering__c(Name = 'Customer Analytics', Offering_Code__c = 'OFF-CUST-01', Product_Family__c = 'Analytics', Sort_Order__c = 3, Active__c = true, Description__c = 'Customer experience insights, churn prevention, and behavioural analytics.'),
+    new Offering__c(Name = 'Risk & Revenue', Offering_Code__c = 'OFF-RSK-01', Product_Family__c = 'Risk & Revenue', Sort_Order__c = 4, Active__c = true, Description__c = 'Risk management, revenue assurance, and margin optimization.'),
+    new Offering__c(Name = '5G Solutions', Offering_Code__c = 'OFF-5G-01', Product_Family__c = '5G Solutions', Sort_Order__c = 5, Active__c = true, Description__c = 'Next-generation 5G standalone architecture monitoring and slice analytics.')
+};
+
+upsert offeringsToUpsert Offering_Code__c;
+System.debug('Offerings upserted: ' + offeringsToUpsert.size());
+
+for (Offering__c off : [SELECT Id, Name, Offering_Code__c FROM Offering__c]) {
+    offeringMap.put(off.Offering_Code__c, off);
+}
+
+// 2. Query demo Products
+Map<String, Product2> productMap = new Map<String, Product2>();
+for (Product2 prd : [SELECT Id, Name, ProductCode FROM Product2 WHERE ProductCode LIKE 'DEMO-PRD%']) {
+    productMap.put(prd.ProductCode, prd);
+}
+System.debug('Demo products found: ' + productMap.size());
+
+// 3. Seed Offering Products mappings
+List<Offering_Product__c> mappingList = new List<Offering_Product__c>();
+
+Map<String, List<String>> offeringToProducts = new Map<String, List<String>>{
+    'OFF-NET-01' => new List<String>{'DEMO-PRD-001', 'DEMO-PRD-003'}, // Roaming Analytics, Network Testing
+    'OFF-SEC-01' => new List<String>{'DEMO-PRD-002', 'DEMO-PRD-004'}, // Fraud Detection, Security Intelligence
+    'OFF-CUST-01' => new List<String>{'DEMO-PRD-005'},                 // Customer Experience Analytics
+    'OFF-RSK-01' => new List<String>{'DEMO-PRD-006', 'DEMO-PRD-007'}, // Risk Management, Revenue Assurance
+    'OFF-5G-01' => new List<String>{'DEMO-PRD-008'}                   // 5G Network Insights
+};
+
+for (String offCode : offeringToProducts.keySet()) {
+    Offering__c off = offeringMap.get(offCode);
+    if (off != null) {
+        for (String prdCode : offeringToProducts.get(offCode)) {
+            Product2 prd = productMap.get(prdCode);
+            if (prd != null) {
+                String mKey = off.Id + '_' + prd.Id;
+                mappingList.add(new Offering_Product__c(
+                    Offering__c = off.Id,
+                    Product__c = prd.Id,
+                    Active__c = true,
+                    Mapping_Key__c = mKey
+                ));
+            }
+        }
+    }
+}
+
+if (!mappingList.isEmpty()) {
+    upsert mappingList Mapping_Key__c;
+    System.debug('Offering Products upserted: ' + mappingList.size());
+}
+
+// 4. Query Demo Accounts
+List<Account> demoAccounts = [SELECT Id, Name, OwnerId FROM Account WHERE Name IN (
+    'Reliance Communications', 'Airtel Group', 'Vodafone Group', 'Deutsche Telekom',
+    'AT&T', 'Verizon', 'Telia Company', 'STC Group'
+)];
+System.debug('Demo accounts found: ' + demoAccounts.size());
+
+// 5. Create Account Plans for FY2027
+List<Account_Plan__c> plansToInsert = new List<Account_Plan__c>();
+Map<String, Account_Plan__c> existingPlans = new Map<String, Account_Plan__c>();
+for (Account_Plan__c ap : [SELECT Id, Account__c, Fiscal_Year__c, Plan_Key__c FROM Account_Plan__c WHERE Fiscal_Year__c = 'FY2027']) {
+    existingPlans.put(ap.Plan_Key__c, ap);
+}
+
+for (Account acc : demoAccounts) {
+    String pKey = acc.Id + '_FY2027';
+    if (!existingPlans.containsKey(pKey)) {
+        plansToInsert.add(new Account_Plan__c(
+            Account__c = acc.Id,
+            Fiscal_Year__c = 'FY2027',
+            Status__c = 'Active',
+            Account_Plan_Owner__c = acc.OwnerId,
+            Plan_Key__c = pKey
+        ));
+    }
+}
+
+if (!plansToInsert.isEmpty()) {
+    insert plansToInsert;
+    System.debug('Account Plans inserted: ' + plansToInsert.size());
+}
+
+// Fetch all FY2027 Account Plans
+Map<Id, Account_Plan__c> allPlans = new Map<Id, Account_Plan__c>([
+    SELECT Id, Account__c, Account__r.Name, Plan_Key__c FROM Account_Plan__c WHERE Fiscal_Year__c = 'FY2027'
+]);
+
+// 6. Inspect created White_Space_Assessment__c records (auto-generated by Flow 1)
+List<White_Space_Assessment__c> assessments = [
+    SELECT Id, Account_Plan__c, Account_Plan__r.Account__r.Name, Offering__c, Offering__r.Offering_Code__c,
+           Our_Spending__c, Competitor_Spending__c, Internal_Spending__c, Unknown_Spending__c, Status__c
+    FROM White_Space_Assessment__c
+    WHERE Account_Plan__c IN :allPlans.keySet()
+];
+System.debug('Total assessments found (auto-created by Flow): ' + assessments.size());
+
+// 7. Hydrate realistic GSP-style spending data across the assessments
+// We simulate spending across the offerings:
+// - Network Analytics: Our ₹500,000, Competitor ₹300,000, Internal ₹100,000, Unknown ₹0 -> Total ₹900k, WS ₹400k
+// - Security: Our ₹200,000, Competitor ₹600,000, Internal ₹0, Unknown ₹100,000 -> Total ₹900k, WS ₹700k
+// - Customer Analytics: Our ₹300,000, Competitor ₹200,000, Internal ₹100,000, Unknown ₹0 -> Total ₹600k, WS ₹300k
+// - Risk & Revenue: Our ₹400,000, Competitor ₹300,000, Internal ₹200,000, Unknown ₹100,000 -> Total ₹1,000k, WS ₹600k
+// - 5G Solutions: Our ₹0, Competitor ₹500,000, Internal ₹0, Unknown ₹300,000 -> Total ₹800k, WS ₹800k (Full White Space)
+
+List<White_Space_Assessment__c> assessmentsToUpdate = new List<White_Space_Assessment__c>();
+
+for (White_Space_Assessment__c wsa : assessments) {
+    String offCode = wsa.Offering__r.Offering_Code__c;
+    String accName = wsa.Account_Plan__r.Account__r.Name;
+    
+    // Base template variation per account tier
+    Decimal multiplier = (accName == 'Reliance Communications' || accName == 'Airtel Group' || accName == 'Vodafone Group') ? 1.5 : 1.0;
+    
+    if (offCode == 'OFF-NET-01') {
+        wsa.Our_Spending__c = 500000 * multiplier;
+        wsa.Competitor_Spending__c = 300000 * multiplier;
+        wsa.Internal_Spending__c = 100000 * multiplier;
+        wsa.Unknown_Spending__c = 0;
+        wsa.Status__c = 'White Space';
+    } else if (offCode == 'OFF-SEC-01') {
+        wsa.Our_Spending__c = 200000 * multiplier;
+        wsa.Competitor_Spending__c = 600000 * multiplier;
+        wsa.Internal_Spending__c = 0;
+        wsa.Unknown_Spending__c = 100000 * multiplier;
+        wsa.Status__c = 'White Space';
+    } else if (offCode == 'OFF-CUST-01') {
+        wsa.Our_Spending__c = 300000 * multiplier;
+        wsa.Competitor_Spending__c = 200000 * multiplier;
+        wsa.Internal_Spending__c = 100000 * multiplier;
+        wsa.Unknown_Spending__c = 0;
+        wsa.Status__c = 'White Space';
+    } else if (offCode == 'OFF-RSK-01') {
+        wsa.Our_Spending__c = 400000 * multiplier;
+        wsa.Competitor_Spending__c = 300000 * multiplier;
+        wsa.Internal_Spending__c = 200000 * multiplier;
+        wsa.Unknown_Spending__c = 100000 * multiplier;
+        wsa.Status__c = 'White Space';
+    } else if (offCode == 'OFF-5G-01') {
+        wsa.Our_Spending__c = 0;
+        wsa.Competitor_Spending__c = 500000 * multiplier;
+        wsa.Internal_Spending__c = 0;
+        wsa.Unknown_Spending__c = 300000 * multiplier;
+        wsa.Status__c = 'White Space';
+    }
+    wsa.Last_Reviewed_Date__c = Date.today();
+    wsa.Comments__c = 'GSP multi-dimensional customer spend analysis for ' + wsa.Account_Plan__r.Account__r.Name;
+    assessmentsToUpdate.add(wsa);
+}
+
+if (!assessmentsToUpdate.isEmpty()) {
+    update assessmentsToUpdate;
+    System.debug('Assessments updated with spending data: ' + assessmentsToUpdate.size());
+}
+
+// 8. Associate Demo Opportunities with Account Plans
+Map<String, Id> accToPlanMap = new Map<String, Id>();
+for (Account_Plan__c ap : allPlans.values()) {
+    accToPlanMap.put(ap.Account__r.Name, ap.Id);
+}
+
+List<Opportunity> oppsToUpdate = new List<Opportunity>();
+for (Opportunity opp : [SELECT Id, Name, AccountId, Account.Name, Amount, Account_Plan__c FROM Opportunity WHERE Account.Name IN :accToPlanMap.keySet()]) {
+    Id planId = accToPlanMap.get(opp.Account.Name);
+    if (planId != null && opp.Account_Plan__c != planId) {
+        opp.Account_Plan__c = planId;
+        oppsToUpdate.add(opp);
+    }
+}
+
+if (!oppsToUpdate.isEmpty()) {
+    update oppsToUpdate;
+    System.debug('Opportunities linked to Account Plans: ' + oppsToUpdate.size());
+}
+
+System.debug('=== Seed Script Completed Successfully ===');

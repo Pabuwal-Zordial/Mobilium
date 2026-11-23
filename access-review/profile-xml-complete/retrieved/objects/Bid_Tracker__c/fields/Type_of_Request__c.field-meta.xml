@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Request__c</fullName>
+    <label>Type of Request</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bill of Material</fullName>
+                <default>false</default>
+                <label>Bill of Material</label>
+            </value>
+            <value>
+                <fullName>Budgetary Estimate</fullName>
+                <default>false</default>
+                <label>Budgetary Estimate</label>
+            </value>
+            <value>
+                <fullName>Change Request</fullName>
+                <default>false</default>
+                <label>Change Request</label>
+            </value>
+            <value>
+                <fullName>Contractual</fullName>
+                <default>false</default>
+                <label>Contractual</label>
+            </value>
+            <value>
+                <fullName>Extended Support</fullName>
+                <default>false</default>
+                <label>Extended Support</label>
+            </value>
+            <value>
+                <fullName>Misc</fullName>
+                <default>false</default>
+                <label>Misc</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Profit Sheet/Bill of Material</fullName>
+                <default>false</default>
+                <label>Profit Sheet/Bill of Material</label>
+            </value>
+            <value>
+                <fullName>Proof of Concept</fullName>
+                <default>false</default>
+                <label>Proof of Concept</label>
+            </value>
+            <value>
+                <fullName>Request for Information</fullName>
+                <default>false</default>
+                <label>Request for Information</label>
+            </value>
+            <value>
+                <fullName>Request for Proposal</fullName>
+                <default>false</default>
+                <label>Request for Proposal</label>
+            </value>
+            <value>
+                <fullName>Request for Quotation</fullName>
+                <default>false</default>
+                <label>Request for Quotation</label>
+            </value>
+            <value>
+                <fullName>Request for Tender</fullName>
+                <default>false</default>
+                <label>Request for Tender</label>
+            </value>
+            <value>
+                <fullName>Standard Proposal</fullName>
+                <default>false</default>
+                <label>Standard Proposal</label>
+            </value>
+            <value>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+                <label>Upgrade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

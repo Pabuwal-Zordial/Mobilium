@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Churned_Product__c</fullName>
+    <label>Reason for Churned Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>System Upgrade</fullName>
+                <default>false</default>
+                <label>System Upgrade</label>
+            </value>
+            <value>
+                <fullName>System Shut Down</fullName>
+                <default>false</default>
+                <label>System Shut Down</label>
+            </value>
+            <value>
+                <fullName>No Longer Wanted</fullName>
+                <default>false</default>
+                <label>No Longer Wanted</label>
+            </value>
+            <value>
+                <fullName>Downgrade SLA</fullName>
+                <default>false</default>
+                <label>Downgrade SLA</label>
+            </value>
+            <value>
+                <fullName>Exchange Rate Difference</fullName>
+                <default>false</default>
+                <label>Exchange Rate Difference</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

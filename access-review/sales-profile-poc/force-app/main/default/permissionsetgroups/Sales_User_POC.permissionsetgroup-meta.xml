@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales User POC</label>
+    <permissionSets>Sales_Project_Name_Restriction</permissionSets>
+    <permissionSets>Sales_User_Access_Delta</permissionSets>
+    <permissionSets>Sales_User_System_Delta</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

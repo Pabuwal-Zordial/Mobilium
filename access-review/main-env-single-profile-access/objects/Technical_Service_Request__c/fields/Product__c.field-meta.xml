@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <label>Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GlobalRoamer</fullName>
+                <default>false</default>
+                <label>GlobalRoamer</label>
+            </value>
+            <value>
+                <fullName>GlobalRoamer Hardware</fullName>
+                <default>false</default>
+                <label>GlobalRoamer Hardware</label>
+            </value>
+            <value>
+                <fullName>SITE in Cloud</fullName>
+                <default>false</default>
+                <label>SITE in Cloud</label>
+            </value>
+            <value>
+                <fullName>Managed Hosting</fullName>
+                <default>false</default>
+                <label>Managed Hosting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roaming_to_project_adjs__c</fullName>
+    <formula>IF(AND(Product_total__c &lt;&gt;0 , (Engmnt_Exp_Actuals__c+Big_Data_Analysis_Actual__c +  Roaming_Actual__c +  Roaming_Analytics_Actual__c  +  Test_Factory_Actual__c + Security_Actuals__c + Risk_Actuals__c +  Testing_Actuals__c)&lt;&gt;0),( Roaming_Actual__c + ( Undetermined_Actual__c *(Roaming_Actual__c / (Engmnt_Exp_Actuals__c + Big_Data_Analysis_Actual__c +  Roaming_Actual__c +  Roaming_Analytics_Actual__c  +  Test_Factory_Actual__c + Security_Actuals__c + Risk_Actuals__c + Testing_Actuals__c))))/ Product_total__c,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Roaming % to project (adj.)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

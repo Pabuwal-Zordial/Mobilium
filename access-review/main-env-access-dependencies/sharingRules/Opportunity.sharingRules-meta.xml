@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BD_Security</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Give access to the opportunity whose LOB is Security to EI Team Member</description>
+        <label>BD-Security</label>
+        <sharedTo>
+            <group>EI_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Business_Line1__c</field>
+            <operation>equals</operation>
+            <value>Security</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CloseDate</field>
+            <operation>greaterThan</operation>
+            <value>12/31/2018</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EECIS_Opportunity_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share EECIS opportunity to Bertrand Leroux</description>
+        <label>EECIS-Opportunity-Sharing</label>
+        <sharedTo>
+            <group>EECIS</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sub_Region1__c</field>
+            <operation>equals</operation>
+            <value>EECIS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sharing_Europe_to_Sachin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Europe to Sachin</label>
+        <sharedTo>
+            <group>Europe</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sub_Region1__c</field>
+            <operation>equals</operation>
+            <value>Europe</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

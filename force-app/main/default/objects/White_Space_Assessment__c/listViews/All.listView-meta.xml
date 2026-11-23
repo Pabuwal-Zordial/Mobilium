@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Plan__c</columns>
+    <columns>Offering__c</columns>
+    <columns>Our_Spending__c</columns>
+    <columns>Competitor_Spending__c</columns>
+    <columns>Internal_Spending__c</columns>
+    <columns>Unknown_Spending__c</columns>
+    <columns>Total_Customer_Spending__c</columns>
+    <columns>White_Space_Value__c</columns>
+    <columns>Share_of_Wallet__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All White Space Assessments</label>
+</ListView>

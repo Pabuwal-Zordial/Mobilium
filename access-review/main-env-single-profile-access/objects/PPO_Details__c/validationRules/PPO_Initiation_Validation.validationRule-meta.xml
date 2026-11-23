@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPO_Initiation_Validation</fullName>
+    <active>true</active>
+    <description>Describes when PPO can be created</description>
+    <errorConditionFormula>(NOT(ISPICKVAL(Opportunity__r.StageName,&apos;Secure Agreement&apos;)) &amp;&amp; NOT(ISPICKVAL(Opportunity__r.StageName,&apos;Develop Solution&apos;)) &amp;&amp; NOT(ISPICKVAL(Opportunity__r.StageName,&apos;Propose Solution&apos;))) &amp;&amp; Opportunity__r.PPO__c =true &amp;&amp; ISNEW()</errorConditionFormula>
+    <errorMessage>PPO is applicable only when  Stage is Develop Solution/Propose Solution/Secure Agreement in Opportunity</errorMessage>
+</ValidationRule>

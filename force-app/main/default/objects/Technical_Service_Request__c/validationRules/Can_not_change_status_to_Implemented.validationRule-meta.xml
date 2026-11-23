@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_not_change_status_to_Implemented</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISPICKVAL(PRIORVALUE(TSR_Status__c), &apos;Implemented&apos;))&amp;&amp;ISPICKVAL(TSR_Status__c,&apos;Implemented&apos;) &amp;&amp; ISCHANGED(TSR_Status__c) &amp;&amp; NOT($Profile.Name =&apos;System Administrator&apos;)&amp;&amp; NOT($Profile.Name=&apos;Mobileum Salesops Team Profile&apos;) &amp;&amp; NOT( $User.Email =&apos;bjoern.wening@mobileum.com&apos;)&amp;&amp; NOT( $User.Email =&apos;snejana.yadova@mobileum.com&apos;) &amp;&amp; NOT( $User.Email =&apos;alessandra.roos@mobileum.com&apos;)</errorConditionFormula>
+    <errorMessage>TSR status can not be changed to implemented except by Admins or Platform Accounting Team</errorMessage>
+</ValidationRule>

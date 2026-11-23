@@ -1,0 +1,1216 @@
+<!--
+/*************************************************************************************
+Name                    lb_loeCalculator
+Developed By            West Monroe Partners
+Purpose                 The component will handle the following:
+						 - display the generic 4 common products for loe calculation
+						 - displays the products from the quote line items - provided the checkbox is false in product
+						 - validates the hours entered and split up and stores the values in the quote line items
+
+Created date              5/15/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0			SS		5/15/2017		Refer component header
+2.0 		SS      6/7/2017        Changes as per Sanjit and Amol's request
+									Refer to "Change - 2.0 in comments"
+*************************************************************************************/
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+				controller="clsLBHandler_loeCalculator"
+>
+	<aura:handler event="aura:systemError" action="{!c.showSystemError}"/>
+	<!-- #1 Creating the list of quote line attribute to save -->
+	<aura:attribute name="quoteLines"
+		          type="SBQQ__QuoteLine__c[]" />
+	<!-- #2 Creating the list of string that serve as column headers -->
+	<aura:attribute name="columnHeaders"
+		          type="String[]" />
+	<!-- #3 Creating the list of common products from custom metadata types -->
+	<aura:attribute name="commonProducts"
+		          type="LoE_Calculator__mdt[]" />
+	<!-- #4 Creating the primary quote -->
+	<aura:attribute name="primaryQuote"
+		          type="SBQQ__Quote__c" />
+    <!-- #5 we need a placeholder for each row, stores the overall value -->
+   	<aura:attribute name="totalPMRowSum"
+   		          type="Integer" />
+	<aura:attribute name="totalSoftInstallRow"
+				type="Integer" />
+	<aura:attribute name="totalSoftInstallAdditionalRow"
+				type="Integer" />
+	<aura:attribute name="totalTestBedRow"
+				type="Integer" />
+	<aura:attribute name="totalGeoRow"
+				type="Integer" />
+	<aura:attribute name="totalDBRow"
+				type="Integer" />
+	<aura:attribute name="total3PInstRow"
+				type="Integer" />
+	<aura:attribute name="totalMiscRow"
+				type="Integer" />
+   <!-- #6 we need a placeholder for each column and overall total-->
+   	<aura:attribute name="totalGenHours"
+   		          type="Integer" />
+	<aura:attribute name="totalSSHours"
+	   		          type="Integer" />
+	<aura:attribute name="totalDeployHours"
+	   		          type="Integer" />
+	<aura:attribute name="totalIntegHours"
+	   		          type="Integer" />
+	<aura:attribute name="totalIntTestHours"
+	   		          type="Integer" />
+	<aura:attribute name="totalUATHours"
+	   		          type="Integer" />
+	<aura:attribute name="totalDocHours"
+	   		          type="Integer" />
+	<aura:attribute name="totalProdHours"
+	   		          type="Integer" />
+	<aura:attribute name="totalHours"
+	   		          type="Integer" />
+  	<aura:attribute name="deploymentHeaderTotalHours"
+  		          type="Integer" />
+  	<aura:attribute name="allowSave"
+  		          type="Boolean" />
+  	<aura:attribute name="instructionText"
+  					type="string" />
+	<aura:attribute name="showAccordian"
+				type="Boolean" />
+	<aura:attribute name="showSave"
+				type="Boolean" />
+	<!-- Handler to call the init function  -->
+	<aura:handler name="init"
+		          value="{!this}"
+			      action="{!c.mtd_dataLoaderForQuote}" />
+
+	<!--  checking if any quote lines -->
+	<aura:if isTrue="{!(v.quoteLines.length > 0)}">
+		<div class="slds-table--edit_container slds-is-relative" id="loeDetails" >
+			<h3 class="slds-section-title--divider"> DETAILED LEVEL OF EFFORT (LoE) CHART {IN PERSON DAYS}</h3>
+			<!--  Displaying the quote lines in a table -->
+
+			<table class="slds-table slds-table--edit slds-table--bordered slds-table--fixed-layout slds-no-cell-focus slds-no-row-hover"
+					 role="grid"
+					 style="width:100%">
+	   			<thead>
+					<!-- Shows the header for the category -->
+					<tr class="slds-line-height--reset">
+						<td width="15%"><th></th></td>
+						<td width="10%"><th>Instructions</th></td>
+						<!-- Iterates through the list of column headers -->
+						<aura:iteration items="{!v.columnHeaders}"
+							          var="headerValue">
+							<td width="9%">
+			        				<th scope="col" style="white-space: pre-line;">{!headerValue}</th>
+							</td>
+						</aura:iteration>
+						<td width="3%">
+									<th scope="col" style="white-space: pre-line;">Totals</th>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+
+					<!--  First row Kick Off generic product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="kickOffGeneralProduct"
+											value="{!v.commonProducts[0].MasterLabel}"
+								/>
+						</td>
+						<td>
+
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Kick_Off_Instructions__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[0].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Kick_Off_Instructions__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[0].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.KickOff_General_Hours__c}"
+												change="{!c.updateTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<!-- disabled ="{!NOT(v.commonProducts[0].isGeneralType__c)}" -->
+						<!--  rest of the phases will be disabled -->
+						<td>
+								<ui:inputNumber maxlength="3"
+												value=""
+												disabled="true"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value=""
+												disabled="true"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value=""
+												disabled="true"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value=""
+												disabled="true"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value=""
+												disabled="true"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value=""
+												disabled="true"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="kickOffGeneralTotal"
+											value="{!v.primaryQuote.KickOff_General_Hours__c}"
+								/>
+						</td>
+					</tr>
+
+					<!--  Software Installation Main Phase product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="softInstallGeneralProduct"
+											value="{!v.commonProducts[1].MasterLabel}"
+								/>
+						</td>
+						<td>
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Software_Installation_Main_Phase_Ins__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[1].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Software_Installation_Main_Phase_Ins__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[1].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Main_Phase_General__c}"
+												change="{!c.updateSoftInstTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Main_Phase_SS__c}"
+												change="{!c.updateSoftInstTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Main_Phase_Deploy__c}"
+												change="{!c.updateSoftInstTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Main_Phase_Intg__c}"
+												change="{!c.updateSoftInstTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Main_Phase_InTest__c}"
+												change="{!c.updateSoftInstTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Main_Phase_UAT__c}"
+												change="{!c.updateSoftInstTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Main_Phase_Doc__c}"
+												change="{!c.updateSoftInstTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="sftInstallGeneralTotal"
+											value="{!v.totalSoftInstallRow}"
+								/>
+						</td>
+					</tr>
+					<!--  Software Installation Additional Phase product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="softInstallAdditionalGeneralProduct"
+											value="{!v.commonProducts[2].MasterLabel}"
+								/>
+						</td>
+						<td>
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Software_Installation_Add_Phases_Insts__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[2].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Software_Installation_Add_Phases_Insts__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[2].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Addi_Phases_Gen__c}"
+												change="{!c.updateSoftInstAddTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Add_Phases_SS__c}"
+												change="{!c.updateSoftInstAddTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Add_Phases_Dply__c}"
+												change="{!c.updateSoftInstAddTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Add_Phases_Intg__c}"
+												change="{!c.updateSoftInstAddTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Add_Phases_InTest__c}"
+												change="{!c.updateSoftInstAddTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Add_Phases_UAT__c}"
+												change="{!c.updateSoftInstAddTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Software_Installation_Add_Phases_Doc__c}"
+												change="{!c.updateSoftInstAddTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="sftInstallAddGeneralTotal"
+											value="{!v.totalSoftInstallAdditionalRow}"
+								/>
+						</td>
+					</tr>
+					<!--  Test Bed deployment product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="TestBedProduct"
+											value="{!v.commonProducts[3].MasterLabel}"
+								/>
+						</td>
+						<td>
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Test_Bed_deployment_Inst__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[3].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Test_Bed_deployment_Inst__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[3].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Test_Bed_deployment_General__c}"
+												change="{!c.updateTestBedTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Test_Bed_deployment_SS__c}"
+												change="{!c.updateTestBedTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Test_Bed_deployment_Dply__c}"
+												change="{!c.updateTestBedTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Test_Bed_deployment_Intg__c}"
+												change="{!c.updateTestBedTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Test_Bed_deployment_InTest__c}"
+												change="{!c.updateTestBedTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Test_Bed_deployment_UAT__c}"
+												change="{!c.updateTestBedTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Test_Bed_deployment_Doc__c}"
+												change="{!c.updateTestBedTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="totalTestBedTotal"
+											value="{!v.totalTestBedRow}"
+								/>
+						</td>
+					</tr>
+					<!--  Geo Redundant deployment product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="geoProduct"
+											value="{!v.commonProducts[4].MasterLabel}"
+								/>
+						</td>
+						<td>
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Geo_Redundant_deployment_Inst__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[4].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Geo_Redundant_deployment_Inst__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[4].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Geo_Redundant_deployment_General__c}"
+												change="{!c.updateGeoTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Geo_Redundant_deployment_SS__c}"
+												change="{!c.updateGeoTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Geo_Redundant_deployment_Dply__c}"
+												change="{!c.updateGeoTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Geo_Redundant_deployment_Intg__c}"
+												change="{!c.updateGeoTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Geo_Redundant_deployment_InTest__c}"
+												change="{!c.updateGeoTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Geo_Redundant_deployment_UAT__c}"
+												change="{!c.updateGeoTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Geo_Redundant_deployment_Doc__c}"
+												change="{!c.updateGeoTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="totalgeoTotal"
+											value="{!v.totalGeoRow}"
+								/>
+						</td>
+					</tr>
+					<!--  Database deployment product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="databaseDeploymentProduct"
+											value="{!v.commonProducts[5].MasterLabel}"
+								/>
+						</td>
+						<td>
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Database_deployment_Insts__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[5].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Database_deployment_Insts__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[5].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Database_deployment_General__c}"
+												change="{!c.updateDBTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Database_deployment_SS__c}"
+												change="{!c.updateDBTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Database_deployment_Dply__c}"
+												change="{!c.updateDBTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Database_deployment_Intg__c}"
+												change="{!c.updateDBTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Database_deployment_InTest__c}"
+												change="{!c.updateDBTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Database_deployment_UAT__c}"
+												change="{!c.updateDBTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Database_deployment_Doc__c}"
+												change="{!c.updateDBTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="totalDBTotal"
+											value="{!v.totalDBRow}"
+								/>
+						</td>
+					</tr>
+					<!--  3P installation product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="3PInstallProduct"
+											value="{!v.commonProducts[6].MasterLabel}"
+								/>
+						</td>
+						<td>
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Third_Party_installation_Inst__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[6].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Third_Party_installation_Inst__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[6].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Third_Party_installation_Gen__c}"
+												change="{!c.update3PInsTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Third_Party_installation_SS__c}"
+												change="{!c.update3PInsTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Third_Party_installation_Dply__c}"
+												change="{!c.update3PInsTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Third_Party_installation_Intg__c}"
+												change="{!c.update3PInsTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Third_Party_installation_inTest__c}"
+												change="{!c.update3PInsTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Third_Party_installation_UAT__c}"
+												change="{!c.update3PInsTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Third_Party_installation_Doc__c}"
+												change="{!c.update3PInsTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="total3PInstow"
+											value="{!v.total3PInstRow}"
+								/>
+						</td>
+					</tr>
+					<!--  Misc product -->
+					<tr class="slds-line-height--reset">
+						<td>
+								<ui:outputText aura:id="MiscProduct"
+											value="{!v.commonProducts[7].MasterLabel}"
+								/>
+						</td>
+						<td>
+										<aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Miscellaneous_Inst__c))}">
+											<button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[7].MasterLabel}">
+											Add
+											</button>
+										</aura:if>
+										<aura:if isTrue="{!not(empty(v.primaryQuote.Miscellaneous_Inst__c))}">
+											<button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[7].MasterLabel}">
+											View
+											</button>
+										</aura:if>
+
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Miscellaneous_Gen__c}"
+												change="{!c.updateMiscTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Miscellaneous_SS__c}"
+												change="{!c.updateMiscTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Miscellaneous_Dply__c}"
+												change="{!c.updateMiscTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Miscellaneous_Intg__c}"
+												change="{!c.updateMiscTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Miscellaneous_InTest__c}"
+												change="{!c.updateMiscTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Miscellaneous_UAT__c}"
+												change="{!c.updateMiscTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:inputNumber maxlength="3"
+												value="{!v.primaryQuote.Miscellaneous_Doc__c}"
+												change="{!c.updateMiscTotals}"
+												disabled="{!!v.showSave}"
+								/>
+						</td>
+						<td>
+								<ui:outputText aura:id="totalMisRow"
+											value="{!v.totalMiscRow}"
+								/>
+						</td>
+					</tr>
+					<!--  nineth row - post production launch support general row -->
+					<tr class="slds-line-height--reset">
+					    <td>
+							<ui:outputText aura:id="PostProdGeneralProduct"
+									   value="{!v.commonProducts[8].MasterLabel}"
+							/>
+					   </td>
+					   <td>
+
+							    <aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Launch_support_instructions__c))}">
+								  <button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[8].MasterLabel}">
+								  Add
+								  </button>
+							    </aura:if>
+							    <aura:if isTrue="{!not(empty(v.primaryQuote.Launch_support_instructions__c))}">
+								  <button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[8].MasterLabel}">
+								  View
+								  </button>
+							    </aura:if>
+
+					   </td>
+					    <td>
+							<ui:inputNumber maxlength="3"
+									    value="{!v.primaryQuote.Post_production_Launch_spprt_General_Hrs__c}"
+									    change="{!c.updateTotals}"
+									    disabled="{!!v.showSave}"
+							/>
+					    </td>
+					    <!-- disabled ="{!NOT(v.commonProducts[0].isGeneralType__c)}" -->
+					    <!--  rest of the phases will be disabled -->
+					    <td>
+							<ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+							/>
+					    </td>
+					    <td>
+							<ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+							/>
+					    </td>
+					    <td>
+						      <ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+						      />
+					    </td>
+					    <td>
+							<ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+							/>
+					    </td>
+					    <td>
+							<ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+							/>
+					    </td>
+					    <td>
+							<ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+							/>
+					    </td>
+
+					    <td>
+							<ui:outputText aura:id="postProdGeneralTotal"
+									   value="{!v.primaryQuote.Post_production_Launch_spprt_General_Hrs__c}"
+							/>
+					    </td>
+					</tr>
+					<!--  tenth row - Training -->
+		                  <tr>
+		                        <td>
+		                                <ui:outputText aura:id="TrainingGeneralProduct"
+		                                               value="{!v.commonProducts[9].MasterLabel}"
+		                                />
+		                       </td>
+		                       <td>
+
+		                                    <aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.Training_Instructions__c))}">
+		                                        <button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[9].MasterLabel}">
+		                                        Add
+		                                        </button>
+		                                    </aura:if>
+		                                    <aura:if isTrue="{!not(empty(v.primaryQuote.Training_Instructions__c))}">
+		                                        <button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[9].MasterLabel}">
+		                                        View
+		                                        </button>
+		                                    </aura:if>
+
+		                       </td>
+		                        <td>
+		                                <ui:inputNumber maxlength="3"
+		                                                value="{!v.primaryQuote.Training_General_Hours__c}"
+		                                                change="{!c.updateTotals}"
+										disabled="{!!v.showSave}"
+		                                />
+		                        </td>
+		                        <!-- disabled ="{!NOT(v.commonProducts[0].isGeneralType__c)}" -->
+		                        <!--  rest of the phases will be disabled -->
+		                        <td>
+		                                <ui:inputNumber maxlength="3"
+		                                                value=""
+		                                                disabled="true"
+		                                />
+		                        </td>
+		                        <td>
+		                                <ui:inputNumber maxlength="3"
+		                                                value=""
+		                                                disabled="true"
+		                                />
+		                        </td>
+		                        <td>
+		                                <ui:inputNumber maxlength="3"
+		                                                value=""
+		                                                disabled="true"
+		                                />
+		                        </td>
+						<td>
+  						      <ui:inputNumber maxlength="3"
+  									    value=""
+  									    disabled="true"
+  						      />
+  					    </td>
+		                        <td>
+		                                <ui:inputNumber maxlength="3"
+		                                                value=""
+		                                                disabled="true"
+		                                />
+		                        </td>
+		                        <td>
+		                                <ui:inputNumber maxlength="3"
+		                                                value=""
+		                                                disabled="true"
+		                                />
+		                        </td>
+
+
+		                        <td>
+		                                <ui:outputText aura:id="trainingGeneralTotal"
+		                                               value="{!v.primaryQuote.Training_General_Hours__c}"
+		                                />
+		                        </td>
+		                    </tr>
+
+		                    <!--  last row - project management row -->
+		                    <tr class="slds-line-height--reset">
+		                        <td>
+		                                <ui:outputText aura:id="PMGeneralProduct"
+		                                               value="{!v.commonProducts[10].MasterLabel}"
+		                                />
+		                       </td>
+		                       <td>
+
+		                                    <aura:if isTrue="{!and(v.showSave,empty(v.primaryQuote.PM_Instructions__c))}">
+		                                        <button class="slds-button slds-button--neutral" onclick="{!c.showModal}" id="{!v.commonProducts[10].MasterLabel}">
+		                                        Add
+		                                        </button>
+		                                    </aura:if>
+		                                    <aura:if isTrue="{!not(empty(v.primaryQuote.PM_Instructions__c))}">
+		                                        <button class="slds-button slds-button--brand" onclick="{!c.showModal}" id="{!v.commonProducts[10].MasterLabel}">
+		                                        View
+		                                        </button>
+		                                    </aura:if>
+
+		                       </td>
+					     <!--  rest of the phases will be disabled -->
+					     <td>
+							 <ui:inputNumber maxlength="3"
+									     value="{!v.primaryQuote.PM_General_Hours__c}"
+									     change="{!c.updatePMTotal}"
+									     disabled="{!!v.showSave}"
+
+							 />
+					     </td>
+
+
+					    <td>
+						      <ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+						      />
+					    </td>
+					    <td>
+						      <ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+						      />
+					    </td>
+					    <td>
+						      <ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+						      />
+					    </td>
+					    <td>
+						      <ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+						      />
+					    </td>
+					    <td>
+						      <ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+						      />
+					    </td>
+					    <td>
+						      <ui:inputNumber maxlength="3"
+									    value=""
+									    disabled="true"
+						      />
+					    </td>
+
+		                        <!-- disabled ="{!NOT(v.commonProducts[0].isGeneralType__c)}" -->
+		                        <!--  rest of the phases will be disabled -->
+
+		                        <td>
+		                                <ui:outputNumber value="{!v.totalPMRowSum}"/>
+		                        </td>
+		                    </tr>
+
+				        <tr>
+						<td>
+								<ui:outputText aura:id="Totals"
+											value="Totals"
+								/>
+						</td>
+						<!--  Place holder for instructions column -->
+						<td></td>
+						<!-- General total -->
+						<td>
+							<ui:outputNumber value="{!v.totalGenHours}" />
+						</td>
+						<!-- SoftStaging total -->
+						<td>
+							<ui:outputNumber value="{!v.totalSSHours}" />
+						</td>
+						<!-- Deployment total -->
+						<td>
+							<ui:outputNumber value="{!v.totalDeployHours}" />
+						</td>
+						<!-- Integration total -->
+						<td>
+							<ui:outputNumber value="{!v.totalIntegHours}" />
+						</td>
+						<!-- Internal Testing total -->
+						<td>
+							<ui:outputNumber value="{!v.totalIntTestHours}" />
+						</td>
+						<!-- UAT total -->
+						<td>
+							<ui:outputNumber value="{!v.totalUATHours}" />
+						</td>
+						<!-- Documentation total -->
+						<td>
+							<ui:outputNumber value="{!v.totalDocHours}" />
+						</td>
+						<!--  overall total -->
+						<td>
+							<ui:outputNumber value="{!v.totalHours}" />
+						</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+			<br/>
+			<br/>
+			<div id="loeTotals">
+				<h3 class="slds-section-title--divider">LoE TYPE BREAKOUT</h3>
+				<div width="100%">
+					<table>
+						<tr>
+							<td>
+							<!--  Displaying the quote lines in a table -->
+							<table class="slds-table slds-table--edit slds-table--bordered slds-table--fixed-layout slds-no-cell-focus slds-no-row-hover"
+									 role="grid"
+									 style="width:100%">
+					   			<thead>
+									<!-- Shows the header for the category -->
+									<tr class="slds-line-height--reset">
+										<td width="40%">
+											<th>LoE Table</th>
+										</td>
+										<td width="15%">
+						        				<th scope="col" style="white-space: pre-line;">Total</th>
+										</td>
+										<td width="15%">
+						        				<th scope="col" style="white-space: pre-line;">IDC Off Site</th>
+										</td>
+										<td width="15%">
+						        				<th scope="col" style="white-space: pre-line;">IDC Onsite</th>
+										</td>
+										<td width="15%">
+						        				<th scope="col" style="white-space: pre-line;">RoW/ Partner</th>
+										</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td> DEPLOYMENT </td>
+										<td class="{!v.deploymentHeaderTotalHours == (v.primaryQuote.Deployment_OffSite__c+ v.primaryQuote.Deployment_OnSite__c + v.primaryQuote.Deployment_RoW__c) ? 'equalTo100' : 'not100'}">
+											 <ui:outputNumber value="{!v.deploymentHeaderTotalHours}" />
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Deployment_OffSite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Deployment_OnSite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Deployment_RoW__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+									</tr>
+									<tr>
+										<td> LAUNCH SUPPORT </td>
+										<td class="{!v.primaryQuote.Post_production_Launch_spprt_General_Hrs__c == (v.primaryQuote.Support_OffSite__c + v.primaryQuote.Support_OnSite__c + v.primaryQuote.Support_Row__c) ? 'equalTo100' : 'not100'}">
+											 <ui:outputNumber value="{!v.primaryQuote.Post_production_Launch_spprt_General_Hrs__c}" />
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Support_OffSite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Support_OnSite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Support_Row__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+									</tr>
+									<tr>
+										<td> TRAINING </td>
+										<td class="{!v.primaryQuote.Training_General_Hours__c == (v.primaryQuote.Training_OffSite__c + v.primaryQuote.Training_OnSite__c + v.primaryQuote.Training_Row__c) ? 'equalTo100' : 'not100'}">
+											 <ui:outputNumber value="{!v.primaryQuote.Training_General_Hours__c}" />
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Training_OffSite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Training_OnSite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.Training_Row__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+									</tr>
+									<tr>
+										<td> PROJECT MANAGEMENT </td>
+										<td class="{!v.totalPMRowSum == (v.primaryQuote.PM_Offsite__c+ v.primaryQuote.PM_Onsite__c + v.primaryQuote.PM_Row__c) ? 'equalTo100' : 'not100'}">
+											 <ui:outputNumber value="{!v.totalPMRowSum}"
+											 />
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.PM_Offsite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.PM_Onsite__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+										<td>
+											<ui:inputNumber value="{!v.primaryQuote.PM_Row__c}"
+															maxlength="3"
+															change="{!c.validateHeaderHours}"
+															disabled="{!!v.showSave}"/>
+										</td>
+									</tr>
+									<!--  final total row -->
+									<tr>
+										<td> TOTALS </td>
+										<td>
+									   		<ui:outputNumber value="{!v.totalHours}" />
+									    </td>
+									   	<td>
+									   		<ui:outputNumber value="{!v.primaryQuote.Deployment_OffSite__c + v.primaryQuote.Support_OffSite__c + v.primaryQuote.Training_OffSite__c + v.primaryQuote.PM_Offsite__c}" />
+									    </td>
+									    <td>
+									   		<ui:outputNumber value="{!v.primaryQuote.Deployment_OnSite__c + v.primaryQuote.Support_OnSite__c + v.primaryQuote.Training_OnSite__c + v.primaryQuote.PM_Onsite__c}" />
+									    </td>
+									    <td>
+									   		<ui:outputNumber value="{!v.primaryQuote.Deployment_RoW__c + v.primaryQuote.Support_Row__c + v.primaryQuote.Training_Row__c + v.primaryQuote.PM_Row__c}" />
+									    </td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td width="50%" style="vertical-align:bottom;text-align:right">
+							<aura:if isTrue="{!and(v.allowSave,v.showSave)}">
+									<ui:button class="slds-button--brand" label="Save" press="{!c.saveLoE}"/>
+							</aura:if>
+						</td>
+					</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="test-id__section slds-section full forcePageBlockSection forcePageBlockSectionView" id="accordianDiv">
+			<h3 class="slds-section__title  test-id__section-header-container">
+				<ui:button class="slds-button test-id__section-header-button slds-section__title-action" aura:id="buttonClicker" press="{!c.toggleAccordian}">
+					<aura:if isTrue="{!v.showAccordian}">
+						<lightning:icon iconName="utility:chevrondown" size="x-small" alternativeText="Indicates approval"/>
+					</aura:if>
+					<aura:if isTrue="{!!v.showAccordian}">
+						<lightning:icon iconName="utility:chevronright" size="x-small" alternativeText="Indicates approval"/>
+					</aura:if>
+					<span class="test-id__section-header-title slds-truncate">   Products from Quote for reference</span>
+				</ui:button>
+			</h3>
+			<!-- accodian contents -->
+			<div class="test-id__section-content slds-section__content section__content">
+				<table class="slds-table slds-table--edit slds-table--bordered slds-table--fixed-layout slds-no-cell-focus slds-no-row-hover"
+						 role="grid"
+						 style="width:100%">
+		   			<thead>
+						<!-- Shows the header for the category -->
+						<tr>
+							<th> Product Code </th>
+							<th> Estimated in LoE </th>
+						</tr>
+					</thead>
+					<tbody>
+						<aura:iteration items="{!v.quoteLines}" var="qLines">
+							<tr>
+								<td>
+									<ui:outputText value="{!qLines.SBQQ__ProductCode__c}" />
+								</td>
+								<td>
+									<ui:inputCheckbox value="{!qLines.LoE_Accounted__c}" disabled="{!!v.showSave}"/>
+								</td>
+							</tr>
+						</aura:iteration>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</aura:if>
+	<!--  Ensuring that error message is thrown if not found -->
+	<aura:if isTrue="{!(v.quoteLines.length == 0)}">
+		No quote line(s) found
+	</aura:if>
+
+	<!--  Modal code -->
+	<div aria-hidden="false" id="newClientSectionId" role="dialog" class="slds-modal slds-modal--large slds-fade-in-open" style="display:none;background-color:lightgrey">
+	   <div class="slds-modal__container">
+		     <div class="slds-modal__header">
+
+			      <h2 class="slds-text-heading--medium" >
+			      	<span id="header43"> </span>
+			      </h2>
+		     </div>
+		     <div class="slds-modal__content slds-p-around--medium">
+			      <div>
+			         	<!--  instructions -->
+					<aura:if isTrue="{!v.showSave}">
+			         		<ui:inputTextArea value="{!v.instructionText}" rows="5"/>
+					</aura:if>
+					<aura:if isTrue="{!!v.showSave}">
+			         		<ui:outputTextArea value="{!v.instructionText}" />
+					</aura:if>
+			      </div>
+			      <br/>
+				<aura:if isTrue="{!v.showSave}">
+			      	<button class="slds-button slds-button--success" onclick="{!c.saveInstruction}">Save</button>
+				</aura:if>
+			      <button class="slds-button slds-button--brand" onclick="{!c.hideModal}">Close</button>
+		      </div>
+		</div>
+ 	</div>
+
+
+</aura:component>

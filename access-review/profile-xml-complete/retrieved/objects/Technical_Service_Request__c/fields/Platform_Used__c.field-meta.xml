@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform_Used__c</fullName>
+    <label>Platform Used</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GlobalRoamer</fullName>
+                <default>false</default>
+                <label>GlobalRoamer</label>
+            </value>
+            <value>
+                <fullName>AsiaRoamer</fullName>
+                <default>false</default>
+                <label>AsiaRoamer</label>
+            </value>
+            <value>
+                <fullName>AmericaRoamer</fullName>
+                <default>false</default>
+                <label>AmericaRoamer</label>
+            </value>
+            <value>
+                <fullName>SITE/SITE in Cloud (GRP Account)</fullName>
+                <default>false</default>
+                <label>SITE/SITE in Cloud (GRP Account)</label>
+            </value>
+            <value>
+                <fullName>SiC (GRP account)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SiC (GRP account)</label>
+            </value>
+            <value>
+                <fullName>Site (GRP account)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site (GRP account)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

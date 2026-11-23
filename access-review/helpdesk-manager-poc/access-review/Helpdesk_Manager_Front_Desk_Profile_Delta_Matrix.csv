@@ -1,0 +1,566 @@
+﻿Dimension,Resource,Property,Helpdesk value,Manager value,Front Desk Profile value,Classification
+Application visibility,Bank_Application,default,true,false,,MIXED_OR_CONFLICT
+Application visibility,Bank_Application,visible,true,false,,MIXED_OR_CONFLICT
+Application visibility,Contact_Tracing,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,Contact_Tracing,visible,false,false,,MIXED_OR_CONFLICT
+Application visibility,Education,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,Education,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,InstituteApp,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,InstituteApp,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,Recruiting,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,Recruiting,visible,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__AllTabSet,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__AllTabSet,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__AlmDevops,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__AlmDevops,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__AppLauncher,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__AppLauncher,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Approvals,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Approvals,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Chatter,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Chatter,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Community,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Community,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Content,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Content,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__DataGovernanceConsole,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__DataGovernanceConsole,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__DataManager,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__DataManager,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__FlowsApp,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__FlowsApp,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Insights,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Insights,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningBolt,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningBolt,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningInstrumentation,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningInstrumentation,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningSales,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningSales,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningSalesConsole,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningSalesConsole,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningScheduler,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningScheduler,visible,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningService,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__LightningService,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Marketing,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Marketing,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__MSJApp,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__MSJApp,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Platform,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Platform,visible,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__QueueManagement,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__QueueManagement,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Sales,default,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Sales,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__SalesCloudMobile,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__SalesCloudMobile,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__SalesforceCMS,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__SalesforceCMS,visible,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Service,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Service,visible,false,true,,MIXED_OR_CONFLICT
+Application visibility,standard__ServiceConsole,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__ServiceConsole,visible,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Shield,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Shield,visible,true,true,,MIXED_OR_CONFLICT
+Application visibility,standard__Sites,default,false,false,,MIXED_OR_CONFLICT
+Application visibility,standard__Sites,visible,false,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Account_Holder_Photo__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Account_Holder_Photo__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Age__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Avg_Deposit__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Avg_Withdraw__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.BALANCE_AMOUNT__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Date_Of_Birth__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Date_Of_Birth__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Email_ID__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Email_ID__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Last_Name__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Last_Name__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Notes__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Notes__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Permanent_Address__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Permanent_Address__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Starting_Balance__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Starting_Balance__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Total_deposit__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Total_Deposit_Count__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Total_Withdraw__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Transactions_Limit__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Account__c.Withdrawal_Count__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Bank__c.Bank_ID__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Bank__c.number_of_branches1__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Bank__c.number_of_branches1__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Bank__c.Total_Number_Of_Branches__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Batch__c.Course__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Batch__c.Course__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Branch__c.Branch_Contact_number__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Branch__c.Branch_Contact_number__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Branch__c.Total_Number_Of_Account__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Course__c.Batch__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Course__c.Batch__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Course__c.Faculty__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Course__c.Faculty__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Faculty__c.Course__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Faculty__c.Course__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Faculty__c.Faculty_ID__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Description__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Description__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Job_Posting_Site_URL__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Job_Posting_Site_URL__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Status__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Status__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Technical_Site__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Job_Posting_Site__c.Technical_Site__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Litigation_Calender__c.Task__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Litigation_Calender__c.Task__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.Loan_Amount__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.Loan_Amount__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.Loan_ID__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.No_of_Installement__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.No_of_Installement__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.Rate_Of_interest__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.Rate_Of_interest__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.Tenure__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Loan_Detail__c.Tenure__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Position__c.Related_Position__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Position__c.Related_Position__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Rating__c.Rating__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Rating__c.Rating__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Rating__c.Rating_for__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Rating__c.Rating_for__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Rating__c.Student_Name__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Core_Competencies__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Core_Competencies__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Core_Competencies_Comments__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Core_Competencies_Comments__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Experience__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Experience__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Experience_Comments__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Experience_Comments__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Interviewer__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Interviewer__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Leadership_Skills__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Leadership_Skills__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Leadership_Skills_Comments__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Leadership_Skills_Comments__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Reason_Recommended__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Reason_Recommended__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Recommend_for_Hire__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Review__c.Recommend_for_Hire__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.Fees__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.Fees__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.School_Address__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.School_Address__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.School_Email__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.School_Email__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.School_Phone__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,School__c.School_Phone__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Address__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Address__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Adhaar_Card__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Adhaar_Card__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Age__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Approval_Status__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Approval_Status__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Avg_rating__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Batch_time__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Batch_time__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Class_Enrolled__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Class_Enrolled__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Count_of_rating__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Country__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Country__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Course_start_time__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Course_start_time__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Father_s_Contact_Number__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Father_s_Contact_Number__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Hobbies__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Hobbies__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Linkdin_Profile__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Linkdin_Profile__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Others__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Others__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Proffessional__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Proffessional__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Referred_By__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Referred_By__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Scholarship__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Scholarship__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.School__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.School__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Student_Contact_Number__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Student_Contact_Number__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Student_Geo_Location__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Student_Geo_Location__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Student_Name__c,editable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Student_Name__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.student_Remark__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.Sum_of_Rating__c,readable,true,true,,MIXED_OR_CONFLICT
+Field permission,Student__c.X12th_Percentage__c,editable,,true,,Manager_ONLY
+Field permission,Student__c.X12th_Percentage__c,readable,,true,,Manager_ONLY
+Object permission,Account__c,allowEdit,true,,,Helpdesk_ONLY
+Object permission,Account__c,allowRead,true,,,Helpdesk_ONLY
+Object permission,Bank__c,allowRead,true,,,Helpdesk_ONLY
+Object permission,Batch__c,allowCreate,,true,,Manager_ONLY
+Object permission,Batch__c,allowDelete,,true,,Manager_ONLY
+Object permission,Batch__c,allowEdit,,true,,Manager_ONLY
+Object permission,Batch__c,allowRead,,true,,Manager_ONLY
+Object permission,Branch__c,allowRead,true,,,Helpdesk_ONLY
+Object permission,Course__c,allowCreate,,true,,Manager_ONLY
+Object permission,Course__c,allowEdit,,true,,Manager_ONLY
+Object permission,Course__c,allowRead,,true,,Manager_ONLY
+Object permission,Faculty__c,allowCreate,,true,,Manager_ONLY
+Object permission,Faculty__c,allowEdit,,true,,Manager_ONLY
+Object permission,Faculty__c,allowRead,,true,,Manager_ONLY
+Object permission,Institute__c,allowCreate,,true,,Manager_ONLY
+Object permission,Institute__c,allowDelete,,true,,Manager_ONLY
+Object permission,Institute__c,allowEdit,,true,,Manager_ONLY
+Object permission,Institute__c,allowRead,,true,,Manager_ONLY
+Object permission,Loan__c,allowCreate,true,,,Helpdesk_ONLY
+Object permission,Loan__c,allowEdit,true,,,Helpdesk_ONLY
+Object permission,Loan__c,allowRead,true,,,Helpdesk_ONLY
+Object permission,Loan_Detail__c,allowCreate,true,,,Helpdesk_ONLY
+Object permission,Loan_Detail__c,allowEdit,true,,,Helpdesk_ONLY
+Object permission,Loan_Detail__c,allowRead,true,,,Helpdesk_ONLY
+Object permission,Rating__c,allowCreate,,true,,Manager_ONLY
+Object permission,Rating__c,allowDelete,,true,,Manager_ONLY
+Object permission,Rating__c,allowEdit,,true,,Manager_ONLY
+Object permission,Rating__c,allowRead,,true,,Manager_ONLY
+Object permission,Student__c,allowCreate,,true,,Manager_ONLY
+Object permission,Student__c,allowDelete,,true,,Manager_ONLY
+Object permission,Student__c,allowEdit,,true,,Manager_ONLY
+Object permission,Student__c,allowRead,,true,,Manager_ONLY
+Object permission,Student_in_Batch__c,allowCreate,,true,,Manager_ONLY
+Object permission,Student_in_Batch__c,allowDelete,,true,,Manager_ONLY
+Object permission,Student_in_Batch__c,allowEdit,,true,,Manager_ONLY
+Object permission,Student_in_Batch__c,allowRead,,true,,Manager_ONLY
+Page layout,Account.(master),layout,Account-Account Layout,Account-Account Layout,,MIXED_OR_CONFLICT
+Page layout,Account.Sales_Leadership_Team,layout,Account-Account Layout,Account-Account Layout,,MIXED_OR_CONFLICT
+Page layout,Account.service,layout,Account-Account %28Marketing%29 Layout,Account-Account %28Marketing%29 Layout,,MIXED_OR_CONFLICT
+Page layout,Account__c.(master),layout,Account__c-Account Layout,Account__c-Account Layout,,MIXED_OR_CONFLICT
+Page layout,Account__c.Employee,layout,Account__c-Employee layout,Account__c-Account Layout,,MIXED_OR_CONFLICT
+Page layout,Account__c.Manager,layout,Account__c-Account Layout,Account__c-Account Layout,,MIXED_OR_CONFLICT
+Page layout,AccountBrand.(master),layout,AccountBrand-Account Brand Layout,AccountBrand-Account Brand Layout,,MIXED_OR_CONFLICT
+Page layout,AccountContactRelation.(master),layout,AccountContactRelation-Account Contact Relationship Layout,AccountContactRelation-Account Contact Relationship Layout,,MIXED_OR_CONFLICT
+Page layout,AccountContactRole.(master),layout,AccountContactRole-Account Contact Role Layout,AccountContactRole-Account Contact Role Layout,,MIXED_OR_CONFLICT
+Page layout,AccountTeamMember.(master),layout,AccountTeamMember-Account Team Member Layout,AccountTeamMember-Account Team Member Layout,,MIXED_OR_CONFLICT
+Page layout,Address.(master),layout,Address-Address Layout,Address-Address Layout,,MIXED_OR_CONFLICT
+Page layout,AppointmentInvitation.(master),layout,AppointmentInvitation-Appointment Invitation Layout,AppointmentInvitation-Appointment Invitation Layout,,MIXED_OR_CONFLICT
+Page layout,ApptBundleConfig.(master),layout,ApptBundleConfig-Appointment Bundle Config Layout,ApptBundleConfig-Appointment Bundle Config Layout,,MIXED_OR_CONFLICT
+Page layout,ApptBundlePolicy.(master),layout,ApptBundlePolicy-Appointment Bundle Policy Layout,ApptBundlePolicy-Appointment Bundle Policy Layout,,MIXED_OR_CONFLICT
+Page layout,Asset.(master),layout,Asset-Asset Layout,Asset-Asset Layout,,MIXED_OR_CONFLICT
+Page layout,AssetAction.(master),layout,AssetAction-Asset Action Layout,AssetAction-Asset Action Layout,,MIXED_OR_CONFLICT
+Page layout,AssetActionSource.(master),layout,AssetActionSource-Asset Action Source Layout,AssetActionSource-Asset Action Source Layout,,MIXED_OR_CONFLICT
+Page layout,AssetRelationship.(master),layout,AssetRelationship-Asset Relationship Layout,AssetRelationship-Asset Relationship Layout,,MIXED_OR_CONFLICT
+Page layout,AssetStatePeriod.(master),layout,AssetStatePeriod-Asset State Period Layout,AssetStatePeriod-Asset State Period Layout,,MIXED_OR_CONFLICT
+Page layout,AssignedResource.(master),layout,AssignedResource-Assigned Resource Layout,AssignedResource-Assigned Resource Layout,,MIXED_OR_CONFLICT
+Page layout,AssociatedLocation.(master),layout,AssociatedLocation-Associated Location Layout,AssociatedLocation-Associated Location Layout,,MIXED_OR_CONFLICT
+Page layout,AuthorizationForm.(master),layout,AuthorizationForm-Authorization Form Layout,AuthorizationForm-Authorization Form Layout,,MIXED_OR_CONFLICT
+Page layout,AuthorizationFormConsent.(master),layout,AuthorizationFormConsent-Authorization Form Consent Layout,AuthorizationFormConsent-Authorization Form Consent Layout,,MIXED_OR_CONFLICT
+Page layout,AuthorizationFormDataUse.(master),layout,AuthorizationFormDataUse-Authorization Form Data Use Layout,AuthorizationFormDataUse-Authorization Form Data Use Layout,,MIXED_OR_CONFLICT
+Page layout,AuthorizationFormText.(master),layout,AuthorizationFormText-Authorization Form Text Layout,AuthorizationFormText-Authorization Form Text Layout,,MIXED_OR_CONFLICT
+Page layout,Bank__c.(master),layout,Bank__c-New bank layout,Bank__c-New bank layout,,MIXED_OR_CONFLICT
+Page layout,Batch__c.(master),layout,Batch__c-Batch Layout,Batch__c-Batch Layout,,MIXED_OR_CONFLICT
+Page layout,Branch__c.(master),layout,Branch__c-Branch Layout,Branch__c-Branch Layout,,MIXED_OR_CONFLICT
+Page layout,BusinessBrand.(master),layout,BusinessBrand-Business Brand Layout,BusinessBrand-Business Brand Layout,,MIXED_OR_CONFLICT
+Page layout,Campaign.(master),layout,Campaign-Campaign Layout,Campaign-Campaign Layout,,MIXED_OR_CONFLICT
+Page layout,CampaignMember.(master),layout,CampaignMember-Campaign Member Page Layout,CampaignMember-Campaign Member Page Layout,,MIXED_OR_CONFLICT
+Page layout,Candidate__c.(master),layout,Candidate__c-Candidate Layout,Candidate__c-Candidate Layout,,MIXED_OR_CONFLICT
+Page layout,CardPaymentMethod.(master),layout,CardPaymentMethod-Card Payment Method Layout,CardPaymentMethod-Card Payment Method Layout,,MIXED_OR_CONFLICT
+Page layout,CartCheckoutSession.(master),layout,CartCheckoutSession-Cart Checkout Session Layout,CartCheckoutSession-Cart Checkout Session Layout,,MIXED_OR_CONFLICT
+Page layout,CartDeliveryGroup.(master),layout,CartDeliveryGroup-Cart Delivery Group Layout,CartDeliveryGroup-Cart Delivery Group Layout,,MIXED_OR_CONFLICT
+Page layout,CartDeliveryGroupMethod.(master),layout,CartDeliveryGroupMethod-Cart Delivery Group Method Layout,CartDeliveryGroupMethod-Cart Delivery Group Method Layout,,MIXED_OR_CONFLICT
+Page layout,CartItem.(master),layout,CartItem-Cart Item Layout,CartItem-Cart Item Layout,,MIXED_OR_CONFLICT
+Page layout,CartTax.(master),layout,CartTax-Cart Tax Layout,CartTax-Cart Tax Layout,,MIXED_OR_CONFLICT
+Page layout,CartValidationOutput.(master),layout,CartValidationOutput-Cart Validation Output Layout,CartValidationOutput-Cart Validation Output Layout,,MIXED_OR_CONFLICT
+Page layout,Case.(master),layout,Case-Case Layout,Case-Case Layout,,MIXED_OR_CONFLICT
+Page layout,CaseClose.(master),layout,CaseClose-Close Case Layout,CaseClose-Close Case Layout,,MIXED_OR_CONFLICT
+Page layout,CollaborationGroup.(master),layout,CollaborationGroup-Group Layout,CollaborationGroup-Group Layout,,MIXED_OR_CONFLICT
+Page layout,CommunityMemberLayout.(master),layout,CommunityMemberLayout-Community Member Layout,CommunityMemberLayout-Community Member Layout,,MIXED_OR_CONFLICT
+Page layout,ConsumptionRate.(master),layout,ConsumptionRate-Consumption Rate Layout,ConsumptionRate-Consumption Rate Layout,,MIXED_OR_CONFLICT
+Page layout,ConsumptionSchedule.(master),layout,ConsumptionSchedule-Consumption Schedule Layout,ConsumptionSchedule-Consumption Schedule Layout,,MIXED_OR_CONFLICT
+Page layout,Contact.(master),layout,Contact-Contact Layout,Contact-Contact Layout,,MIXED_OR_CONFLICT
+Page layout,ContactPointAddress.(master),layout,ContactPointAddress-Contact Point Address Layout,ContactPointAddress-Contact Point Address Layout,,MIXED_OR_CONFLICT
+Page layout,ContactPointEmail.(master),layout,ContactPointEmail-Contact Point Email Layout,ContactPointEmail-Contact Point Email Layout,,MIXED_OR_CONFLICT
+Page layout,ContactPointPhone.(master),layout,ContactPointPhone-Contact Point Phone Layout,ContactPointPhone-Contact Point Phone Layout,,MIXED_OR_CONFLICT
+Page layout,ContactPointTypeConsent.(master),layout,ContactPointTypeConsent-Contact Point Type Consent Layout,ContactPointTypeConsent-Contact Point Type Consent Layout,,MIXED_OR_CONFLICT
+Page layout,ContentVersion.(master),layout,ContentVersion-Content Version Layout,ContentVersion-Content Version Layout,,MIXED_OR_CONFLICT
+Page layout,Contract.(master),layout,Contract-Contract Layout,Contract-Contract Layout,,MIXED_OR_CONFLICT
+Page layout,Country__mdt.(master),layout,Country__mdt-Country Layout,Country__mdt-Country Layout,,MIXED_OR_CONFLICT
+Page layout,Course__c.(master),layout,Course__c-Course Layout,Course__c-Course Layout,,MIXED_OR_CONFLICT
+Page layout,CreditMemo.(master),layout,CreditMemo-Credit Memo Layout,CreditMemo-Credit Memo Layout,,MIXED_OR_CONFLICT
+Page layout,CreditMemoLine.(master),layout,CreditMemoLine-Credit Memo Line Layout,CreditMemoLine-Credit Memo Line Layout,,MIXED_OR_CONFLICT
+Page layout,Customer.(master),layout,Customer-Customer Layout,Customer-Customer Layout,,MIXED_OR_CONFLICT
+Page layout,DandBCompany.(master),layout,DandBCompany-D%26B Company Layout,DandBCompany-D%26B Company Layout,,MIXED_OR_CONFLICT
+Page layout,DataUseLegalBasis.(master),layout,DataUseLegalBasis-Data Use Legal Basis Layout,DataUseLegalBasis-Data Use Legal Basis Layout,,MIXED_OR_CONFLICT
+Page layout,DataUsePurpose.(master),layout,DataUsePurpose-Data Use Purpose Layout,DataUsePurpose-Data Use Purpose Layout,,MIXED_OR_CONFLICT
+Page layout,DelegatedAccount.(master),layout,DelegatedAccount-External Managed Account Layout,DelegatedAccount-External Managed Account Layout,,MIXED_OR_CONFLICT
+Page layout,DigitalWallet.(master),layout,DigitalWallet-Digital Wallet Layout,DigitalWallet-Digital Wallet Layout,,MIXED_OR_CONFLICT
+Page layout,DuplicateRecordSet.(master),layout,DuplicateRecordSet-Duplicate Record Set Layout,DuplicateRecordSet-Duplicate Record Set Layout,,MIXED_OR_CONFLICT
+Page layout,DynamicDataCapture.(master),layout,DynamicDataCapture-Dynamic Data Capture Layout,DynamicDataCapture-Dynamic Data Capture Layout,,MIXED_OR_CONFLICT
+Page layout,EmailMessage.(master),layout,EmailMessage-Email Message Layout,EmailMessage-Email Message Layout,,MIXED_OR_CONFLICT
+Page layout,EngagementChannelType.(master),layout,EngagementChannelType-Engagement Channel Type Layout,EngagementChannelType-Engagement Channel Type Layout,,MIXED_OR_CONFLICT
+Page layout,EnhancedLetterhead.(master),layout,EnhancedLetterhead-Enhanced Letterhead Layout,EnhancedLetterhead-Enhanced Letterhead Layout,,MIXED_OR_CONFLICT
+Page layout,Event.(master),layout,Event-Event Layout,Event-Event Layout,,MIXED_OR_CONFLICT
+Page layout,Event.Showing,layout,Event-Showing Layout,Event-Showing Layout,,MIXED_OR_CONFLICT
+Page layout,Expense.(master),layout,Expense-Expense Layout,Expense-Expense Layout,,MIXED_OR_CONFLICT
+Page layout,ExpenseReport.(master),layout,ExpenseReport-Expense Report Layout,ExpenseReport-Expense Report Layout,,MIXED_OR_CONFLICT
+Page layout,ExpenseReportEntry.(master),layout,ExpenseReportEntry-Expense Report Entry Layout,ExpenseReportEntry-Expense Report Entry Layout,,MIXED_OR_CONFLICT
+Page layout,Faculty__c.(master),layout,Faculty__c-Faculty Layout,Faculty__c-Faculty Layout,,MIXED_OR_CONFLICT
+Page layout,FeedItem.(master),layout,FeedItem-Feed Item Layout,FeedItem-Feed Item Layout,,MIXED_OR_CONFLICT
+Page layout,FinanceBalanceSnapshot.(master),layout,FinanceBalanceSnapshot-Finance Balance Snapshot Layout,FinanceBalanceSnapshot-Finance Balance Snapshot Layout,,MIXED_OR_CONFLICT
+Page layout,FinanceTransaction.(master),layout,FinanceTransaction-Finance Transaction Layout,FinanceTransaction-Finance Transaction Layout,,MIXED_OR_CONFLICT
+Page layout,FldSvcObjChg.(master),layout,FldSvcObjChg-Field Service Object Change Layout,FldSvcObjChg-Field Service Object Change Layout,,MIXED_OR_CONFLICT
+Page layout,FldSvcObjChgDtl.(master),layout,FldSvcObjChgDtl-Field Service Object Change Detail Layout,FldSvcObjChgDtl-Field Service Object Change Detail Layout,,MIXED_OR_CONFLICT
+Page layout,FlowInterview.(master),layout,FlowInterview-Flow Interview Layout,FlowInterview-Flow Interview Layout,,MIXED_OR_CONFLICT
+Page layout,FulfillmentOrder.(master),layout,FulfillmentOrder-Fulfillment Order Layout,FulfillmentOrder-Fulfillment Order Layout,,MIXED_OR_CONFLICT
+Page layout,FulfillmentOrderItemAdjustment.(master),layout,FulfillmentOrderItemAdjustment-Fulfillment Order Item Adjustment Layout,FulfillmentOrderItemAdjustment-Fulfillment Order Item Adjustment Layout,,MIXED_OR_CONFLICT
+Page layout,FulfillmentOrderItemTax.(master),layout,FulfillmentOrderItemTax-Fulfillment Order Item Tax Layout,FulfillmentOrderItemTax-Fulfillment Order Item Tax Layout,,MIXED_OR_CONFLICT
+Page layout,FulfillmentOrderLineItem.(master),layout,FulfillmentOrderLineItem-Fulfillment Order Product Layout,FulfillmentOrderLineItem-Fulfillment Order Product Layout,,MIXED_OR_CONFLICT
+Page layout,Global.(master),layout,Global-Global Layout,Global-Global Layout,,MIXED_OR_CONFLICT
+Page layout,Idea.(master),layout,Idea-Idea Layout,Idea-Idea Layout,,MIXED_OR_CONFLICT
+Page layout,IframeWhiteListUrl.(master),layout,IframeWhiteListUrl-Whitelisted Domain for Visualforce Inline Frames Layout,IframeWhiteListUrl-Whitelisted Domain for Visualforce Inline Frames Layout,,MIXED_OR_CONFLICT
+Page layout,Individual.(master),layout,Individual-Individual Layout,Individual-Individual Layout,,MIXED_OR_CONFLICT
+Page layout,Institute__c.(master),layout,Institute__c-Institute Layout,Institute__c-Institute Layout,,MIXED_OR_CONFLICT
+Page layout,Interviewer__c.(master),layout,Interviewer__c-Interviewer Layout,Interviewer__c-Interviewer Layout,,MIXED_OR_CONFLICT
+Page layout,Invoice.(master),layout,Invoice-Invoice Layout,Invoice-Invoice Layout,,MIXED_OR_CONFLICT
+Page layout,InvoiceLine.(master),layout,InvoiceLine-Invoice Line Layout,InvoiceLine-Invoice Line Layout,,MIXED_OR_CONFLICT
+Page layout,Job_Application__c.(master),layout,Job_Application__c-Job Application Layout,Job_Application__c-Job Application Layout,,MIXED_OR_CONFLICT
+Page layout,Job_Posting__c.(master),layout,Job_Posting__c-Job Posting Layout,Job_Posting__c-Job Posting Layout,,MIXED_OR_CONFLICT
+Page layout,Job_Posting_Site__c.(master),layout,Job_Posting_Site__c-Job Posting Site Layout,Job_Posting_Site__c-Job Posting Site Layout,,MIXED_OR_CONFLICT
+Page layout,JobProfile.(master),layout,JobProfile-Job Profile Layout,JobProfile-Job Profile Layout,,MIXED_OR_CONFLICT
+Page layout,Knowledge__kav.(master),layout,Knowledge__kav-Knowledge Layout,Knowledge__kav-Knowledge Layout,,MIXED_OR_CONFLICT
+Page layout,Lead.(master),layout,Lead-Lead Layout,Lead-Lead Layout,,MIXED_OR_CONFLICT
+Page layout,LegalEntity.(master),layout,LegalEntity-Legal Entity Layout,LegalEntity-Legal Entity Layout,,MIXED_OR_CONFLICT
+Page layout,Litigation_Calender__c.(master),layout,Litigation_Calender__c-Litigation Calender Layout,Litigation_Calender__c-Litigation Calender Layout,,MIXED_OR_CONFLICT
+Page layout,Loan__c.(master),layout,Loan__c-Loan Layout,Loan__c-Loan Layout,,MIXED_OR_CONFLICT
+Page layout,Loan_Detail__c.(master),layout,Loan_Detail__c-Loan Detail Layout,Loan_Detail__c-Loan Detail Layout,,MIXED_OR_CONFLICT
+Page layout,Loan_Detail__c.Cashier,layout,Loan_Detail__c-Loan Detail Layout,Loan_Detail__c-Loan Detail Layout,,MIXED_OR_CONFLICT
+Page layout,Loan_Detail__c.helpdesk,layout,Loan_Detail__c-helpdesk,Loan_Detail__c-Loan Detail Layout,,MIXED_OR_CONFLICT
+Page layout,Loan_Detail__c.Manager,layout,Loan_Detail__c-Loan Detail Layout,Loan_Detail__c-Loan Detail Layout,,MIXED_OR_CONFLICT
+Page layout,Location.(master),layout,Location-Location Layout,Location-Location Layout,,MIXED_OR_CONFLICT
+Page layout,Location__c.(master),layout,Location__c-Location Layout,Location__c-Location Layout,,MIXED_OR_CONFLICT
+Page layout,Location_Tracing__c.(master),layout,Location_Tracing__c-Location Tracing Layout,Location_Tracing__c-Location Tracing Layout,,MIXED_OR_CONFLICT
+Page layout,Macro.(master),layout,Macro-Macro Layout,Macro-Macro Layout,,MIXED_OR_CONFLICT
+Page layout,MaintenanceAsset.(master),layout,MaintenanceAsset-Maintenance Asset Layout,MaintenanceAsset-Maintenance Asset Layout,,MIXED_OR_CONFLICT
+Page layout,MaintenancePlan.(master),layout,MaintenancePlan-Maintenance Plan Layout,MaintenancePlan-Maintenance Plan Layout,,MIXED_OR_CONFLICT
+Page layout,MaintenanceWorkRule.(master),layout,MaintenanceWorkRule-Maintenance Work Rule Layout,MaintenanceWorkRule-Maintenance Work Rule Layout,,MIXED_OR_CONFLICT
+Page layout,OperatingHours.(master),layout,OperatingHours-Operating Hours Layout,OperatingHours-Operating Hours Layout,,MIXED_OR_CONFLICT
+Page layout,OperatingHoursHoliday.(master),layout,OperatingHoursHoliday-Operating Hours Holiday Layout,OperatingHoursHoliday-Operating Hours Holiday Layout,,MIXED_OR_CONFLICT
+Page layout,Opportunity.(master),layout,Opportunity-Opportunity Layout,Opportunity-Opportunity Layout,,MIXED_OR_CONFLICT
+Page layout,OpportunityLineItem.(master),layout,OpportunityLineItem-Opportunity Product Layout,OpportunityLineItem-Opportunity Product Layout,,MIXED_OR_CONFLICT
+Page layout,Order.(master),layout,Order-Order Layout,Order-Order Layout,,MIXED_OR_CONFLICT
+Page layout,OrderItem.(master),layout,OrderItem-Order Product Layout,OrderItem-Order Product Layout,,MIXED_OR_CONFLICT
+Page layout,Payment.(master),layout,Payment-Payment Layout,Payment-Payment Layout,,MIXED_OR_CONFLICT
+Page layout,PaymentAuthorization.(master),layout,PaymentAuthorization-Payment Authorization Layout,PaymentAuthorization-Payment Authorization Layout,,MIXED_OR_CONFLICT
+Page layout,PaymentGateway.(master),layout,PaymentGateway-Payment Gateway Layout,PaymentGateway-Payment Gateway Layout,,MIXED_OR_CONFLICT
+Page layout,PaymentGatewayLog.(master),layout,PaymentGatewayLog-Payment Gateway Log Layout,PaymentGatewayLog-Payment Gateway Log Layout,,MIXED_OR_CONFLICT
+Page layout,PaymentGroup.(master),layout,PaymentGroup-Payment Group Layout,PaymentGroup-Payment Group Layout,,MIXED_OR_CONFLICT
+Page layout,PaymentLineInvoice.(master),layout,PaymentLineInvoice-Payment Line Invoice Layout,PaymentLineInvoice-Payment Line Invoice Layout,,MIXED_OR_CONFLICT
+Page layout,People_Tracing__c.(master),layout,People_Tracing__c-People Tracing Layout,People_Tracing__c-People Tracing Layout,,MIXED_OR_CONFLICT
+Page layout,Person__c.(master),layout,Person__c-Person Layout,Person__c-Person Layout,,MIXED_OR_CONFLICT
+Page layout,Position__c.(master),layout,Position__c-Position Layout,Position__c-Position Layout,,MIXED_OR_CONFLICT
+Page layout,Pricebook2.(master),layout,Pricebook2-Price Book Layout,Pricebook2-Price Book Layout,,MIXED_OR_CONFLICT
+Page layout,PricebookEntry.(master),layout,PricebookEntry-Price Book Entry Layout,PricebookEntry-Price Book Entry Layout,,MIXED_OR_CONFLICT
+Page layout,ProcessException.(master),layout,ProcessException-Process Exception Layout,ProcessException-Process Exception Layout,,MIXED_OR_CONFLICT
+Page layout,Product2.(master),layout,Product2-Product Layout,Product2-Product Layout,,MIXED_OR_CONFLICT
+Page layout,ProductConsumed.(master),layout,ProductConsumed-Product Consumed Layout,ProductConsumed-Product Consumed Layout,,MIXED_OR_CONFLICT
+Page layout,ProductConsumedState.(master),layout,ProductConsumedState-Product Consumed State Layout,ProductConsumedState-Product Consumed State Layout,,MIXED_OR_CONFLICT
+Page layout,ProductConsumptionSchedule.(master),layout,ProductConsumptionSchedule-Product Consumption Schedule Layout,ProductConsumptionSchedule-Product Consumption Schedule Layout,,MIXED_OR_CONFLICT
+Page layout,ProductItem.(master),layout,ProductItem-Product Item Layout,ProductItem-Product Item Layout,,MIXED_OR_CONFLICT
+Page layout,ProductItemTransaction.(master),layout,ProductItemTransaction-Product Item Transaction Layout,ProductItemTransaction-Product Item Transaction Layout,,MIXED_OR_CONFLICT
+Page layout,ProductRequest.(master),layout,ProductRequest-Product Request Layout,ProductRequest-Product Request Layout,,MIXED_OR_CONFLICT
+Page layout,ProductRequestLineItem.(master),layout,ProductRequestLineItem-Product Request Line Item Layout,ProductRequestLineItem-Product Request Line Item Layout,,MIXED_OR_CONFLICT
+Page layout,ProductRequired.(master),layout,ProductRequired-Product Required Layout,ProductRequired-Product Required Layout,,MIXED_OR_CONFLICT
+Page layout,ProductServiceCampaign.(master),layout,ProductServiceCampaign-Product Service Campaign Layout,ProductServiceCampaign-Product Service Campaign Layout,,MIXED_OR_CONFLICT
+Page layout,ProductServiceCampaignItem.(master),layout,ProductServiceCampaignItem-Product Service Campaign Item Layout,ProductServiceCampaignItem-Product Service Campaign Item Layout,,MIXED_OR_CONFLICT
+Page layout,ProductTransfer.(master),layout,ProductTransfer-Product Transfer Layout,ProductTransfer-Product Transfer Layout,,MIXED_OR_CONFLICT
+Page layout,ProductTransferState.(master),layout,ProductTransferState-Product Transfer State Layout,ProductTransferState-Product Transfer State Layout,,MIXED_OR_CONFLICT
+Page layout,Property__c.(master),layout,Property__c-Property Layout,Property__c-Property Layout,,MIXED_OR_CONFLICT
+Page layout,QuickText.(master),layout,QuickText-Quick Text Layout,QuickText-Quick Text Layout,,MIXED_OR_CONFLICT
+Page layout,Quote.(master),layout,Quote-Quote Layout,Quote-Quote Layout,,MIXED_OR_CONFLICT
+Page layout,QuoteLineItem.(master),layout,QuoteLineItem-Quote Line Item Layout,QuoteLineItem-Quote Line Item Layout,,MIXED_OR_CONFLICT
+Page layout,Rating__c.(master),layout,Rating__c-Rating Layout,Rating__c-Rating Layout,,MIXED_OR_CONFLICT
+Page layout,RecordsetFilterCriteria.(master),layout,RecordsetFilterCriteria-Recordset Filter Criteria Layout,RecordsetFilterCriteria-Recordset Filter Criteria Layout,,MIXED_OR_CONFLICT
+Page layout,RecordsetFilterCriteriaRule.(master),layout,RecordsetFilterCriteriaRule-Recordset Filter Criteria Rule Layout,RecordsetFilterCriteriaRule-Recordset Filter Criteria Rule Layout,,MIXED_OR_CONFLICT
+Page layout,Refund.(master),layout,Refund-Refund Layout,Refund-Refund Layout,,MIXED_OR_CONFLICT
+Page layout,RefundLinePayment.(master),layout,RefundLinePayment-Refund Line Payment Layout,RefundLinePayment-Refund Line Payment Layout,,MIXED_OR_CONFLICT
+Page layout,ResourceAbsence.(master),layout,ResourceAbsence-Resource Absence Layout,ResourceAbsence-Resource Absence Layout,,MIXED_OR_CONFLICT
+Page layout,ResourcePreference.(master),layout,ResourcePreference-Resource Preference Layout,ResourcePreference-Resource Preference Layout,,MIXED_OR_CONFLICT
+Page layout,ReturnOrder.(master),layout,ReturnOrder-Return Order Layout,ReturnOrder-Return Order Layout,,MIXED_OR_CONFLICT
+Page layout,ReturnOrderItemAdjustment.(master),layout,ReturnOrderItemAdjustment-Return Order Item Adjustment Layout,ReturnOrderItemAdjustment-Return Order Item Adjustment Layout,,MIXED_OR_CONFLICT
+Page layout,ReturnOrderItemTax.(master),layout,ReturnOrderItemTax-Return Order Item Tax Layout,ReturnOrderItemTax-Return Order Item Tax Layout,,MIXED_OR_CONFLICT
+Page layout,ReturnOrderLineItem.(master),layout,ReturnOrderLineItem-Return Order Line Item Layout,ReturnOrderLineItem-Return Order Line Item Layout,,MIXED_OR_CONFLICT
+Page layout,Review__c.(master),layout,Review__c-Review Layout,Review__c-Review Layout,,MIXED_OR_CONFLICT
+Page layout,SchedulingConstraint.(master),layout,SchedulingConstraint-Scheduling Constraint Layout,SchedulingConstraint-Scheduling Constraint Layout,,MIXED_OR_CONFLICT
+Page layout,SchedulingObjective.(master),layout,SchedulingObjective-Scheduling Objective Layout,SchedulingObjective-Scheduling Objective Layout,,MIXED_OR_CONFLICT
+Page layout,SchedulingRule.(master),layout,SchedulingRule-Scheduling Rule Layout,SchedulingRule-Scheduling Rule Layout,,MIXED_OR_CONFLICT
+Page layout,SchedulingWorkspace.(master),layout,SchedulingWorkspace-Scheduling Workspace Layout,SchedulingWorkspace-Scheduling Workspace Layout,,MIXED_OR_CONFLICT
+Page layout,SchedulingWorkspaceTerritory.(master),layout,SchedulingWorkspaceTerritory-Scheduling Workspace Territory Layout,SchedulingWorkspaceTerritory-Scheduling Workspace Territory Layout,,MIXED_OR_CONFLICT
+Page layout,School__c.(master),layout,School__c-School Layout,School__c-School Layout,,MIXED_OR_CONFLICT
+Page layout,Scorecard.(master),layout,Scorecard-Scorecard Layout,Scorecard-Scorecard Layout,,MIXED_OR_CONFLICT
+Page layout,ScorecardAssociation.(master),layout,ScorecardAssociation-Scorecard Association Layout,ScorecardAssociation-Scorecard Association Layout,,MIXED_OR_CONFLICT
+Page layout,ScorecardMetric.(master),layout,ScorecardMetric-Scorecard Metric Layout,ScorecardMetric-Scorecard Metric Layout,,MIXED_OR_CONFLICT
+Page layout,Seller.(master),layout,Seller-Seller Layout,Seller-Seller Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceAppointment.(master),layout,ServiceAppointment-Service Appointment Layout,ServiceAppointment-Service Appointment Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceAppointmentCapacityUsage.(master),layout,ServiceAppointmentCapacityUsage-Service Appointment Capacity Usage Layout,ServiceAppointmentCapacityUsage-Service Appointment Capacity Usage Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceCrew.(master),layout,ServiceCrew-Service Crew Layout,ServiceCrew-Service Crew Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceCrewMember.(master),layout,ServiceCrewMember-Service Crew Member Layout,ServiceCrewMember-Service Crew Member Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceResource.(master),layout,ServiceResource-Service Resource Layout,ServiceResource-Service Resource Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceResourceCapacity.(master),layout,ServiceResourceCapacity-Resource Capacity Layout,ServiceResourceCapacity-Resource Capacity Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceResourcePreference.(master),layout,ServiceResourcePreference-Service Resource Preference Layout,ServiceResourcePreference-Service Resource Preference Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceResourceSkill.(master),layout,ServiceResourceSkill-Service Resource Skill Layout,ServiceResourceSkill-Service Resource Skill Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceTerritory.(master),layout,ServiceTerritory-Service Territory Layout,ServiceTerritory-Service Territory Layout,,MIXED_OR_CONFLICT
+Page layout,ServiceTerritoryMember.(master),layout,ServiceTerritoryMember-Service Territory Member Layout,ServiceTerritoryMember-Service Territory Member Layout,,MIXED_OR_CONFLICT
+Page layout,Shift.(master),layout,Shift-Shift Layout,Shift-Shift Layout,,MIXED_OR_CONFLICT
+Page layout,ShiftPattern.(master),layout,ShiftPattern-Shift Pattern Layout,ShiftPattern-Shift Pattern Layout,,MIXED_OR_CONFLICT
+Page layout,ShiftPatternEntry.(master),layout,ShiftPatternEntry-Shift Pattern Entry Layout,ShiftPatternEntry-Shift Pattern Entry Layout,,MIXED_OR_CONFLICT
+Page layout,ShiftSchedulingOperation.(master),layout,ShiftSchedulingOperation-Shift Scheduling Operation Layout,ShiftSchedulingOperation-Shift Scheduling Operation Layout,,MIXED_OR_CONFLICT
+Page layout,ShiftTemplate.(master),layout,ShiftTemplate-Shift Template Layout,ShiftTemplate-Shift Template Layout,,MIXED_OR_CONFLICT
+Page layout,Shipment.(master),layout,Shipment-Shipment Layout,Shipment-Shipment Layout,,MIXED_OR_CONFLICT
+Page layout,SkillRequirement.(master),layout,SkillRequirement-Skill Requirement Layout,SkillRequirement-Skill Requirement Layout,,MIXED_OR_CONFLICT
+Page layout,SocialPersona.(master),layout,SocialPersona-Social Persona Layout,SocialPersona-Social Persona Layout,,MIXED_OR_CONFLICT
+Page layout,Solution.(master),layout,Solution-Solution Layout,Solution-Solution Layout,,MIXED_OR_CONFLICT
+Page layout,Student__c.(master),layout,Student__c-Student Layout,Student__c-Manager Page layout,,MIXED_OR_CONFLICT
+Page layout,Student__c.Associate_faculty,layout,Student__c-Admin Student Layout,Student__c-Admin Student Layout,,MIXED_OR_CONFLICT
+Page layout,Student__c.Director_RT,layout,Student__c-Director,Student__c-Director,,MIXED_OR_CONFLICT
+Page layout,Student__c.Front_Desk_RT,layout,Student__c-Front Desk page layout,Student__c-Front Desk page layout,,MIXED_OR_CONFLICT
+Page layout,Student__c.Manager,layout,Student__c-Manager Page layout,Student__c-Manager Page layout,,MIXED_OR_CONFLICT
+Page layout,Student_in_Batch__c.(master),layout,Student_in_Batch__c-Student in Batch Layout,Student_in_Batch__c-Student in Batch Layout,,MIXED_OR_CONFLICT
+Page layout,Swarm.(master),layout,Swarm-Swarm Layout,Swarm-Swarm Layout,,MIXED_OR_CONFLICT
+Page layout,SwarmMember.(master),layout,SwarmMember-Swarm Member Layout,SwarmMember-Swarm Member Layout,,MIXED_OR_CONFLICT
+Page layout,Task.(master),layout,Task-Task Layout,Task-Task Layout,,MIXED_OR_CONFLICT
+Page layout,test1__c.(master),layout,test1__c-test1 Layout,test1__c-test1 Layout,,MIXED_OR_CONFLICT
+Page layout,test__c.(master),layout,test__c-test Layout,test__c-test Layout,,MIXED_OR_CONFLICT
+Page layout,TimeSheet.(master),layout,TimeSheet-Time Sheet Layout,TimeSheet-Time Sheet Layout,,MIXED_OR_CONFLICT
+Page layout,TimeSheetEntry.(master),layout,TimeSheetEntry-Time Sheet Entry Layout,TimeSheetEntry-Time Sheet Entry Layout,,MIXED_OR_CONFLICT
+Page layout,TimeSlot.(master),layout,TimeSlot-Time Slot Layout,TimeSlot-Time Slot Layout,,MIXED_OR_CONFLICT
+Page layout,Transaction__c.(master),layout,Transaction__c-new transaction layouut,Transaction__c-new transaction layouut,,MIXED_OR_CONFLICT
+Page layout,TravelMode.(master),layout,TravelMode-Travel Mode Layout,TravelMode-Travel Mode Layout,,MIXED_OR_CONFLICT
+Page layout,User.(master),layout,User-User Layout,User-User Layout,,MIXED_OR_CONFLICT
+Page layout,UserAlt.(master),layout,UserAlt-User Profile Layout,UserAlt-User Profile Layout,,MIXED_OR_CONFLICT
+Page layout,UserProvAccount.(master),layout,UserProvAccount-User Provisioning Account Layout,UserProvAccount-User Provisioning Account Layout,,MIXED_OR_CONFLICT
+Page layout,UserProvisioningLog.(master),layout,UserProvisioningLog-User Provisioning Log Layout,UserProvisioningLog-User Provisioning Log Layout,,MIXED_OR_CONFLICT
+Page layout,UserProvisioningRequest.(master),layout,UserProvisioningRequest-User Provisioning Request Layout,UserProvisioningRequest-User Provisioning Request Layout,,MIXED_OR_CONFLICT
+Page layout,Waitlist.(master),layout,Waitlist-%5F%5FMISSING LABEL%5F%5F PropertyFile - val Waitlist not found in section StandardLayouts,Waitlist-%5F%5FMISSING LABEL%5F%5F PropertyFile - val Waitlist not found in section StandardLayouts,,MIXED_OR_CONFLICT
+Page layout,WarrantyTerm.(master),layout,WarrantyTerm-Warranty Term Layout,WarrantyTerm-Warranty Term Layout,,MIXED_OR_CONFLICT
+Page layout,WebCart.(master),layout,WebCart-Cart Layout,WebCart-Cart Layout,,MIXED_OR_CONFLICT
+Page layout,WebCartAdjustmentBasis.(master),layout,WebCartAdjustmentBasis-Cart Adjustment Basis Layout,WebCartAdjustmentBasis-Cart Adjustment Basis Layout,,MIXED_OR_CONFLICT
+Page layout,WebCartAdjustmentGroup.(master),layout,WebCartAdjustmentGroup-Cart Adjustment Group Layout,WebCartAdjustmentGroup-Cart Adjustment Group Layout,,MIXED_OR_CONFLICT
+Page layout,WebStore.(master),layout,WebStore-Store Layout,WebStore-Store Layout,,MIXED_OR_CONFLICT
+Page layout,WebStoreConfig.(master),layout,WebStoreConfig-Web Store Configuration Layout,WebStoreConfig-Web Store Configuration Layout,,MIXED_OR_CONFLICT
+Page layout,WorkCapacityAvailability.(master),layout,WorkCapacityAvailability-Work Capacity Availability Layout,WorkCapacityAvailability-Work Capacity Availability Layout,,MIXED_OR_CONFLICT
+Page layout,WorkCapacityLimit.(master),layout,WorkCapacityLimit-Work Capacity Limit Layout,WorkCapacityLimit-Work Capacity Limit Layout,,MIXED_OR_CONFLICT
+Page layout,WorkCapacityUsage.(master),layout,WorkCapacityUsage-Work Capacity Usage Layout,WorkCapacityUsage-Work Capacity Usage Layout,,MIXED_OR_CONFLICT
+Page layout,WorkOrder.(master),layout,WorkOrder-Work Order Layout,WorkOrder-Work Order Layout,,MIXED_OR_CONFLICT
+Page layout,WorkOrderLineItem.(master),layout,WorkOrderLineItem-Work Order Line Item Layout,WorkOrderLineItem-Work Order Line Item Layout,,MIXED_OR_CONFLICT
+Page layout,WorkPlan.(master),layout,WorkPlan-Work Plan Layout,WorkPlan-Work Plan Layout,,MIXED_OR_CONFLICT
+Page layout,WorkPlanSelectionRule.(master),layout,WorkPlanSelectionRule-Work Plan Selection Rule Layout,WorkPlanSelectionRule-Work Plan Selection Rule Layout,,MIXED_OR_CONFLICT
+Page layout,WorkPlanTemplate.(master),layout,WorkPlanTemplate-Work Plan Template Layout,WorkPlanTemplate-Work Plan Template Layout,,MIXED_OR_CONFLICT
+Page layout,WorkPlanTemplateEntry.(master),layout,WorkPlanTemplateEntry-Work Plan Template Entry Layout,WorkPlanTemplateEntry-Work Plan Template Entry Layout,,MIXED_OR_CONFLICT
+Page layout,WorkStep.(master),layout,WorkStep-Work Step Layout,WorkStep-Work Step Layout,,MIXED_OR_CONFLICT
+Page layout,WorkStepTemplate.(master),layout,WorkStepTemplate-Work Step Template Layout,WorkStepTemplate-Work Step Template Layout,,MIXED_OR_CONFLICT
+Page layout,WorkType.(master),layout,WorkType-Work Type Layout,WorkType-Work Type Layout,,MIXED_OR_CONFLICT
+Page layout,WorkTypeGroup.(master),layout,WorkTypeGroup-Work Type Group Layout,WorkTypeGroup-Work Type Group Layout,,MIXED_OR_CONFLICT
+Page layout,WorkTypeGroupMember.(master),layout,WorkTypeGroupMember-Work Type Group Member Layout,WorkTypeGroupMember-Work Type Group Member Layout,,MIXED_OR_CONFLICT
+Record type visibility/default,Account.Sales_Leadership_Team,default,true,true,,MIXED_OR_CONFLICT
+Record type visibility/default,Account.Sales_Leadership_Team,visible,true,true,,MIXED_OR_CONFLICT
+Record type visibility/default,Account.service,default,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Account.service,visible,true,true,,MIXED_OR_CONFLICT
+Record type visibility/default,Account__c.Employee,default,true,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Account__c.Employee,visible,true,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Account__c.Manager,default,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Account__c.Manager,visible,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Event.Showing,default,true,true,,MIXED_OR_CONFLICT
+Record type visibility/default,Event.Showing,visible,true,true,,MIXED_OR_CONFLICT
+Record type visibility/default,Loan_Detail__c.Cashier,default,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Loan_Detail__c.Cashier,visible,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Loan_Detail__c.helpdesk,default,true,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Loan_Detail__c.helpdesk,visible,true,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Loan_Detail__c.Manager,default,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Loan_Detail__c.Manager,visible,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Associate_faculty,default,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Associate_faculty,visible,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Director_RT,default,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Director_RT,visible,false,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Front_Desk_RT,default,true,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Front_Desk_RT,visible,true,false,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Manager,default,false,true,,MIXED_OR_CONFLICT
+Record type visibility/default,Student__c.Manager,visible,true,true,,MIXED_OR_CONFLICT
+System permission,ActivitiesAccess,enabled,true,true,true,COMMON_ALL
+System permission,AddDirectMessageMembers,enabled,true,true,true,COMMON_ALL
+System permission,AllowUniversalSearch,enabled,true,true,true,COMMON_ALL
+System permission,AllowViewKnowledge,enabled,true,true,true,COMMON_ALL
+System permission,ApexRestServices,enabled,true,true,true,COMMON_ALL
+System permission,ApiEnabled,enabled,true,true,true,COMMON_ALL
+System permission,AssignTopics,enabled,true,true,true,COMMON_ALL
+System permission,ChatterEditOwnPost,enabled,true,true,true,COMMON_ALL
+System permission,ChatterFileLink,enabled,true,true,true,COMMON_ALL
+System permission,ChatterInternalUser,enabled,true,true,true,COMMON_ALL
+System permission,ChatterInviteExternalUsers,enabled,true,true,true,COMMON_ALL
+System permission,ChatterOwnGroups,enabled,true,true,true,COMMON_ALL
+System permission,ContentWorkspaces,enabled,true,true,true,COMMON_ALL
+System permission,ConvertLeads,enabled,,true,true,MIXED_OR_CONFLICT
+System permission,CreateCustomizeFilters,enabled,true,true,true,COMMON_ALL
+System permission,CreateCustomizeReports,enabled,true,true,,MIXED_OR_CONFLICT
+System permission,CreateTopics,enabled,true,true,true,COMMON_ALL
+System permission,DistributeFromPersWksp,enabled,true,true,true,COMMON_ALL
+System permission,EditEvent,enabled,true,true,true,COMMON_ALL
+System permission,EditOppLineItemUnitPrice,enabled,true,true,true,COMMON_ALL
+System permission,EditTask,enabled,true,true,true,COMMON_ALL
+System permission,EditTopics,enabled,true,true,true,COMMON_ALL
+System permission,EmailMass,enabled,true,true,true,COMMON_ALL
+System permission,EmailSingle,enabled,true,true,true,COMMON_ALL
+System permission,EnableCommunityAppLauncher,enabled,true,true,true,COMMON_ALL
+System permission,EnableNotifications,enabled,true,true,true,COMMON_ALL
+System permission,ExportReport,enabled,true,true,,MIXED_OR_CONFLICT
+System permission,FieldServiceAccess,enabled,true,true,true,COMMON_ALL
+System permission,ImportPersonal,enabled,,true,true,MIXED_OR_CONFLICT
+System permission,LightningConsoleAllowedForUser,enabled,true,true,true,COMMON_ALL
+System permission,LightningExperienceUser,enabled,true,true,true,COMMON_ALL
+System permission,ListEmailSend,enabled,true,true,true,COMMON_ALL
+System permission,ManageCustomReportTypes,enabled,,,true,Front Desk Profile_ONLY
+System permission,MassInlineEdit,enabled,true,true,true,COMMON_ALL
+System permission,OverrideForecasts,enabled,true,true,true,COMMON_ALL
+System permission,RemoveDirectMessageMembers,enabled,true,true,true,COMMON_ALL
+System permission,RunReports,enabled,true,true,,MIXED_OR_CONFLICT
+System permission,SelectFilesFromSalesforce,enabled,true,true,true,COMMON_ALL
+System permission,SendSitRequests,enabled,true,true,true,COMMON_ALL
+System permission,ShareFilesWithNetworks,enabled,true,true,true,COMMON_ALL
+System permission,ShowCompanyNameAsUserBadge,enabled,true,true,true,COMMON_ALL
+System permission,SubmitMacrosAllowed,enabled,true,true,true,COMMON_ALL
+System permission,SubscribeToLightningReports,enabled,true,true,,MIXED_OR_CONFLICT
+System permission,TransactionalEmailSend,enabled,true,true,true,COMMON_ALL
+System permission,UseWebLink,enabled,true,true,true,COMMON_ALL
+System permission,ViewHelpLink,enabled,true,true,true,COMMON_ALL
+System permission,ViewRoles,enabled,true,true,true,COMMON_ALL
+System permission,ViewSetup,enabled,,true,true,MIXED_OR_CONFLICT
+System permission,ViewSetupAuditTrail,enabled,,true,true,MIXED_OR_CONFLICT
+Tab visibility,Account__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Bank__c,visibility,Hidden,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Batch__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Branch__c,visibility,Hidden,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Candidate__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,Course__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Faculty__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Interviewer__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,Job_Application__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,Job_Posting_Site__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Knowledge__kav,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Litigation_Calender__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Loan__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Loan_Detail__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Location__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,Location_Tracing__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,People_Tracing__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,Person__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,Position__c,visibility,Hidden,Hidden,,MIXED_OR_CONFLICT
+Tab visibility,Property__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Rating__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Review__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,School__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Student__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Student_in_Batch__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,test1__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT
+Tab visibility,Transaction__c,visibility,DefaultOn,DefaultOn,,MIXED_OR_CONFLICT

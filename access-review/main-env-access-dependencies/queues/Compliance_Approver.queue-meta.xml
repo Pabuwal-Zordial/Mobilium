@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Compliance Approver</name>
+    <queueMembers>
+        <users>
+            <user>amrita.desai@sfdc.mobileum.com</user>
+            <user>anuj.jalan@sfdc.mobileum.com</user>
+            <user>madhu.chougula@sfdc.mobileum.com</user>
+            <user>rashmi.bagadia@sfdc.mobileum.com</user>
+            <user>suvidya.mandke@sfdc.mobileum.com</user>
+            <user>tim.hensley@sfdc.mobileum.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>SBQQ__Quote__c</sobjectType>
+    </queueSobject>
+</Queue>

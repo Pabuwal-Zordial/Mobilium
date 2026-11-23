@@ -1,0 +1,17 @@
+.THIS .not100 {
+    background-color:red;
+}
+.THIS .equalTo100 {
+    background-color:green;
+}
+
+.THIS .customSize{
+	font-size:9px;
+	padding: 5%;
+}
+
+.THIS .datePicker-openIcon {
+    width: 0px;
+	height: 0px;
+	right: var(--lwc-x-spacingSmall,1px);
+}

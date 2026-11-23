@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_FA_status_without_Date</fullName>
+    <active>true</active>
+    <description>validation to ensure no duplicate renewals are created</description>
+    <errorConditionFormula>AND(  ISPICKVAL(FA_Status__c,&apos;Achieved&apos;) , ISNULL( FA_Date__c ))</errorConditionFormula>
+    <errorMessage>Please enter FA date before changing FA Status</errorMessage>
+</ValidationRule>

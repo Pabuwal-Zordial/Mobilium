@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adhaar_rule2</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCLONE()</errorConditionFormula>
+    <errorDisplayField>Adhaar_Number__c</errorDisplayField>
+    <errorMessage>Adhaar number already exist</errorMessage>
+</ValidationRule>

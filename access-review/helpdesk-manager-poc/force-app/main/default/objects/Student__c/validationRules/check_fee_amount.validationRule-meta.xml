@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>check_fee_amount</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+IF(ISPICKVAL( Course_Name__c , &apos;Sfdc Admin&apos;)  || 
+   ISPICKVAL( Course_Name__c , &apos;Sfdc Dev&apos;)  ,
+   Fee__c &lt; 5000,
+   false))</errorConditionFormula>
+    <errorMessage>greater than 500 always</errorMessage>
+</ValidationRule>

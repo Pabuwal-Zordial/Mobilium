@@ -1,0 +1,7 @@
+.slds-modal {
+    z-index: 10000;
+}
+
+.slds-backdrop {
+    z-index: 9999;
+}

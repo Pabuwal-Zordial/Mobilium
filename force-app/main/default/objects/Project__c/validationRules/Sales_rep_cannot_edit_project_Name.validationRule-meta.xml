@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_rep_cannot_edit_project_Name</fullName>
+    <active>true</active>
+    <description>Ensuring that sales rep cannot edit project name</description>
+    <errorConditionFormula>AND( $Profile.Name = &apos;Mobileum - Sales User&apos;, ISCHANGED(Name ))</errorConditionFormula>
+    <errorMessage>Sales users cannot edit the project name</errorMessage>
+</ValidationRule>

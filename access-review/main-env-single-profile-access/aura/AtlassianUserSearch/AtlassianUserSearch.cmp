@@ -1,0 +1,48 @@
+<aura:component controller="AtlassianSearchUserController">
+	<aura:attribute name="options" type="List" default="[{'label': 'Yes', 'value': 'yes'}, {'label': 'No', 'value': 'no'}]"/>
+	<aura:attribute name="answer" type="String" default="no"/>
+	<aura:attribute name="projectDirectorName" type="String"/>
+	<aura:attribute name="projectDirectorUsername" type="String"/>
+	<aura:attribute name="projectDirectorEmail" type="String"/>
+	<aura:attribute name="projectManagerName" type="String"/>
+	<aura:attribute name="projectManagerUsername" type="String"/>
+	<aura:attribute name="projectManagerEmail" type="String"/>
+	<aura:attribute name="data" type="Object"/>
+	<aura:attribute name="columns" type="List"/>
+	<aura:attribute name="processing" type="Boolean" access="PRIVATE" default="false"/>
+	<aura:attribute name="isUpdate" type="Boolean" default="false"/>
+	<aura:attribute name="searchQuestion" type="String" access="PRIVATE" default="Do you want to assign a Project Director and a Project Manager to this Project?"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<aura:method name="getSelectedUsers" action="{! c.getSelectedUsers }" access="public"></aura:method>
+	<aura:if isTrue="{!v.processing}">
+		<div>
+			<lightning:spinner class="spinner-custom" alternativeText="Loading" size="large"/>
+		</div>
+	</aura:if>
+	<div class="slds-grid slds-gutters slds-wrap">
+		<div class="slds-col slds-size_1-of-1">
+			<lightning:radioGroup label="{! v.searchQuestion }" options="{! v.options }" value="{! v.answer }" type="radio"/>
+		</div>
+		<aura:if isTrue="{! or(v.answer == 'yes', v.isUpdate) }">
+			<div class="slds-col slds-size_1-of-2">
+				<lightning:input label="Current Project Director" disabled="true" value="{! v.projectDirectorName }"></lightning:input>
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+				<lightning:input label="Current Project Manager" disabled="true" value="{! v.projectManagerName }"></lightning:input>
+			</div>
+		</aura:if>
+		<aura:if isTrue="{! v.answer == 'yes' }">
+			<div class="slds-border_top slds-size_1-of-1 slds-m-top_small">
+				<div class="slds-col slds-size_1-of-1 slds-m-top_small" onkeyup="{! c.handleSearch }">
+					<lightning:input aura:id="searchInput" placeholder="Please enter here the name, email or username and press 'ENTER'" variant="label-hidden" minlength="3" required="true"></lightning:input>
+				</div>
+				<div class="slds-col slds-size_1-of-1 slds-m-top_small slds-p-around_none slds-box tableContainer">
+					<lightning:datatable keyField="key" columns="{! v.columns }" data="{! v.data }" hideCheckboxColumn="true" resizeColumnDisabled="true" onrowaction="{! c.handleRowAction }">
+					</lightning:datatable>
+				</div>
+			</div>
+		</aura:if>
+	</div>
+</aura:component>

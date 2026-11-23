@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Inside Sales</name>
+    <queueMembers>
+        <users>
+            <user>ann.simoens@sfdc.mobileum.com</user>
+            <user>cristina.carvalho@sfdc.mobileum.com</user>
+            <user>eva.deryckere@sfdc.mobileum.com</user>
+            <user>joao.roncon@sfdc.mobileum.com</user>
+            <user>maria.stepanova@sfdc.mobileum.com</user>
+            <user>peng.yaxuan@sfdc.mobileum.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

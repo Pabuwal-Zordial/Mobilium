@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_age</fullName>
+    <active>false</active>
+    <errorConditionFormula>Age__c &lt; 12</errorConditionFormula>
+    <errorDisplayField>Date_Of_Birth__c</errorDisplayField>
+    <errorMessage>age should be above 12</errorMessage>
+</ValidationRule>

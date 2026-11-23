@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extra_Licenses__c</fullName>
+    <label>Extra Licenses</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VoLTE</fullName>
+                <default>false</default>
+                <label>VoLTE</label>
+            </value>
+            <value>
+                <fullName>IoT</fullName>
+                <default>false</default>
+                <label>IoT</label>
+            </value>
+            <value>
+                <fullName>5G</fullName>
+                <default>false</default>
+                <label>5G</label>
+            </value>
+            <value>
+                <fullName>ICQT</fullName>
+                <default>false</default>
+                <label>ICQT</label>
+            </value>
+            <value>
+                <fullName>SOS/eCall</fullName>
+                <default>false</default>
+                <label>SOS/eCall</label>
+            </value>
+            <value>
+                <fullName>Remote eSIM Provisioning</fullName>
+                <default>false</default>
+                <label>Remote eSIM Provisioning</label>
+            </value>
+            <value>
+                <fullName>RPI</fullName>
+                <default>false</default>
+                <label>RPI</label>
+            </value>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>RoboShark (only GlobalRoamer)</fullName>
+                <default>false</default>
+                <label>RoboShark (only GlobalRoamer)</label>
+            </value>
+            <value>
+                <fullName>Others (use comment field)</fullName>
+                <default>false</default>
+                <label>Others (use comment field)</label>
+            </value>
+            <value>
+                <fullName>SAM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SAM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

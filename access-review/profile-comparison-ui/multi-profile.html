@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Multi-Profile Access Analysis</title>
+  <link rel="stylesheet" href="multi-profile.css">
+  <script defer src="multi-profile.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="back-link" href="index.html" aria-label="Back to two-profile comparison">←</a>
+    <div class="brand-mark" aria-hidden="true">SF</div>
+    <div><p class="eyebrow">ACCESS REVIEW WORKBENCH</p><h1>Multi-profile access analysis</h1></div>
+    <span class="privacy-badge"><span class="privacy-dot"></span>Private on this device</span>
+  </header>
+  <main>
+    <section class="intro">
+      <div><h2>Compare up to 18 profiles at once</h2><p>Upload the profile XML files. The tool will show what access is shared, what differs, and which profiles may be worth reviewing together.</p></div>
+      <div class="local-note"><strong>Local processing</strong><br>Profile XML stays in this browser. Nothing is sent to Salesforce.</div>
+    </section>
+
+    <section class="upload-panel">
+      <div class="panel-heading"><div><p class="eyebrow">STEP 1 · ADD PROFILES</p><h2>Select the Salesforce Profile XML files</h2></div><span class="limit-pill">2–18 files · 25 MB each</span></div>
+      <label class="file-picker" for="profile-files"><span class="upload-icon" aria-hidden="true">↑</span><span><strong>Choose profile files</strong><small>Select multiple XML files at once, or drag them into this area.</small></span><input id="profile-files" type="file" accept=".xml,application/xml,text/xml" multiple></label>
+      <div id="drop-zone" class="drop-zone" tabindex="0">Drop profile XML files here</div>
+      <div id="file-list" class="file-list" aria-live="polite"><p class="muted">No files selected.</p></div>
+      <details class="advanced-options">
+        <summary>Grouping settings <span>Optional</span></summary>
+        <div class="analysis-options">
+          <label class="threshold-control" for="similarity-threshold"><span><strong>How similar should profiles be?</strong><small>A profile pair must have at least this much overlap in its positive access grants. For a group, every pair must meet the threshold.</small></span><span class="range-value"><output id="threshold-value" for="similarity-threshold">85%</output><input id="similarity-threshold" type="range" min="60" max="100" step="5" value="85"></span></label>
+          <label class="check-control"><input id="require-profile-settings" type="checkbox" checked><span><strong>Require matching profile settings</strong><small>When on, different layouts, login hours, IP ranges, and similar settings keep profiles in separate groups.</small></span></label>
+        </div>
+      </details>
+      <div class="actions"><p id="input-message" class="input-message" role="status">Select at least 2 profile XML files to begin.</p><button id="analyze-button" class="button button-primary" type="button" disabled>Compare profiles <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section id="results" class="results" hidden aria-live="polite">
+      <div id="warning-box" class="warning-box"></div>
+      <div id="summary" class="summary-grid"></div>
+      <section class="panel">
+        <div class="panel-title-row"><div><p class="eyebrow">STEP 2 · REVIEW THE GROUPS</p><h2>Profiles with similar access</h2><p class="section-note">Names do not affect the grouping. Treat these as suggestions to review, not an automatic approval to merge.</p></div></div>
+        <div id="clusters" class="cluster-grid"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title-row"><div><p class="eyebrow">STEP 3 · OPTIONAL DRAFT</p><h2>Permission Set suggestions</h2><p class="section-note">Download draft XML for admin review. A Permission Set adds access; it cannot remove access.</p></div><button id="download-xml" class="button button-primary" type="button">Download draft XML</button></div>
+        <label class="check-control risk-check"><input id="include-high-impact" type="checkbox"><span><strong>Include high-impact grants in the draft XML</strong><small>Off by default. Includes administrator-level, View All/Modify All, and sensitive-field grants. Review and approve these individually before use.</small></span></label>
+        <p id="xml-summary" class="section-note"></p>
+        <div id="candidate-table-wrap" class="table-wrap"></div>
+        <p class="warning-inline">Generated XML is a draft, not deployment-ready. The bundle does not contain a merged Profile, user assignments, or a package manifest. Check name collisions, licensing, business need, and effective access in a sandbox.</p>
+      </section>
+      <section class="panel">
+        <div class="panel-title-row"><div><p class="eyebrow">STEP 4 · OPTIONAL DETAIL</p><h2>Compare each permission</h2></div><button id="download-csv" class="button button-secondary" type="button">Download this table as CSV</button></div>
+        <div class="filter-bar">
+          <label>Show <select id="view-filter"><option value="all">All findings</option><option value="shared">Shared grants</option><option value="differences">Differences</option><option value="conflicts">Explicit conflicts</option></select></label>
+          <label>Category <select id="category-filter"><option value="all">All categories</option></select></label>
+          <label class="search-label">Search <input id="search-input" type="search" placeholder="Object, field, permission…"></label>
+        </div>
+        <p id="result-count" class="result-count"></p>
+        <div class="table-wrap matrix-wrap"><table id="comparison-table"></table></div>
+        <div class="pagination"><button class="button button-secondary" id="prev-page" type="button">Previous</button><span id="page-label"></span><button class="button button-secondary" id="next-page" type="button">Next</button></div>
+      </section>
+      <section class="guardrails"><h2>Before using the recommendations</h2><ul>
+        <li>A Permission Set adds access. It cannot remove access granted by the base profile or preserve a denial by itself.</li>
+        <li>The tool compares supplied XML only. It does not inspect existing PS/PSG assignments, role hierarchy, sharing, territories, user needs, or profile-name references elsewhere.</li>
+        <li>Profile-only settings such as layouts, login hours, and IP ranges stay outside generated Permission Sets and must be preserved separately.</li>
+        <li>Confirm target personas and named user assignments with business/security owners, then validate grants and denials in a sandbox.</li>
+      </ul></section>
+    </section>
+    <footer><span>Salesforce Profile Compare</span><span>Local multi-profile analysis · No org access · No deployment</span></footer>
+  </main>
+</body>
+</html>

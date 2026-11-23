@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductCategory__c</fullName>
+    <label>Product Category</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MBLIM SW</fullName>
+                <default>false</default>
+                <label>MBLIM SW</label>
+            </value>
+            <value>
+                <fullName>MBLIM SW MNT</fullName>
+                <default>false</default>
+                <label>MBLIM SW MNT</label>
+            </value>
+            <value>
+                <fullName>MBLIM Services</fullName>
+                <default>false</default>
+                <label>MBLIM Services</label>
+            </value>
+            <value>
+                <fullName>MBLIM O&amp;M</fullName>
+                <default>false</default>
+                <label>MBLIM O&amp;M</label>
+            </value>
+            <value>
+                <fullName>3P SW&amp;HW</fullName>
+                <default>false</default>
+                <label>3P SW&amp;HW</label>
+            </value>
+            <value>
+                <fullName>3P Services</fullName>
+                <default>false</default>
+                <label>3P Services</label>
+            </value>
+            <value>
+                <fullName>3P MNT</fullName>
+                <default>false</default>
+                <label>3P MNT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

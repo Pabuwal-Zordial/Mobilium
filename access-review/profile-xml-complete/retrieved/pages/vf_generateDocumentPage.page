@@ -1,0 +1,98 @@
+<!--
+/*************************************************************************************
+Name                    vf_generateDocumentPage
+Developed By            West Monroe Partners
+Purpose                The page will display the following buttons:
+                         # Preview
+                              Opens a new tab with the pdf page
+                         # Save
+                              Saves a quote document with the attachment
+                         # Save and Email
+                              Opens the default save and email page
+                         # cancel
+                              cancel, takes the user back to "Quote"
+Created date           3/20/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0		SS		3/20/2017		Refer component header
+*************************************************************************************/
+-->
+<apex:page standardController="SBQQ__Quote__c"
+          extensions="ctrlExt_quoteTemplate"
+          title="Generate Document"
+           >
+	<!-- using the slds library -->
+     <apex:slds />
+
+          <!-- The page starts here -->
+     <div class="slds-scope">
+               <!-- The page title -->
+               <div style="padding:2%">
+                    <article class="slds-card" style="padding:1%">
+                         <div class="slds-card__header slds-grid">
+                              <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                                   <!-- Icon - document logo -->
+                                   <div class="slds-media__figure">
+                                   <span class="slds-icon_container slds-icon-standard-document" title="description of icon when needed">
+                                        <svg class="slds-icon slds-icon--large" aria-hidden="true">
+                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS,'/assets/icons/standard-sprite/svg/symbols.svg#document')}"></use>
+                                        </svg>
+                                   </span>
+                                   </div>
+                                   <div class="slds-media__body">
+                                   <!-- Shows the Quote ID number and the text 'generate document' -->
+                                   <h2>
+                                        <span class="slds-text-heading--medium">
+                                             <h2> {!SBQQ__Quote__c.Name} </h2>
+                                             <br/>
+                                             <h1> Generate Document </h1>
+                                        </span>
+                                   </h2>
+                                   </div>
+                              </header>
+                              <div class="slds-no-flex"> 
+                                   <!-- buttons for the page -->
+                                   <div class="slds-button-group" role="group">
+                                        <apex:form >
+                                             <a class="slds-button slds-button--neutral" target="_blank" href="/apex/vf_quoteTemplate?id={!SBQQ__Quote__c.id}">Preview</a>
+                                             <apex:commandButton styleclass="slds-button slds-button--neutral" action="{!saveEmailMethod}" value="Save & Email"/>
+                                             <apex:commandButton styleclass="slds-button slds-button--neutral" action="{!saveMethod}" value="Save"/> 
+                                             <apex:commandButton styleclass="slds-button slds-button--neutral" action="{!quoteRedirect}" value="Cancel" />
+                                        </apex:form>
+                                        
+                                   </div>
+                              </div>
+                         </div>
+                    </article>
+                    <br/>
+                    <!-- Showing document options -->
+                    <div>
+                         <span class="slds-text-heading--medium"> Document Options </span>
+                         <!-- Specific document information -->
+                         <div>
+                              <table style="width:50%">
+                                   <tr>
+                                        <!-- displaying template name-->
+                                        <td width="30%">
+                                             <label class="slds-text-body--default">Template</label>
+                                        </td>
+                                        <td width="70%">
+                                             <input type="text" disabled="true" id="input-03" class="slds-input" value="Mobileum Quote Template"/>
+                                        </td>
+                                   </tr>
+                                   <tr>
+                                        <!-- displaying the document name -->
+                                        <td width="30%">
+                                             <label class="slds-text-body--default">Document Name</label>
+                                        </td>
+                                        <td width="70%">
+                                             <input type="text" class="slds-input" value="{!str_documentTempName}" />
+                                        </td>
+                                   </tr>
+                              </table>
+                         </div>
+                    </div>
+               </div>
+          </div>
+</apex:page>

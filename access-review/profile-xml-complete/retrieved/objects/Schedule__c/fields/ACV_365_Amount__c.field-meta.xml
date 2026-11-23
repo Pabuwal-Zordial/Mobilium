@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_365_Amount__c</fullName>
+    <formula>IF(  
+(
+Billing_Frequency__c = &quot;One-Time&quot;
+&amp;&amp;
+ Subscription_Term__c &gt; 0
+&amp;&amp;
+ISPICKVAL( Type__c , &quot;Accounting&quot;)
+)
+,
+ Amount__c 
+,
+IF(  
+(
+Billing_Frequency__c = &quot;One-Time&quot;
+&amp;&amp;
+ Subscription_Term__c &gt; 0
+&amp;&amp;
+ISPICKVAL( Type__c , &quot;Billing&quot;)
+)
+,
+0
+,
+Amount__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV (365) Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

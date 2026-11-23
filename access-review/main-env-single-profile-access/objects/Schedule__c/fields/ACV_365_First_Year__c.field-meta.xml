@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_365_First_Year__c</fullName>
+    <formula>IF(  ACV_Start_Date__c &lt;= ACV_365_Date__c 
+&amp;&amp;
+ACV_365_Date__c &lt; ACV_365_End_Date__c ,TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV (365) First Year</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

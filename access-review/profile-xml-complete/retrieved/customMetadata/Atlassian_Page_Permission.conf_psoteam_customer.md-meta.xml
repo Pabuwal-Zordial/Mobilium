@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>conf_psoteam customer</label>
+    <protected>false</protected>
+    <values>
+        <field>Entity_Name__c</field>
+        <value xsi:type="xsd:string">conf_psoteam</value>
+    </values>
+    <values>
+        <field>Entity_Type__c</field>
+        <value xsi:type="xsd:string">group</value>
+    </values>
+    <values>
+        <field>Read__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Space__c</field>
+        <value xsi:type="xsd:string">Customer</value>
+    </values>
+    <values>
+        <field>Update__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

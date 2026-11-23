@@ -1,0 +1,51 @@
+<aura:component controller="ProposalCodeGeneratorController" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome">
+	<aura:html tag="style">
+		.cuf-content {
+			padding: 0 0rem !important;
+		}
+
+		.slds-p-around--medium {
+			padding: 0rem !important;
+		}
+
+		.slds-modal__content {
+			height:unset !important;
+			max-height:unset !important;
+		}
+	</aura:html>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<aura:attribute name="isMasterCode" type="Boolean" access="PRIVATE" default="true"/>
+	<aura:attribute name="opportunityType" type="String" access="PRIVATE" default=""/>
+	<aura:attribute name="submitted" type="Boolean" access="PRIVATE" default="false"/>
+	<aura:attribute name="loading" type="Boolean" access="PRIVATE" default="false"/>
+
+	<div>
+		<div class="modal-header slds-modal__header slds-size_1-of-1">
+			<h4 class="slds-modal__title slds-hyphenate">New Proposal Code</h4>
+		</div>
+		<aura:if isTrue="{!v.loading}">
+			<div>
+				<lightning:spinner class="spinner-custom" alternativeText="Loading" size="large"/>
+			</div>
+		</aura:if>
+		<lightning:recordEditForm aura:id="recordEditForm" objectApiName="Proposal_Code__c">
+			<div class="slds-modal__content slds-align_absolute-center slds-size_1-of-1 slds-is-relative">
+				<div class="slds-modal__content slds-align_absolute-center slds-size_1-of-1 slds-is-relative">
+					<form class="slds-form--stacked slds-size--1-of-1">
+						<div class="slds-grid slds-gutters slds-wrap slds-m-around_xx-small">
+							<div class="slds-col slds-size_1-of-1">
+								<lightning:inputField fieldName="Opportunity_Type__c" value="{! v.opportunityType }" disabled="{! v.isMasterCode }"/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer slds-modal__footer slds-size_1-of-1">
+				<lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.cancel }"/>
+				<lightning:button variant="brand" label="Generate" title="Generate" type="submit" disabled="{! v.submitted }" onclick="{! c.generate }"/>
+			</div>
+		</lightning:recordEditForm>
+	</div>
+</aura:component>

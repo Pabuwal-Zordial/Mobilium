@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>alphabets_only</fullName>
+    <active>false</active>
+    <description>Name should contain alphabets only</description>
+    <errorConditionFormula>REGEX( Student__r.Student_Name__c , &quot;[A-Z]{3}-[a-z]{3}&quot;)</errorConditionFormula>
+    <errorDisplayField>Student__c</errorDisplayField>
+    <errorMessage>Name should contain alphabets only</errorMessage>
+</ValidationRule>

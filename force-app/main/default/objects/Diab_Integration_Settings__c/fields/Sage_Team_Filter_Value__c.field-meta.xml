@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sage_Team_Filter_Value__c</fullName>
+    <description>Team name to filter and process Employee records from Sage People (For ex: Global Delivery).</description>
+    <externalId>false</externalId>
+    <label>Sage Team Filter Value</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

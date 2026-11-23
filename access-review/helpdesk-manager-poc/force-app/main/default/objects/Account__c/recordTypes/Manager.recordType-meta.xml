@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager</fullName>
+    <active>true</active>
+    <label>Manager</label>
+    <picklistValues>
+        <picklist>Account_Type__c</picklist>
+        <values>
+            <fullName>Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minor Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Savings Account</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Minimum_Balance1__c</picklist>
+        <values>
+            <fullName>10%2C000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2C500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25%2C000</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>neutral</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"name": "Mobilium",
+			"path": "../../../../Mobilium"
+		}
+	],
+	"settings": {
+		"xml.preferences.showSchemaDocumentationType": "none"
+	}
+}

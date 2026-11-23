@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grace_Period__c</fullName>
+    <label>Grace Period (months)</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Package_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2 Months</fullName>
+                <default>false</default>
+                <label>2 Months</label>
+            </value>
+            <value>
+                <fullName>3 Months</fullName>
+                <default>false</default>
+                <label>3 Months</label>
+            </value>
+            <value>
+                <fullName>6 Months</fullName>
+                <default>false</default>
+                <label>6 Months</label>
+            </value>
+            <value>
+                <fullName>12 Months</fullName>
+                <default>false</default>
+                <label>12 Months</label>
+            </value>
+            <value>
+                <fullName>Other (use comment)</fullName>
+                <default>false</default>
+                <label>Other (use comment)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Prepaid (PRP)</controllingFieldValue>
+            <valueName>2 Months</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prepaid (PRP)</controllingFieldValue>
+            <valueName>3 Months</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prepaid (PRP)</controllingFieldValue>
+            <valueName>6 Months</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prepaid (PRP)</controllingFieldValue>
+            <valueName>12 Months</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prepaid (PRP)</controllingFieldValue>
+            <valueName>Other (use comment)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

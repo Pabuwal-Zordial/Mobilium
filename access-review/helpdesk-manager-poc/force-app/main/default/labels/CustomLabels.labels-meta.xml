@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Declaration</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Declaration</shortDescription>
+        <value>Declaration bye bye</value>
+    </labels>
+    <labels>
+        <fullName>Disclaimer</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Disclaimer</shortDescription>
+        <value>Disclaimer is the</value>
+    </labels>
+    <labels>
+        <fullName>WelcomeMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WelcomeMessage</shortDescription>
+        <value>WelcomeMessage</value>
+    </labels>
+</CustomLabels>

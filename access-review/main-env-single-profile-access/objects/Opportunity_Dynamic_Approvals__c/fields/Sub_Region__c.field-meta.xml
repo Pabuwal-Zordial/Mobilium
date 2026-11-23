@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Region__c</fullName>
+    <label>Sub Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Global</fullName>
+                <default>false</default>
+                <label>Global</label>
+            </value>
+            <value>
+                <fullName>AMERICAS</fullName>
+                <default>false</default>
+                <label>AMERICAS</label>
+            </value>
+            <value>
+                <fullName>ASIA</fullName>
+                <default>false</default>
+                <label>ASIA</label>
+            </value>
+            <value>
+                <fullName>EECIS Canada</fullName>
+                <default>false</default>
+                <label>EECIS Canada</label>
+            </value>
+            <value>
+                <fullName>EUROPE</fullName>
+                <default>false</default>
+                <label>EUROPE</label>
+            </value>
+            <value>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+                <label>LATAM</label>
+            </value>
+            <value>
+                <fullName>MEA</fullName>
+                <default>false</default>
+                <label>MEA</label>
+            </value>
+            <value>
+                <fullName>MENA</fullName>
+                <default>false</default>
+                <label>MENA</label>
+            </value>
+            <value>
+                <fullName>NAMR GUAVUS</fullName>
+                <default>false</default>
+                <label>NAMR GUAVUS</label>
+            </value>
+            <value>
+                <fullName>Nio</fullName>
+                <default>false</default>
+                <label>Nio</label>
+            </value>
+            <value>
+                <fullName>SSA</fullName>
+                <default>false</default>
+                <label>SSA</label>
+            </value>
+            <value>
+                <fullName>WW</fullName>
+                <default>false</default>
+                <label>WW</label>
+            </value>
+            <value>
+                <fullName>CANADA</fullName>
+                <default>false</default>
+                <label>CANADA</label>
+            </value>
+            <value>
+                <fullName>AIRTEL</fullName>
+                <default>false</default>
+                <label>AIRTEL</label>
+            </value>
+            <value>
+                <fullName>South America</fullName>
+                <default>false</default>
+                <label>South America</label>
+            </value>
+            <value>
+                <fullName>North America</fullName>
+                <default>false</default>
+                <label>North America</label>
+            </value>
+            <value>
+                <fullName>NASA</fullName>
+                <default>false</default>
+                <label>NASA</label>
+            </value>
+            <value>
+                <fullName>SEAO</fullName>
+                <default>false</default>
+                <label>SEAO</label>
+            </value>
+            <value>
+                <fullName>EECIS</fullName>
+                <default>false</default>
+                <label>EECIS</label>
+            </value>
+            <value>
+                <fullName>East Europe</fullName>
+                <default>false</default>
+                <label>East Europe</label>
+            </value>
+            <value>
+                <fullName>West Europe</fullName>
+                <default>false</default>
+                <label>West Europe</label>
+            </value>
+            <value>
+                <fullName>Central America</fullName>
+                <default>false</default>
+                <label>Central America</label>
+            </value>
+            <value>
+                <fullName>Middle East</fullName>
+                <default>false</default>
+                <label>Middle East</label>
+            </value>
+            <value>
+                <fullName>AFRICA</fullName>
+                <default>false</default>
+                <label>AFRICA</label>
+            </value>
+            <value>
+                <fullName>INDIA</fullName>
+                <default>false</default>
+                <label>INDIA</label>
+            </value>
+            <value>
+                <fullName>SAARC</fullName>
+                <default>false</default>
+                <label>SAARC</label>
+            </value>
+            <value>
+                <fullName>All</fullName>
+                <default>false</default>
+                <label>All</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

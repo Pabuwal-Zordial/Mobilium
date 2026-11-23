@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Working_Hours__c</fullName>
+    <description>Default Working Hours to be set for all PSA Resources coming from Sage where Working Hours is blank or 0.</description>
+    <externalId>false</externalId>
+    <label>Default Working Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

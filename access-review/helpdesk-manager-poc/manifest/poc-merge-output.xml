@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Shared_Access_Base_POC</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Front_Desk_Access_Delta_POC</members>
+        <members>Helpdesk_Access_Delta_POC</members>
+        <members>Manager_Access_Delta_POC</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>68.0</version>
+</Package>

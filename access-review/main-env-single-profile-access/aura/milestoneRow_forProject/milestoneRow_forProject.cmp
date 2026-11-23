@@ -1,0 +1,166 @@
+<!--
+/*************************************************************************************
+Name                    milestoneRow_forProject
+Developed By            West Monroe Partners
+Purpose                 The component will handle the following:
+				 - Handle visibility in terms of which product categories have to be chosen
+				 - Shows the percentage field - integers are allow
+				 - Validates if the row sum = 100
+
+Created date            2/3/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0		SS		2/3/2017		Refer component header
+*************************************************************************************/
+-->
+<aura:component >
+	<!-- creating the attributes for the component -->
+	<!-- #1 we need a placeholder for each row, each row is a milestone record  -->
+	<aura:attribute name="milestone"
+		          type="Milestone__c" />
+	<!-- #2 we need a placeholder for each row, stores the overall value for the % -->
+    	<aura:attribute name="totalRowPercentage"
+    		          type="Integer" />
+	<!-- Handler to call the init function  -->
+    	<aura:handler name="init"
+    		        value="{!this}"
+    			  action="{!c.doInit}" />
+
+	<tr>
+		<td>
+			<!-- Product category from the milestone -->
+			<ui:outputText aura:id="prodCategory"
+					   value="{!v.milestone.ProductCategory__c}"
+					   title="Product Category"
+			/>
+
+		</td>
+		<td>
+			<!-- All percentage fields for the milestone -->
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						value="{!v.milestone.PO__c}"
+						change="{!c.updateTotalAndValidate}"
+						class="{!v.milestone.PO__c > 0 ? '' : 'zeroStyleCSS'}"
+						/>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.Contract__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.Contract__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.HW_delivery__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.HW_delivery__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+			</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.HW_Install__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.HW_Install__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.SW_delivery__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.SW_delivery__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.RFA__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.RFA__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.UAT__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.UAT__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.Stability__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.Stability__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.FA__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.FA__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.KPI__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.KPI__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<td>
+			<div class="slds-form-element">
+				<div class="slds-form-element__control">
+					<ui:inputNumber maxlength="3"
+						 class="{!v.milestone.Retention__c > 0 ? '' : 'zeroStyleCSS'}"
+						 value="{!v.milestone.Retention__c}"
+						 change="{!c.updateTotalAndValidate}"
+						 />
+				 </div>
+	 		</div>
+		</td>
+		<!-- Total row percentage, changes on value change -->
+		<td width="4%" aura:id="totalRowId">
+			{!v.totalRowPercentage}
+		</td>
+	</tr>
+</aura:component>

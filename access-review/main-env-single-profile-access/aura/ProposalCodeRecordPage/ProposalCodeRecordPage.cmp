@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="fields" type="String[]" default="['Name','Customer_Acronym_text__c','Opportunity__c','Opportunity_Type__c','Entity_Number__c']" />
+    <lightning:recordForm
+        aura:id="myRecordForm"
+        recordId="{!v.recordId}"
+        objectApiName="Proposal_Code__c"
+        fields="{!v.fields}"
+        columns="2"
+        mode="readonly"
+        />
+</aura:component>

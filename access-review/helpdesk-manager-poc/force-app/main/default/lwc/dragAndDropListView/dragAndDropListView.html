@@ -1,0 +1,11 @@
+<template>
+    <div class="container">
+        <ul>
+            <template for:each={items} for:item="item" for:index="index">
+                <li key={item.id} draggable="true" ondragstart={handleDragStart} ondragover={handleDragOver} ondrop={handleDrop}>
+                    {item.name}
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products__c</fullName>
+    <label>Products</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>5G HTTP</fullName>
+                <default>false</default>
+                <label>5G HTTP</label>
+            </value>
+            <value>
+                <fullName>5G HTTP Firewall</fullName>
+                <default>false</default>
+                <label>5G HTTP Firewall</label>
+            </value>
+            <value>
+                <fullName>A2P SMS Hub</fullName>
+                <default>false</default>
+                <label>A2P SMS Hub</label>
+            </value>
+            <value>
+                <fullName>Active Intelligence</fullName>
+                <default>false</default>
+                <label>Active Intelligence</label>
+            </value>
+            <value>
+                <fullName>AF</fullName>
+                <default>false</default>
+                <label>AF</label>
+            </value>
+            <value>
+                <fullName>App Testing</fullName>
+                <default>false</default>
+                <label>App Testing</label>
+            </value>
+            <value>
+                <fullName>Automation Framework (AF)</fullName>
+                <default>false</default>
+                <label>Automation Framework (AF)</label>
+            </value>
+            <value>
+                <fullName>BLU</fullName>
+                <default>false</default>
+                <label>BLU</label>
+            </value>
+            <value>
+                <fullName>BRG</fullName>
+                <default>false</default>
+                <label>BRG</label>
+            </value>
+            <value>
+                <fullName>Business Process Intelligence</fullName>
+                <default>false</default>
+                <label>Business Process Intelligence</label>
+            </value>
+            <value>
+                <fullName>Bypass Fraud</fullName>
+                <default>false</default>
+                <label>Bypass Fraud</label>
+            </value>
+            <value>
+                <fullName>Cell ID Tracker</fullName>
+                <default>false</default>
+                <label>Cell ID Tracker</label>
+            </value>
+            <value>
+                <fullName>Centralized Routing Engine</fullName>
+                <default>false</default>
+                <label>Centralized Routing Engine</label>
+            </value>
+            <value>
+                <fullName>CLI Spoofing &amp; Robocalling</fullName>
+                <default>false</default>
+                <label>CLI Spoofing &amp; Robocalling</label>
+            </value>
+            <value>
+                <fullName>Collection Management</fullName>
+                <default>false</default>
+                <label>Collection Management</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Convene EIR</fullName>
+                <default>false</default>
+                <label>Convene EIR</label>
+            </value>
+            <value>
+                <fullName>Conversational Analytics</fullName>
+                <default>false</default>
+                <label>Conversational Analytics</label>
+            </value>
+            <value>
+                <fullName>Data Fraud</fullName>
+                <default>false</default>
+                <label>Data Fraud</label>
+            </value>
+            <value>
+                <fullName>Developing Solutions</fullName>
+                <default>false</default>
+                <label>Developing Solutions</label>
+            </value>
+            <value>
+                <fullName>Diameter Firewall</fullName>
+                <default>false</default>
+                <label>Diameter Firewall</label>
+            </value>
+            <value>
+                <fullName>DNA</fullName>
+                <default>false</default>
+                <label>DNA</label>
+            </value>
+            <value>
+                <fullName>DNA_5G-EdgeAnalytics</fullName>
+                <default>false</default>
+                <label>DNA_5G-EdgeAnalytics</label>
+            </value>
+            <value>
+                <fullName>DNA_5G-EdgeOperator</fullName>
+                <default>false</default>
+                <label>DNA_5G-EdgeOperator</label>
+            </value>
+            <value>
+                <fullName>DNA_AccessRightsControl</fullName>
+                <default>false</default>
+                <label>DNA_AccessRightsControl</label>
+            </value>
+            <value>
+                <fullName>DNA_Alerts</fullName>
+                <default>false</default>
+                <label>DNA_Alerts</label>
+            </value>
+            <value>
+                <fullName>DNA_CryptoID</fullName>
+                <default>false</default>
+                <label>DNA_CryptoID</label>
+            </value>
+            <value>
+                <fullName>DNA_DataFraudDetection</fullName>
+                <default>false</default>
+                <label>DNA_DataFraudDetection</label>
+            </value>
+            <value>
+                <fullName>DNA_DigitalContentIntelligence</fullName>
+                <default>false</default>
+                <label>DNA_DigitalContentIntelligence</label>
+            </value>
+            <value>
+                <fullName>DNA_DigitalLeadsGenerator</fullName>
+                <default>false</default>
+                <label>DNA_DigitalLeadsGenerator</label>
+            </value>
+            <value>
+                <fullName>DNA_EventAnalytics</fullName>
+                <default>false</default>
+                <label>DNA_EventAnalytics</label>
+            </value>
+            <value>
+                <fullName>DNA_Explorer&amp;PeriodicReports</fullName>
+                <default>false</default>
+                <label>DNA_Explorer&amp;PeriodicReports</label>
+            </value>
+            <value>
+                <fullName>DNA_HomeAnalytics</fullName>
+                <default>false</default>
+                <label>DNA_HomeAnalytics</label>
+            </value>
+            <value>
+                <fullName>DNA_IntelligentTriggers</fullName>
+                <default>false</default>
+                <label>DNA_IntelligentTriggers</label>
+            </value>
+            <value>
+                <fullName>DNA_IoT-DeviceAnalytics</fullName>
+                <default>false</default>
+                <label>DNA_IoT-DeviceAnalytics</label>
+            </value>
+            <value>
+                <fullName>DNA_IP-DataRetention</fullName>
+                <default>false</default>
+                <label>DNA_IP-DataRetention</label>
+            </value>
+            <value>
+                <fullName>DNA_Mapview</fullName>
+                <default>false</default>
+                <label>DNA_Mapview</label>
+            </value>
+            <value>
+                <fullName>DNA_NetworkAnalysis</fullName>
+                <default>false</default>
+                <label>DNA_NetworkAnalysis</label>
+            </value>
+            <value>
+                <fullName>DNA_SubscriberCare</fullName>
+                <default>false</default>
+                <label>DNA_SubscriberCare</label>
+            </value>
+            <value>
+                <fullName>DNA_SubscriberChurnPrediction</fullName>
+                <default>false</default>
+                <label>DNA_SubscriberChurnPrediction</label>
+            </value>
+            <value>
+                <fullName>DNA_SuperAppsIntelligence</fullName>
+                <default>false</default>
+                <label>DNA_SuperAppsIntelligence</label>
+            </value>
+            <value>
+                <fullName>DNA_Tracing</fullName>
+                <default>false</default>
+                <label>DNA_Tracing</label>
+            </value>
+            <value>
+                <fullName>DNA_UserMonitoring</fullName>
+                <default>false</default>
+                <label>DNA_UserMonitoring</label>
+            </value>
+            <value>
+                <fullName>DNA_VideoStreamingAnalytics</fullName>
+                <default>false</default>
+                <label>DNA_VideoStreamingAnalytics</label>
+            </value>
+            <value>
+                <fullName>DNA_VoLTE-Analytics</fullName>
+                <default>false</default>
+                <label>DNA_VoLTE-Analytics</label>
+            </value>
+            <value>
+                <fullName>DNA_xAnalyser</fullName>
+                <default>false</default>
+                <label>DNA_xAnalyser</label>
+            </value>
+            <value>
+                <fullName>DNA Platform</fullName>
+                <default>false</default>
+                <label>DNA Platform</label>
+            </value>
+            <value>
+                <fullName>DPI</fullName>
+                <default>false</default>
+                <label>DPI</label>
+            </value>
+            <value>
+                <fullName>DRA</fullName>
+                <default>false</default>
+                <label>DRA</label>
+            </value>
+            <value>
+                <fullName>dsHSS</fullName>
+                <default>false</default>
+                <label>dsHSS</label>
+            </value>
+            <value>
+                <fullName>dsPGW</fullName>
+                <default>false</default>
+                <label>dsPGW</label>
+            </value>
+            <value>
+                <fullName>dsTest</fullName>
+                <default>false</default>
+                <label>dsTest</label>
+            </value>
+            <value>
+                <fullName>Equipment Identity Register</fullName>
+                <default>false</default>
+                <label>Equipment Identity Register</label>
+            </value>
+            <value>
+                <fullName>Global Roamer</fullName>
+                <default>false</default>
+                <label>Global Roamer</label>
+            </value>
+            <value>
+                <fullName>GLR</fullName>
+                <default>false</default>
+                <label>GLR</label>
+            </value>
+            <value>
+                <fullName>GTP Firewall</fullName>
+                <default>false</default>
+                <label>GTP Firewall</label>
+            </value>
+            <value>
+                <fullName>GTP Probe</fullName>
+                <default>false</default>
+                <label>GTP Probe</label>
+            </value>
+            <value>
+                <fullName>GTP Proxy</fullName>
+                <default>false</default>
+                <label>GTP Proxy</label>
+            </value>
+            <value>
+                <fullName>HomePolicy</fullName>
+                <default>false</default>
+                <label>HomePolicy</label>
+            </value>
+            <value>
+                <fullName>iCampaign</fullName>
+                <default>false</default>
+                <label>iCampaign</label>
+            </value>
+            <value>
+                <fullName>ICQT</fullName>
+                <default>false</default>
+                <label>ICQT</label>
+            </value>
+            <value>
+                <fullName>IMSI Hub</fullName>
+                <default>false</default>
+                <label>IMSI Hub</label>
+            </value>
+            <value>
+                <fullName>Incentive Management</fullName>
+                <default>false</default>
+                <label>Incentive Management</label>
+            </value>
+            <value>
+                <fullName>IoT Packet Printing</fullName>
+                <default>false</default>
+                <label>IoT Packet Printing</label>
+            </value>
+            <value>
+                <fullName>IRM</fullName>
+                <default>false</default>
+                <label>IRM</label>
+            </value>
+            <value>
+                <fullName>IRTA</fullName>
+                <default>false</default>
+                <label>IRTA</label>
+            </value>
+            <value>
+                <fullName>IRTMS</fullName>
+                <default>false</default>
+                <label>IRTMS</label>
+            </value>
+            <value>
+                <fullName>LCR</fullName>
+                <default>false</default>
+                <label>LCR</label>
+            </value>
+            <value>
+                <fullName>LIS</fullName>
+                <default>false</default>
+                <label>LIS</label>
+            </value>
+            <value>
+                <fullName>Managed Service</fullName>
+                <default>false</default>
+                <label>Managed Service</label>
+            </value>
+            <value>
+                <fullName>MAP and SMS Forwarding</fullName>
+                <default>false</default>
+                <label>MAP and SMS Forwarding</label>
+            </value>
+            <value>
+                <fullName>MCA</fullName>
+                <default>false</default>
+                <label>MCA</label>
+            </value>
+            <value>
+                <fullName>Misc</fullName>
+                <default>false</default>
+                <label>Misc</label>
+            </value>
+            <value>
+                <fullName>MNS</fullName>
+                <default>false</default>
+                <label>MNS</label>
+            </value>
+            <value>
+                <fullName>Mobile Money</fullName>
+                <default>false</default>
+                <label>Mobile Money</label>
+            </value>
+            <value>
+                <fullName>Mobileum Assurance Solution (MAS)</fullName>
+                <default>false</default>
+                <label>Mobileum Assurance Solution (MAS)</label>
+            </value>
+            <value>
+                <fullName>MRS</fullName>
+                <default>false</default>
+                <label>MRS</label>
+            </value>
+            <value>
+                <fullName>Multiline</fullName>
+                <default>false</default>
+                <label>Multiline</label>
+            </value>
+            <value>
+                <fullName>NA</fullName>
+                <default>false</default>
+                <label>NA</label>
+            </value>
+            <value>
+                <fullName>Ncore</fullName>
+                <default>false</default>
+                <label>Ncore</label>
+            </value>
+            <value>
+                <fullName>NRG</fullName>
+                <default>false</default>
+                <label>NRG</label>
+            </value>
+            <value>
+                <fullName>NTR</fullName>
+                <default>false</default>
+                <label>NTR</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>OTT Bypass</fullName>
+                <default>false</default>
+                <label>OTT Bypass</label>
+            </value>
+            <value>
+                <fullName>Passive Analytics (IDS)</fullName>
+                <default>false</default>
+                <label>Passive Analytics (IDS)</label>
+            </value>
+            <value>
+                <fullName>Penetration Testing</fullName>
+                <default>false</default>
+                <label>Penetration Testing</label>
+            </value>
+            <value>
+                <fullName>PMMS</fullName>
+                <default>false</default>
+                <label>PMMS</label>
+            </value>
+            <value>
+                <fullName>PMMS/Profile Engine</fullName>
+                <default>false</default>
+                <label>PMMS/Profile Engine</label>
+            </value>
+            <value>
+                <fullName>Proactive CLI Refiling Fraud (inc TCG &amp; Terminator)</fullName>
+                <default>false</default>
+                <label>Proactive CLI Refiling Fraud (inc TCG &amp; Terminator)</label>
+            </value>
+            <value>
+                <fullName>Proactive RA (inc TCG)</fullName>
+                <default>false</default>
+                <label>Proactive RA (inc TCG)</label>
+            </value>
+            <value>
+                <fullName>Proactive SBD SMS Bypass (using TCG &amp; Terminator)</fullName>
+                <default>false</default>
+                <label>Proactive SBD SMS Bypass (using TCG &amp; Terminator)</label>
+            </value>
+            <value>
+                <fullName>Proactive SBD SMS Bypass (using Terminator)</fullName>
+                <default>false</default>
+                <label>Proactive SBD SMS Bypass (using Terminator)</label>
+            </value>
+            <value>
+                <fullName>Proactive SBD Voice Bypass (inc TCG)</fullName>
+                <default>false</default>
+                <label>Proactive SBD Voice Bypass (inc TCG)</label>
+            </value>
+            <value>
+                <fullName>Proactive SBD Voice Bypass (inc TCG &amp; Terminator)</fullName>
+                <default>false</default>
+                <label>Proactive SBD Voice Bypass (inc TCG &amp; Terminator)</label>
+            </value>
+            <value>
+                <fullName>Proactive SBD Voice Bypass (using Terminator)</fullName>
+                <default>false</default>
+                <label>Proactive SBD Voice Bypass (using Terminator)</label>
+            </value>
+            <value>
+                <fullName>Proactive SIM BOX (inc TCG)</fullName>
+                <default>false</default>
+                <label>Proactive SIM BOX (inc TCG)</label>
+            </value>
+            <value>
+                <fullName>Proactive SMS Bypass (inc TCG)</fullName>
+                <default>false</default>
+                <label>Proactive SMS Bypass (inc TCG)</label>
+            </value>
+            <value>
+                <fullName>RAID</fullName>
+                <default>false</default>
+                <label>RAID</label>
+            </value>
+            <value>
+                <fullName>RAID BA</fullName>
+                <default>false</default>
+                <label>RAID BA</label>
+            </value>
+            <value>
+                <fullName>RAID Collections</fullName>
+                <default>false</default>
+                <label>RAID Collections</label>
+            </value>
+            <value>
+                <fullName>RAID FM</fullName>
+                <default>false</default>
+                <label>RAID FM</label>
+            </value>
+            <value>
+                <fullName>RAID Incentives</fullName>
+                <default>false</default>
+                <label>RAID Incentives</label>
+            </value>
+            <value>
+                <fullName>RAID Platform</fullName>
+                <default>false</default>
+                <label>RAID Platform</label>
+            </value>
+            <value>
+                <fullName>RAID RA</fullName>
+                <default>false</default>
+                <label>RAID RA</label>
+            </value>
+            <value>
+                <fullName>RAID Roaming</fullName>
+                <default>false</default>
+                <label>RAID Roaming</label>
+            </value>
+            <value>
+                <fullName>RAID RV</fullName>
+                <default>false</default>
+                <label>RAID RV</label>
+            </value>
+            <value>
+                <fullName>RAID SBD</fullName>
+                <default>false</default>
+                <label>RAID SBD</label>
+            </value>
+            <value>
+                <fullName>RAPA (Profitable Analytics/Roamer Analytics)</fullName>
+                <default>false</default>
+                <label>RAPA (Profitable Analytics/Roamer Analytics)</label>
+            </value>
+            <value>
+                <fullName>RA Testing</fullName>
+                <default>false</default>
+                <label>RA Testing</label>
+            </value>
+            <value>
+                <fullName>Rating &amp; Billing Validation</fullName>
+                <default>false</default>
+                <label>Rating &amp; Billing Validation</label>
+            </value>
+            <value>
+                <fullName>RBA</fullName>
+                <default>false</default>
+                <label>RBA</label>
+            </value>
+            <value>
+                <fullName>RCEM</fullName>
+                <default>false</default>
+                <label>RCEM</label>
+            </value>
+            <value>
+                <fullName>RCEM expansion to include GTP and domestic use case of BRG.</fullName>
+                <default>false</default>
+                <label>RCEM expansion to include GTP and domestic use case of BRG.</label>
+            </value>
+            <value>
+                <fullName>Regulator Assurance</fullName>
+                <default>false</default>
+                <label>Regulator Assurance</label>
+            </value>
+            <value>
+                <fullName>RF</fullName>
+                <default>false</default>
+                <label>RF</label>
+            </value>
+            <value>
+                <fullName>RIS</fullName>
+                <default>false</default>
+                <label>RIS</label>
+            </value>
+            <value>
+                <fullName>RISK Intelligence</fullName>
+                <default>false</default>
+                <label>RISK Intelligence</label>
+            </value>
+            <value>
+                <fullName>Roamer Analytics</fullName>
+                <default>false</default>
+                <label>Roamer Analytics</label>
+            </value>
+            <value>
+                <fullName>Roamflow</fullName>
+                <default>false</default>
+                <label>Roamflow</label>
+            </value>
+            <value>
+                <fullName>Roaming Fraud</fullName>
+                <default>false</default>
+                <label>Roaming Fraud</label>
+            </value>
+            <value>
+                <fullName>Roaming Fraud Solution</fullName>
+                <default>false</default>
+                <label>Roaming Fraud Solution</label>
+            </value>
+            <value>
+                <fullName>Roaming Intelligence</fullName>
+                <default>false</default>
+                <label>Roaming Intelligence</label>
+            </value>
+            <value>
+                <fullName>Roaming Platform Expansion</fullName>
+                <default>false</default>
+                <label>Roaming Platform Expansion</label>
+            </value>
+            <value>
+                <fullName>Roaming Replicator (Dual IMSI/IMSI HUB/Roaming Hub)</fullName>
+                <default>false</default>
+                <label>Roaming Replicator (Dual IMSI/IMSI HUB/Roaming Hub)</label>
+            </value>
+            <value>
+                <fullName>Roam Policy</fullName>
+                <default>false</default>
+                <label>Roam Policy</label>
+            </value>
+            <value>
+                <fullName>RoamSIM</fullName>
+                <default>false</default>
+                <label>RoamSIM</label>
+            </value>
+            <value>
+                <fullName>Roam Wallet</fullName>
+                <default>false</default>
+                <label>Roam Wallet</label>
+            </value>
+            <value>
+                <fullName>ROVNG</fullName>
+                <default>false</default>
+                <label>ROVNG</label>
+            </value>
+            <value>
+                <fullName>RR</fullName>
+                <default>false</default>
+                <label>RR</label>
+            </value>
+            <value>
+                <fullName>RSC</fullName>
+                <default>false</default>
+                <label>RSC</label>
+            </value>
+            <value>
+                <fullName>RSN</fullName>
+                <default>false</default>
+                <label>RSN</label>
+            </value>
+            <value>
+                <fullName>SC</fullName>
+                <default>false</default>
+                <label>SC</label>
+            </value>
+            <value>
+                <fullName>SCA</fullName>
+                <default>false</default>
+                <label>SCA</label>
+            </value>
+            <value>
+                <fullName>SCAP</fullName>
+                <default>false</default>
+                <label>SCAP</label>
+            </value>
+            <value>
+                <fullName>Seamless Call Back (SCB)</fullName>
+                <default>false</default>
+                <label>Seamless Call Back (SCB)</label>
+            </value>
+            <value>
+                <fullName>SEPP</fullName>
+                <default>false</default>
+                <label>SEPP</label>
+            </value>
+            <value>
+                <fullName>Service Communication Proxy</fullName>
+                <default>false</default>
+                <label>Service Communication Proxy</label>
+            </value>
+            <value>
+                <fullName>SGLR</fullName>
+                <default>false</default>
+                <label>SGLR</label>
+            </value>
+            <value>
+                <fullName>SHR</fullName>
+                <default>false</default>
+                <label>SHR</label>
+            </value>
+            <value>
+                <fullName>Signaling Security</fullName>
+                <default>false</default>
+                <label>Signaling Security</label>
+            </value>
+            <value>
+                <fullName>Signaling Security- (SS7/DIAMETER/GTP FW)</fullName>
+                <default>false</default>
+                <label>Signaling Security- (SS7/DIAMETER/GTP FW)</label>
+            </value>
+            <value>
+                <fullName>SimBox Detection</fullName>
+                <default>false</default>
+                <label>SimBox Detection</label>
+            </value>
+            <value>
+                <fullName>SIMMR</fullName>
+                <default>false</default>
+                <label>SIMMR</label>
+            </value>
+            <value>
+                <fullName>SIP Firewall</fullName>
+                <default>false</default>
+                <label>SIP Firewall</label>
+            </value>
+            <value>
+                <fullName>SITE</fullName>
+                <default>false</default>
+                <label>SITE</label>
+            </value>
+            <value>
+                <fullName>SITE - On Cloud</fullName>
+                <default>false</default>
+                <label>SITE - On Cloud</label>
+            </value>
+            <value>
+                <fullName>SITE - On Premise</fullName>
+                <default>false</default>
+                <label>SITE - On Premise</label>
+            </value>
+            <value>
+                <fullName>SLT</fullName>
+                <default>false</default>
+                <label>SLT</label>
+            </value>
+            <value>
+                <fullName>SMPP Firewall</fullName>
+                <default>false</default>
+                <label>SMPP Firewall</label>
+            </value>
+            <value>
+                <fullName>SMSC</fullName>
+                <default>false</default>
+                <label>SMSC</label>
+            </value>
+            <value>
+                <fullName>SMS Firewall</fullName>
+                <default>false</default>
+                <label>SMS Firewall</label>
+            </value>
+            <value>
+                <fullName>SPRS</fullName>
+                <default>false</default>
+                <label>SPRS</label>
+            </value>
+            <value>
+                <fullName>SS7 Firewall</fullName>
+                <default>false</default>
+                <label>SS7 Firewall</label>
+            </value>
+            <value>
+                <fullName>Steering Analytics</fullName>
+                <default>false</default>
+                <label>Steering Analytics</label>
+            </value>
+            <value>
+                <fullName>Steer to Quality</fullName>
+                <default>false</default>
+                <label>Steer to Quality</label>
+            </value>
+            <value>
+                <fullName>STIR/SHAKEN</fullName>
+                <default>false</default>
+                <label>STIR/SHAKEN</label>
+            </value>
+            <value>
+                <fullName>Subscriber Location Tracking</fullName>
+                <default>false</default>
+                <label>Subscriber Location Tracking</label>
+            </value>
+            <value>
+                <fullName>Subscription Fraud</fullName>
+                <default>false</default>
+                <label>Subscription Fraud</label>
+            </value>
+            <value>
+                <fullName>Sync Server</fullName>
+                <default>false</default>
+                <label>Sync Server</label>
+            </value>
+            <value>
+                <fullName>TCG</fullName>
+                <default>false</default>
+                <label>TCG</label>
+            </value>
+            <value>
+                <fullName>Threat Intelligence</fullName>
+                <default>false</default>
+                <label>Threat Intelligence</label>
+            </value>
+            <value>
+                <fullName>TSI</fullName>
+                <default>false</default>
+                <label>TSI</label>
+            </value>
+            <value>
+                <fullName>URL Scanner</fullName>
+                <default>false</default>
+                <label>URL Scanner</label>
+            </value>
+            <value>
+                <fullName>VFM</fullName>
+                <default>false</default>
+                <label>VFM</label>
+            </value>
+            <value>
+                <fullName>VHE</fullName>
+                <default>false</default>
+                <label>VHE</label>
+            </value>
+            <value>
+                <fullName>VMCC</fullName>
+                <default>false</default>
+                <label>VMCC</label>
+            </value>
+            <value>
+                <fullName>Voice Firewall</fullName>
+                <default>false</default>
+                <label>Voice Firewall</label>
+            </value>
+            <value>
+                <fullName>Voice FW/SIP FW</fullName>
+                <default>false</default>
+                <label>Voice FW/SIP FW</label>
+            </value>
+            <value>
+                <fullName>Voice Policy Engine</fullName>
+                <default>false</default>
+                <label>Voice Policy Engine</label>
+            </value>
+            <value>
+                <fullName>WBA (Wholesale Analytics/WSRA / RAID Roaming)</fullName>
+                <default>false</default>
+                <label>WBA (Wholesale Analytics/WSRA / RAID Roaming)</label>
+            </value>
+            <value>
+                <fullName>Wholesale Analytics</fullName>
+                <default>false</default>
+                <label>Wholesale Analytics</label>
+            </value>
+            <value>
+                <fullName>Wholesale Business Advisor</fullName>
+                <default>false</default>
+                <label>Wholesale Business Advisor</label>
+            </value>
+            <value>
+                <fullName>WISDOM</fullName>
+                <default>false</default>
+                <label>WISDOM</label>
+            </value>
+            <value>
+                <fullName>WSMS</fullName>
+                <default>false</default>
+                <label>WSMS</label>
+            </value>
+            <value>
+                <fullName>WSRA</fullName>
+                <default>false</default>
+                <label>WSRA</label>
+            </value>
+            <value>
+                <fullName>RDNA</fullName>
+                <default>false</default>
+                <label>RDNA</label>
+            </value>
+            <value>
+                <fullName>AMMS</fullName>
+                <default>false</default>
+                <label>AMMS</label>
+            </value>
+            <value>
+                <fullName>REF</fullName>
+                <default>false</default>
+                <label>REF</label>
+            </value>
+            <value>
+                <fullName>Smart MEdiator</fullName>
+                <default>false</default>
+                <label>Smart MEdiator</label>
+            </value>
+            <value>
+                <fullName>5G Performance Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5G Performance Testing</label>
+            </value>
+            <value>
+                <fullName>A2P Grey Route Firewall</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>A2P Grey Route Firewall</label>
+            </value>
+            <value>
+                <fullName>Automation Framework</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Automation Framework</label>
+            </value>
+            <value>
+                <fullName>Business Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business Assurance</label>
+            </value>
+            <value>
+                <fullName>Business Operations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business Operations</label>
+            </value>
+            <value>
+                <fullName>Collections Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Collections Assurance</label>
+            </value>
+            <value>
+                <fullName>Collections Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Collections Management</label>
+            </value>
+            <value>
+                <fullName>Cost and Margin Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cost and Margin Assurance</label>
+            </value>
+            <value>
+                <fullName>Cross Protocol Firewall</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cross Protocol Firewall</label>
+            </value>
+            <value>
+                <fullName>Data Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Data Management</label>
+            </value>
+            <value>
+                <fullName>Dealers Fraud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dealers Fraud</label>
+            </value>
+            <value>
+                <fullName>Diameter FW</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Diameter FW</label>
+            </value>
+            <value>
+                <fullName>Domestic Network Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Domestic Network Testing</label>
+            </value>
+            <value>
+                <fullName>EI Firewall</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EI Firewall</label>
+            </value>
+            <value>
+                <fullName>Emergency Services Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Emergency Services Testing</label>
+            </value>
+            <value>
+                <fullName>Enhanced Caller ID</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Enhanced Caller ID</label>
+            </value>
+            <value>
+                <fullName>Fraud Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fraud Management</label>
+            </value>
+            <value>
+                <fullName>GTP FW</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GTP FW</label>
+            </value>
+            <value>
+                <fullName>GTP Traffic Router</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GTP Traffic Router</label>
+            </value>
+            <value>
+                <fullName>Global IoT Connectivity Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Global IoT Connectivity Testing</label>
+            </value>
+            <value>
+                <fullName>IMS &amp; VoLTE Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IMS &amp; VoLTE Testing</label>
+            </value>
+            <value>
+                <fullName>Incentives Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Incentives Management</label>
+            </value>
+            <value>
+                <fullName>International Network Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>International Network Testing</label>
+            </value>
+            <value>
+                <fullName>IoT &amp; eSIM Performance Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IoT &amp; eSIM Performance Testing</label>
+            </value>
+            <value>
+                <fullName>IoT Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IoT Assurance</label>
+            </value>
+            <value>
+                <fullName>MFS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MFS</label>
+            </value>
+            <value>
+                <fullName>Mobile Money Active Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mobile Money Active Testing</label>
+            </value>
+            <value>
+                <fullName>Network Security</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Network Security</label>
+            </value>
+            <value>
+                <fullName>Partner Incentives Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partner Incentives Assurance</label>
+            </value>
+            <value>
+                <fullName>Penetration Testing Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penetration Testing Services</label>
+            </value>
+            <value>
+                <fullName>Performance Intelligence</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Performance Intelligence</label>
+            </value>
+            <value>
+                <fullName>Prepaid Balance Validation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Prepaid Balance Validation</label>
+            </value>
+            <value>
+                <fullName>Proactive Business Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proactive Business Assurance</label>
+            </value>
+            <value>
+                <fullName>Proactive Fraud Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proactive Fraud Management</label>
+            </value>
+            <value>
+                <fullName>Proactive Revenue Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proactive Revenue Assurance</label>
+            </value>
+            <value>
+                <fullName>Proactive Risk Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proactive Risk Management</label>
+            </value>
+            <value>
+                <fullName>Provisioning Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Provisioning Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID CFA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RAID CFA</label>
+            </value>
+            <value>
+                <fullName>RAID RAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RAID RAS</label>
+            </value>
+            <value>
+                <fullName>Revenue Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Revenue Assurance</label>
+            </value>
+            <value>
+                <fullName>Revenue Share Fraud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Revenue Share Fraud</label>
+            </value>
+            <value>
+                <fullName>Roaming Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Roaming Management</label>
+            </value>
+            <value>
+                <fullName>Roaming Quality Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Roaming Quality Testing</label>
+            </value>
+            <value>
+                <fullName>SMS SPAM Firewall</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SMS SPAM Firewall</label>
+            </value>
+            <value>
+                <fullName>Smartphone Experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Smartphone Experience</label>
+            </value>
+            <value>
+                <fullName>Telecom Wholesale Fraud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Telecom Wholesale Fraud</label>
+            </value>
+            <value>
+                <fullName>Test Factory</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Test Factory</label>
+            </value>
+            <value>
+                <fullName>Usage Assurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Usage Assurance</label>
+            </value>
+            <value>
+                <fullName>Video Performance Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Video Performance Testing</label>
+            </value>
+            <value>
+                <fullName>VoIP &amp; SIP Fraud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VoIP &amp; SIP Fraud</label>
+            </value>
+            <value>
+                <fullName>VoLTE Roaming Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VoLTE Roaming Testing</label>
+            </value>
+            <value>
+                <fullName>Voice, Data &amp; Messaging Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Voice, Data &amp; Messaging Testing</label>
+            </value>
+            <value>
+                <fullName>eSIM Platform</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>eSIM Platform</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

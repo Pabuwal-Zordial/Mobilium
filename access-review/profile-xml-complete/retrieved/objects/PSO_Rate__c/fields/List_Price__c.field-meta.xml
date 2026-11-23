@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_Price__c</fullName>
+    <inlineHelpText>The list price price for this role, as stored in the pricebook for Implementation Services SKUs. Update this whenever you update the list prices of the Roaming Impl. Serv. SKUs. This should be consistent for all PSO Rate records that have the same role.</inlineHelpText>
+    <label>List Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

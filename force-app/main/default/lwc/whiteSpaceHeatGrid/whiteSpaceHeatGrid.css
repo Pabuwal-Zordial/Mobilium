@@ -1,0 +1,523 @@
+/* White Space Heat Grid Styles */
+:host {
+    display: block;
+    --won-bg: #ecfdf5;
+    --won-border: #10b981;
+    --won-text: #065f46;
+    --won-badge: #059669;
+
+    --comp-bg: #fff1f2;
+    --comp-border: #f43f5e;
+    --comp-text: #9f1239;
+    --comp-badge: #e11d48;
+
+    --diy-bg: #fffbeb;
+    --diy-border: #f59e0b;
+    --diy-text: #92400e;
+    --diy-badge: #d97706;
+
+    --open-bg: #f8fafc;
+    --open-border: #cbd5e1;
+    --open-text: #475569;
+    --open-badge: #64748b;
+}
+
+.heat-grid-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header & KPI Banner */
+.grid-header-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: #ffffff;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.app-icon {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.grid-subtitle {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.controls-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* KPI Bar */
+.kpi-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.kpi-label {
+    font-size: 0.725rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.kpi-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.kpi-value.highlight-green {
+    color: #059669;
+}
+
+.kpi-value.highlight-blue {
+    color: #0284c7;
+}
+
+.kpi-value.highlight-purple {
+    color: #7c3aed;
+}
+
+/* Legend Bar */
+.legend-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.legend-items {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-dot.won { background-color: var(--won-badge); }
+.legend-dot.competitor { background-color: var(--comp-badge); }
+.legend-dot.diy { background-color: var(--diy-badge); }
+.legend-dot.open { background-color: var(--open-badge); }
+
+.search-box {
+    max-width: 250px;
+}
+
+/* Grid Table */
+.matrix-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.matrix-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.matrix-table th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.875rem 0.75rem;
+    text-align: center;
+    border-bottom: 2px solid #cbd5e1;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.matrix-table th.account-col-header {
+    text-align: left;
+    min-width: 220px;
+    padding-left: 1.5rem;
+    position: sticky;
+    left: 0;
+    z-index: 20;
+    background: #f1f5f9;
+}
+
+.matrix-table th.metric-col-header {
+    min-width: 120px;
+}
+
+.matrix-table th.offering-col-header {
+    min-width: 160px;
+}
+
+.offering-header-title {
+    display: block;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.offering-header-sub {
+    display: block;
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.matrix-table td {
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.matrix-table td.account-cell {
+    background: #ffffff;
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    border-right: 1px solid #e2e8f0;
+    padding-left: 1.5rem;
+}
+
+.account-link {
+    font-weight: 600;
+    color: #0284c7;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.account-link:hover {
+    text-decoration: underline;
+}
+
+.plan-subtext {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.metric-cell {
+    text-align: right;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: #1e293b;
+    padding-right: 1rem;
+    background: #ffffff;
+}
+
+.metric-cell.text-green { color: #059669; }
+.metric-cell.text-blue { color: #0284c7; }
+
+/* Heat Map Cell Cards */
+.heat-cell-card {
+    border-radius: 8px;
+    padding: 0.6rem 0.6rem;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    user-select: none;
+    text-align: center;
+}
+
+.heat-cell-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.12);
+    z-index: 40;
+}
+
+.heat-cell-card.badge-won {
+    background: var(--won-bg);
+    border-color: var(--won-border);
+    color: var(--won-text);
+}
+
+.heat-cell-card.badge-competitor {
+    background: var(--comp-bg);
+    border-color: var(--comp-border);
+    color: var(--comp-text);
+}
+
+.heat-cell-card.badge-diy {
+    background: var(--diy-bg);
+    border-color: var(--diy-border);
+    color: var(--diy-text);
+}
+
+.heat-cell-card.badge-open {
+    background: var(--open-bg);
+    border-color: var(--open-border);
+    color: var(--open-text);
+}
+
+.cell-badge {
+    display: inline-block;
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.badge-won .cell-badge {
+    background: var(--won-badge);
+    color: #ffffff;
+}
+
+.badge-competitor .cell-badge {
+    background: var(--comp-badge);
+    color: #ffffff;
+}
+
+.badge-diy .cell-badge {
+    background: var(--diy-badge);
+    color: #ffffff;
+}
+
+.badge-open .cell-badge {
+    background: var(--open-badge);
+    color: #ffffff;
+}
+
+.cell-amount {
+    margin: 4px 0 2px 0;
+}
+
+.amount-val {
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.15;
+    display: block;
+    letter-spacing: -0.01em;
+}
+
+.amount-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+    display: block;
+    margin-top: 1px;
+}
+
+.cell-share {
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+
+.share-pill {
+    background: rgba(0, 0, 0, 0.08);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.675rem;
+}
+
+.our-spend-sub {
+    font-size: 0.68rem;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+/* Tooltip Popover */
+.cell-popover {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0f172a;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    min-width: 200px;
+    font-size: 0.775rem;
+    text-align: left;
+    pointer-events: none;
+}
+
+/* For the first row, position downwards so it never goes behind sticky table headers */
+tbody tr:first-child .cell-popover {
+    bottom: auto;
+    top: calc(100% + 8px);
+}
+
+/* Right-align popover for the last column to prevent offscreen clipping */
+.matrix-table td:last-child .cell-popover {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+.heat-cell-card:hover .cell-popover {
+    display: block;
+}
+
+.popover-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    color: #38bdf8;
+}
+
+.popover-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.popover-label {
+    color: #94a3b8;
+}
+
+.popover-val {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Modal styling */
+.modal-header-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.modal-subtitle {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.modal-body-content {
+    padding: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.quick-opp-section {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1.25rem;
+}
+
+.quick-opp-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: #64748b;
+}
+
+.empty-state-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    color: #1e293b;
+}

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <processMetadataValues>
+            <name>postTarget</name>
+            <value>
+                <stringValue>PO_RECEIVED</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>textJson</name>
+            <value>
+                <stringValue>{&quot;mentions&quot;:[],&quot;message&quot;:&quot;Hello,\n\nThis is to notify that PO has been received for the below mentioned opportunity.\n\nOpportunity Name: {![Opportunity].Name}\n\nClose Date:{![Opportunity].CloseDate}\n\nAccount Name: {![Opportunity].Account.Name}\n\nOpportunity Amount (QC): {![Opportunity].Opportunity_Total_Selected_Currency__c}\n\nOpportunity Currency : {![Opportunity].Currency_Table__r.Name}\n\nOpportunity Amount (USD): {![Opportunity].Amount}\n\nOpportunity Owner: {![Opportunity].Owner.FirstName}, {![Opportunity].Owner.LastName}\n\nDeal Type: {![Opportunity].Type}\n\nCompany Code : {![Opportunity].Company_Code__c}\n\nBusiness Unit : {![Opportunity].Business_Unit__c}\n\nBusiness Unit Sub Category : {![Opportunity].Business_Unit_Sub_Category__c}\n\nProposal Code : {![Opportunity].Project_Code__c}\n\nEntity Number : {![Opportunity].Entity_Number__c}\n\nClick below link for the Opportunity\n\nURL: https://mobileum--mobstaging.sandbox.lightning.force.com/lightning/r/{![Opportunity].Id}\n&quot;}</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Posting to chatter group</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>Hello,
+
+This is to notify that PO has been received for the below mentioned opportunity.
+
+Opportunity Name: {!myVariable_current.Name}
+
+Close Date:{!myVariable_current.CloseDate}
+
+Account Name: {!myVariable_current.Account.Name}
+
+Opportunity Amount (QC): {!myVariable_current.Opportunity_Total_Selected_Currency__c}
+
+Opportunity Currency : {!myVariable_current.Currency_Table__r.Name}
+
+Opportunity Amount (USD): {!myVariable_current.Amount}
+
+Opportunity Owner: {!myVariable_current.Owner.FirstName}, {!myVariable_current.Owner.LastName}
+
+Deal Type: {!myVariable_current.Type}
+
+Company Code : {!myVariable_current.Company_Code__c}
+
+Business Unit : {!myVariable_current.Business_Unit__c}
+
+Business Unit Sub Category : {!myVariable_current.Business_Unit_Sub_Category__c}
+
+Proposal Code : {!myVariable_current.Project_Code__c}
+
+Entity Number : {!myVariable_current.Entity_Number__c}
+
+Click below link for the Opportunity
+
+URL: https://mobileum--mobstaging.sandbox.lightning.force.com/lightning/r/{!myVariable_current.Id}
+</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>GROUP</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>0F9O5000000euJdKAI</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>isChangedDecision2_myRule_1_StageName</name>
+        <label>isChangedDecision2_myRule_1_StageName</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_2_myRule_1_StageName</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision</targetReference>
+            </connector>
+            <label>isChangedRule_2_myRule_1_StageName</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PO &amp; Signed Contract</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_2_myRule_1_StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Opportunity stage is PO Received</label>
+        </rules>
+    </decisions>
+    <description>Post to chatter group PO Received when opportunity stage is PO Received</description>
+    <interviewLabel>Post_to_chatter_group_PO_Received-18_InterviewLabel</interviewLabel>
+    <label>Post to chatter group PO Received</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Opportunity</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <startElementReference>isChangedDecision2_myRule_1_StageName</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

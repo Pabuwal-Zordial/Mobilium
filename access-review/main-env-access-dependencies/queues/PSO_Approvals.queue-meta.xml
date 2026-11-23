@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>PSO Approvals</name>
+    <queueMembers>
+        <users>
+            <user>sfi-stdmnamr@sfdc.mobileum.com</user>
+            <user>deepak.d@sfdc.mobileum.com</user>
+            <user>divya.alwani@sfdc.mobileum.com</user>
+            <user>sfi-stdmmena@sfdc.mobileum.com</user>
+            <user>sfi-stdmapac@sfdc.mobileum.com</user>
+            <user>samith.ramachandran@mobileum.com</user>
+            <user>sanjeet.bali@sfdc.mobileum.com</user>
+            <user>sfi-stdmeurope@sfdc.mobileum.com</user>
+            <user>sfi-stdmgwthsaa@sfdc.mobileum.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>SBQQ__Quote__c</sobjectType>
+    </queueSobject>
+</Queue>

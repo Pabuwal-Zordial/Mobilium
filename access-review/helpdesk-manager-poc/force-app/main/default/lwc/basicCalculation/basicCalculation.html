@@ -1,0 +1,23 @@
+<template>
+  <div class = 'slds-box' style = "width:30%">
+    <lightning-input type="number" onchange={FirstInputChange} value = {firstInput} variant="standard" name="firstNumber" label="First Number" placeholder="Enter the First Number" aria-required="true"></lightning-input>
+     <lightning-input type="number" onchange={SecondInputChange} value = {secondInput} variant="standard" name="secondNumber" label="Second Number" placeholder="Enter the Second Number" required = true></lightning-input>
+     <lightning-button-group>
+
+      <lightning-button variant="base" label="Add" title="Add" onclick={additionOfTwoNumbers} ></lightning-button>
+      <lightning-button variant="base" label="sub" title="Add" onclick={sub} class="slds-m-left_x-small"></lightning-button>
+      <lightning-button variant="base" label="Multi" title="Add" onclick={mul} class="slds-m-left_x-small"></lightning-button>
+      <lightning-button variant="base" label="Division" title="Add" onclick={div} class="slds-m-left_x-small"></lightning-button>
+
+     </lightning-button-group>
+     <template if:true={showResult}>
+      <div class="slds-box slds-theme_shade">
+      <p>
+        Result is {totalValue}
+       </p>
+      </div>
+     </template>
+    
+
+    </div>
+</template>

@@ -1,0 +1,19 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<c-modal title={title}>
+		<template if:true={isReassign}>
+			<c-custom-lookup
+				oncustomlookupvaluechanged={handleLookupChange}
+				label-value="Reassign To"
+				target-object-type="User">
+			</c-custom-lookup>
+		</template>
+		<template if:false={isReassign}>
+			<lightning-textarea name="comments" label="Comments" onchange={handleCommentsChange}></lightning-textarea>
+		</template>
+		<div slot="footer">
+			<button class="slds-button slds-button_neutral" onclick={handleClose} title="Cancel">Cancel</button>
+			<button class="slds-button slds-button_brand" onclick={handlePositiveButtonClick} title={currentAction} disabled={isLoading}>{currentAction}</button>
+		</div>
+	</c-modal>
+</template>

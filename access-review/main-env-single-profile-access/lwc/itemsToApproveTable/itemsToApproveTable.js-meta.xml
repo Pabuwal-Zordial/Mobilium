@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property name="sObjectApiName" label="SObject Api Name" type="String"/>
+            <property name="fieldToOrderData" label="Field to Order Data" type="String"/>
+            <property name="sObjectFieldsJson" label="Json with the configuration of the fields to show on the datatable" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

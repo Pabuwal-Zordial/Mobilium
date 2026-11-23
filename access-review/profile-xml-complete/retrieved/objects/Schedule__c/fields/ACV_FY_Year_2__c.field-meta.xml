@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_FY_Year_2__c</fullName>
+    <formula>IF( ACV_FY_End_Year_1__c &lt; Scheduled_Date__c 
+&amp;&amp; 
+Scheduled_Date__c &lt;= ACV_FY_End_Year_2__c
+&amp;&amp;
+ISPICKVAL( Type__c , &quot;Billing&quot;)
+ ,TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV (FY) - Year 2</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
