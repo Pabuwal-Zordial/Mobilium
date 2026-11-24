@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Hubspot</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Hubspot</label>
+        <sharedTo>
+            <role>Hubspot</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>System_Administrator</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Hubspot_Queue</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Hubspot Queue</label>
+        <sharedTo>
+            <role>Hubspot</role>
+        </sharedTo>
+        <sharedFrom>
+            <queue>Inside_Sales</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Marketing</label>
+        <sharedTo>
+            <group>Marketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>System_Administrator</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

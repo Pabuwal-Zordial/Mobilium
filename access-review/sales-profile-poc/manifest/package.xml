@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Restrict_Project_Name_Edit</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>Sales_Head_POC</members>
+        <members>Sales_User_POC</members>
+        <name>PermissionSetGroup</name>
+    </types>
+    <types>
+        <members>Sales_Head_Access_Delta</members>
+        <members>Sales_Project_Name_Restriction</members>
+        <members>Sales_User_Access_Delta</members>
+        <members>Sales_User_System_Delta</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Sales_Profile_POC_Baseline</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Project__c.Sales_rep_cannot_edit_project_Name</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>67.0</version>
+</Package>

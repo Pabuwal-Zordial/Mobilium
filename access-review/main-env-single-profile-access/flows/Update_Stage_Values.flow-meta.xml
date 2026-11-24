@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>Update Stage Values {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Stage Values</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Stage_Deleted</name>
+        <label>Stage Deleted</label>
+        <locationX>176</locationX>
+        <locationY>1475</locationY>
+        <connector>
+            <targetReference>Stage_Deleted_Recon</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Deleted</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>Deleted</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Deleted_Recon</name>
+        <label>Stage Deleted Recon</label>
+        <locationX>176</locationX>
+        <locationY>1583</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Deleted Recon</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>Deleted Recon</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Develop_Solution</name>
+        <label>Stage Develop Solution</label>
+        <locationX>176</locationX>
+        <locationY>719</locationY>
+        <connector>
+            <targetReference>Stage_Propose_Solution</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Develop Solution</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>4. Develop Solution</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Finance_Review</name>
+        <label>Stage Finance Review</label>
+        <locationX>176</locationX>
+        <locationY>1151</locationY>
+        <connector>
+            <targetReference>Stage_Won_Closed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Finance Review</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>8. Finance Review</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Identify_the_Opportunity</name>
+        <label>Stage Identify the Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>Stage_Validate_the_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Identify the Opportunity</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>1. Identify the Opportunity</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Lost</name>
+        <label>Stage Lost</label>
+        <locationX>176</locationX>
+        <locationY>1367</locationY>
+        <connector>
+            <targetReference>Stage_Deleted</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lost</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>Lost</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_PO_Signed_Contract</name>
+        <label>Stage PO &amp; Signed Contract</label>
+        <locationX>176</locationX>
+        <locationY>1043</locationY>
+        <connector>
+            <targetReference>Stage_Finance_Review</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PO &amp; Signed Contract</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>7. PO &amp; Signed Contract</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Propose_Solution</name>
+        <label>Stage Propose Solution</label>
+        <locationX>176</locationX>
+        <locationY>827</locationY>
+        <connector>
+            <targetReference>Stage_Secure_Agreement</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Propose Solution</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>5. Propose Solution</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Qualify_the_Opportunity</name>
+        <label>Stage Qualify the Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>611</locationY>
+        <connector>
+            <targetReference>Stage_Develop_Solution</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Qualify the Opportunity</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>3. Qualify the Opportunity</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Secure_Agreement</name>
+        <label>Stage Secure Agreement</label>
+        <locationX>176</locationX>
+        <locationY>935</locationY>
+        <connector>
+            <targetReference>Stage_PO_Signed_Contract</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Secure Agreement</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>6. Secure Agreement</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Validate_the_Opportunity</name>
+        <label>Stage Validate the Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>503</locationY>
+        <connector>
+            <targetReference>Stage_Qualify_the_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Validate the Opportunity</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>2. Validate the Opportunity</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Whitespace</name>
+        <label>Stage Whitespace</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>Stage_Identify_the_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>White Space</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>White Space</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stage_Won_Closed</name>
+        <label>Stage Won &amp; Closed</label>
+        <locationX>176</locationX>
+        <locationY>1259</locationY>
+        <connector>
+            <targetReference>Stage_Lost</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Won &amp; Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage_Value__c</field>
+            <value>
+                <stringValue>9. Won &amp; Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Stage_Whitespace</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

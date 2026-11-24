@@ -1,0 +1,168 @@
+<!--
+/*************************************************************************************
+Name                    milestoneTable_display_for_opportunity_comp
+Developed By            West Monroe Partners
+Purpose                 The component will contain the following:
+                        Table headers
+				Dates related to the project information
+				Iterating component of table rows
+				Save button
+
+Created date            2/2/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0		SS		2/2/2017		Refer component header
+*************************************************************************************/
+-->
+<aura:component implements="flexipage:availableForAllPageTypes"
+		    controller="clshandler_milestone_schedule"
+>
+	<!-- creating the attributes for the component -->
+	<!-- #1 we need a placeholder for the list of milestone headers that we will recieve from custom metadata-->
+	<aura:attribute name="milestoneHeaders"
+		          type="String[]" />
+	<!-- #2 Creating the project attribute to handle the date changes values -->
+	<aura:attribute name="project"
+		          type="Project__c" />
+	<!-- #3 Querying the milestone rows to be displayed -->
+    	<aura:attribute name="milestoneRows"
+    		          type="Milestone__c[]" />
+
+	<!-- Handler to call the init function  -->
+	<aura:handler name="init"
+		        value="{!this}"
+			  action="{!c.doInit}" />
+	<!-- Handler to get the project ID from the event function  -->
+	<aura:handler event="c:projectSelectionEvent"
+		        action="{!c.handleProjectSelection}" />
+
+
+	<!-- Spinner to show that data is loading-->
+	<span id="loadingSpinner" style="display:none">
+		<lightning:spinner variant="brand"
+						size="large"
+						aura:id="milestoneTableLoader"
+						alternativeText="Loading...."
+				    		/>
+	</span>
+
+	<!-- Data table to show the header information -->
+	<aura:if isTrue="{!(v.milestoneHeaders.length >= 2)}">
+		<div class="slds-table--edit_container slds-is-relative">
+			<table class="slds-table slds-table--edit slds-table--bordered slds-table--fixed-layout slds-no-cell-focus slds-no-row-hover"
+				 role="grid"
+				 style="width:100%">
+	   			<thead>
+					<!-- Shows the header for the category -->
+					<tr class="slds-line-height--reset">
+						<td>
+							<th></th>
+						</td>
+						<!-- Iterates through the list of milestone headers -->
+						<aura:iteration items="{!v.milestoneHeaders}"
+							          var="headerValue">
+							<td>
+			        				<th scope="col" >{!headerValue}</th>
+							</td>
+						</aura:iteration>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td> </td> <!-- Date row header-->
+						<!-- Displays all the dates with the date format -->
+						<td>
+							<ui:inputDate aura:id="po_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.PO_Date__c}"
+									  format="MM/dd/yyyy"
+									  updateOn="change"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="contract_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.Contract_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="hwDelivery_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.HW_delivery_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="hwInstall_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.HW_Install_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="swDelivery_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.SW_delivery_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="RFA_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.RFA_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="UAT_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.UAT_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="stability_dateField"
+										displayDatePicker="true"
+										class="customSize"
+									  value="{!v.project.Stability_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="FA_dateField"
+										 displayDatePicker="true"
+										 class="customSize"
+									 value="{!v.project.FA_Date__c}"
+									 format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="KPI_dateField"
+										  displayDatePicker="true"
+										  class="customSize"
+									  value="{!v.project.KPI_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+						<td>
+							<ui:inputDate aura:id="Retention_dateField"
+									  displayDatePicker="true"
+									  class="customSize"
+									  value="{!v.project.Retention_Date__c}"
+									  format="MM/dd/yyyy"/>
+						</td>
+					</tr>
+					<!-- Sending the milestone rows based on product categories displayed opportunity line items -->
+					<aura:iteration items="{!v.milestoneRows}"
+							    var="runningMilestone">
+							    <c:milestoneRow_forProject milestone="{!runningMilestone}" />
+					</aura:iteration>
+				</tbody>
+			</table>
+		</div>
+		<br/>
+		<!-- Button to save the page -->
+		<ui:button class="slds-button--brand" label="Save" press="{!c.validateAndSave}"/>
+	</aura:if>
+
+
+</aura:component>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type__c</fullName>
+    <description>Minimum balance to open Saving account is 10000,
+Minimum balance to open current account is 25000,
+Minimum balance to open minor account is 2500,</description>
+    <inlineHelpText>Select the type of account from the options</inlineHelpText>
+    <label>Account Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Current Account</fullName>
+                <default>false</default>
+                <label>Current Account</label>
+            </value>
+            <value>
+                <fullName>Minor Account</fullName>
+                <default>false</default>
+                <label>Minor Account</label>
+            </value>
+            <value>
+                <fullName>Savings Account</fullName>
+                <default>false</default>
+                <label>Savings Account</label>
+            </value>
+            <value>
+                <fullName>Company</fullName>
+                <default>false</default>
+                <label>Company</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

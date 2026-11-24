@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-grid">
+        <lightning-combobox
+        name="Branches"
+        label="banches Name"
+        value={selectedBank}
+        placeholder="Select the bank to find the branches"
+        options={branchOptions}
+        onchange={handleBranchChange} ></lightning-combobox>
+        <template if:true={branch.data}>
+            <div class="slds-col slds-p-horizontal_medium">
+                <template for:each={branch.data} for:item="bran">
+                    <lightning-card title={bran.Name} key={bran.id}>
+                        <p class="slds-p-horizontal_small"> {bran.Name}</p>
+                        <p class="slds-p-horizontal_small"> {bran.Id}</p>
+                        
+                        
+
+                    </lightning-card>
+                </template> 
+
+            </div>
+        </template>
+
+    </div>
+    
+</template>

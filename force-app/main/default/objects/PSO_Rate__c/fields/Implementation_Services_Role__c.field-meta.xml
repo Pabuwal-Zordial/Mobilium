@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implementation_Services_Role__c</fullName>
+    <inlineHelpText>The role that this regional rate is related to</inlineHelpText>
+    <label>Implementation Services Role</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Implementation_Services_Role</valueSetName>
+    </valueSet>
+</CustomField>

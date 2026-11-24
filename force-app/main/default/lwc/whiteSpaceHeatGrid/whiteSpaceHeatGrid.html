@@ -1,0 +1,342 @@
+<template>
+    <div class="heat-grid-container">
+        <!-- Header Banner -->
+        <div class="grid-header-banner">
+            <div class="title-group">
+                <div class="app-icon">
+                    <lightning-icon icon-name="standard:account_team_member" size="medium" variant="inverse"></lightning-icon>
+                </div>
+                <div>
+                    <h2 class="grid-title">{headerTitle}</h2>
+                    <p class="grid-subtitle">{headerSubtitle}</p>
+                </div>
+            </div>
+
+            <div class="controls-group">
+                <template if:false={isSinglePlanMode}>
+                    <lightning-combobox
+                        name="fiscalYear"
+                        value={selectedFiscalYear}
+                        placeholder="Select Fiscal Year"
+                        options={fiscalYearOptions}
+                        onchange={handleFiscalYearChange}
+                        variant="label-hidden">
+                    </lightning-combobox>
+                </template>
+                <lightning-button-icon
+                    icon-name="utility:refresh"
+                    alternative-text="Refresh"
+                    variant="border-filled"
+                    onclick={handleRefresh}>
+                </lightning-button-icon>
+            </div>
+        </div>
+
+        <!-- Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-p-around_large slds-text-align_center">
+                <lightning-spinner alternative-text="Loading Heat Grid..." size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:false={isLoading}>
+            <!-- Summary KPI Bar -->
+            <div class="kpi-bar">
+                <div class="kpi-card">
+                    <div class="kpi-label">{kpiAccountLabel}</div>
+                    <div class="kpi-value">{kpiAccountCount}</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Our Revenue Captured</div>
+                    <div class="kpi-value highlight-green">{formattedOurRevenue}</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Addressable White Space</div>
+                    <div class="kpi-value highlight-blue">{formattedWhiteSpace}</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Customer Spend</div>
+                    <div class="kpi-value">{formattedCustomerSpend}</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Avg Share of Wallet</div>
+                    <div class="kpi-value highlight-purple">{formattedAvgShare}%</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Active Pipeline</div>
+                    <div class="kpi-value">{formattedOpenPipeline}</div>
+                </div>
+            </div>
+
+            <!-- Legend & Search Bar -->
+            <div class="legend-bar">
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-dot won"></span>
+                        <span>Client / Won (&ge;50% Share)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot competitor"></span>
+                        <span>Competitor Entrenched</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot diy"></span>
+                        <span>Internal DIY / Low Share</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot open"></span>
+                        <span>Open White Space</span>
+                    </div>
+                </div>
+
+                <template if:false={isSinglePlanMode}>
+                    <div class="search-box">
+                        <lightning-input
+                            type="search"
+                            placeholder="Filter accounts..."
+                            variant="label-hidden"
+                            value={searchTerm}
+                            onchange={handleSearchChange}>
+                        </lightning-input>
+                    </div>
+                </template>
+            </div>
+
+            <!-- 2D Matrix Table -->
+            <template if:true={hasData}>
+                <div class="matrix-wrapper">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th class="account-col-header">
+                                    <template if:true={isSinglePlanMode}>Account & Plan</template>
+                                    <template if:false={isSinglePlanMode}>Account Plan</template>
+                                </th>
+                                <th class="metric-col-header">Our Revenue</th>
+                                <th class="metric-col-header">White Space</th>
+                                <th class="metric-col-header">Share %</th>
+
+                                <template for:each={offerings} for:item="off">
+                                    <th key={off.id} class="offering-col-header">
+                                        <span class="offering-header-title">{off.name}</span>
+                                        <span class="offering-header-sub">{off.code} • {off.productFamily}</span>
+                                    </th>
+                                </template>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={filteredRows} for:item="row">
+                                <tr key={row.planId}>
+                                    <td class="account-cell">
+                                        <a href={row.planUrl} class="account-link" target="_blank">{row.accountName}</a>
+                                        <div class="plan-subtext">{row.planName} • {row.fiscalYear}</div>
+                                    </td>
+                                    <td class="metric-cell text-green">{row.formattedOurRevenue}</td>
+                                    <td class="metric-cell text-blue">{row.formattedWhiteSpace}</td>
+                                    <td class="metric-cell">{row.shareOfWallet}%</td>
+
+                                    <template for:each={row.cells} for:item="cell">
+                                        <td key={cell.offeringId}>
+                                            <div class={cell.cardClass} onclick={handleCellClick} data-cell-id={cell.id} data-plan-id={row.planId} data-offering-id={cell.offeringId}>
+                                                <span class="cell-badge">{cell.displayBadgeText}</span>
+                                                <div class="cell-amount">
+                                                    <template if:true={cell.isWon}>
+                                                        <span class="amount-val">{cell.formattedOurSpend}</span>
+                                                        <span class="amount-label">Our Revenue</span>
+                                                    </template>
+                                                    <template if:false={cell.isWon}>
+                                                        <span class="amount-val">{cell.formattedWhiteSpace}</span>
+                                                        <span class="amount-label">White Space</span>
+                                                    </template>
+                                                </div>
+                                                <div class="cell-share">
+                                                    <span class="share-pill">{cell.shareOfWallet}% Share</span>
+                                                    <template if:false={cell.isWon}>
+                                                        <span class="our-spend-sub">Our: {cell.formattedOurSpend}</span>
+                                                    </template>
+                                                </div>
+
+                                                <!-- Hover Tooltip Popover -->
+                                                <div class="cell-popover">
+                                                    <div class="popover-title">{cell.offeringName}</div>
+                                                    <div class="popover-row">
+                                                        <span class="popover-label">Our Spend:</span>
+                                                        <span class="popover-val">{cell.formattedOurSpend}</span>
+                                                    </div>
+                                                    <div class="popover-row">
+                                                        <span class="popover-label">Competitor:</span>
+                                                        <span class="popover-val">{cell.formattedCompetitorSpend}</span>
+                                                    </div>
+                                                    <div class="popover-row">
+                                                        <span class="popover-label">Internal DIY:</span>
+                                                        <span class="popover-val">{cell.formattedInternalSpend}</span>
+                                                    </div>
+                                                    <div class="popover-row">
+                                                        <span class="popover-label">Unknown Spend:</span>
+                                                        <span class="popover-val">{cell.formattedUnknownSpend}</span>
+                                                    </div>
+                                                    <div class="popover-row" style="margin-top: 4px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 4px;">
+                                                        <span class="popover-label">White Space:</span>
+                                                        <span class="popover-val" style="color: #38bdf8;">{cell.formattedWhiteSpace}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </template>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+
+            <!-- Empty State -->
+            <template if:false={hasData}>
+                <div class="empty-state">
+                    <lightning-icon icon-name="utility:search" size="large" variant="neutral"></lightning-icon>
+                    <div class="empty-state-title">No Account Plans Found</div>
+                    <p>There are no active account plans for {selectedFiscalYear}. Create an Account Plan to populate the heat grid.</p>
+                </div>
+            </template>
+        </template>
+    </div>
+
+    <!-- Edit Spend & Action Modal -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium" aria-modal="true">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header modal-header-banner">
+                    <div>
+                        <h2 class="modal-title">Update Spend: {selectedCell.offeringName}</h2>
+                        <p class="modal-subtitle">{selectedCell.accountName} • {selectedCell.offeringCode}</p>
+                    </div>
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        variant="bare-inverse"
+                        alternative-text="Close"
+                        onclick={closeModal}>
+                    </lightning-button-icon>
+                </header>
+
+                <div class="slds-modal__content modal-body-content">
+                    <div class="form-grid">
+                        <lightning-input
+                            type="number"
+                            formatter="currency"
+                            step="1000"
+                            label="Our Spending ($)"
+                            value={editOurSpend}
+                            onchange={handleSpendFieldChange}
+                            oninput={handleSpendFieldChange}
+                            data-field="ourSpend">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="number"
+                            formatter="currency"
+                            step="1000"
+                            label="Competitor Spending ($)"
+                            value={editCompetitorSpend}
+                            onchange={handleSpendFieldChange}
+                            oninput={handleSpendFieldChange}
+                            data-field="competitorSpend">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="number"
+                            formatter="currency"
+                            step="1000"
+                            label="Internal DIY Spending ($)"
+                            value={editInternalSpend}
+                            onchange={handleSpendFieldChange}
+                            oninput={handleSpendFieldChange}
+                            data-field="internalSpend">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="number"
+                            formatter="currency"
+                            step="1000"
+                            label="Unknown Spending ($)"
+                            value={editUnknownSpend}
+                            onchange={handleSpendFieldChange}
+                            oninput={handleSpendFieldChange}
+                            data-field="unknownSpend">
+                        </lightning-input>
+
+                        <div class="full-width">
+                            <lightning-textarea
+                                label="Strategy Notes & Comments"
+                                value={editComments}
+                                onchange={handleSpendFieldChange}
+                                oninput={handleSpendFieldChange}
+                                data-field="comments"
+                                placeholder="Add notes regarding competitor displacement, contract renewal, or customer pain points...">
+                            </lightning-textarea>
+                        </div>
+                    </div>
+
+                    <!-- Quick Opportunity Launch Section -->
+                    <div class="quick-opp-section">
+                        <div class="quick-opp-title">
+                            <lightning-input
+                                type="checkbox"
+                                label="Create Linked Expansion Opportunity"
+                                checked={createOppEnabled}
+                                onchange={handleToggleOpp}>
+                            </lightning-input>
+                        </div>
+
+                        <template if:true={createOppEnabled}>
+                            <div class="form-grid slds-m-top_small">
+                                <lightning-input
+                                    type="text"
+                                    label="Opportunity Name"
+                                    value={oppName}
+                                    onchange={handleOppFieldChange}
+                                    data-field="oppName"
+                                    required>
+                                </lightning-input>
+
+                                <lightning-input
+                                    type="number"
+                                    formatter="currency"
+                                    step="1000"
+                                    label="Target Deal Amount ($)"
+                                    value={oppAmount}
+                                    onchange={handleOppFieldChange}
+                                    data-field="oppAmount"
+                                    required>
+                                </lightning-input>
+
+                                <lightning-input
+                                    type="date"
+                                    label="Target Close Date"
+                                    value={oppCloseDate}
+                                    onchange={handleOppFieldChange}
+                                    data-field="oppCloseDate"
+                                    required>
+                                </lightning-input>
+
+                                <lightning-combobox
+                                    label="Sales Stage"
+                                    value={oppStage}
+                                    options={stageOptions}
+                                    onchange={handleOppFieldChange}
+                                    data-field="oppStage"
+                                    required>
+                                </lightning-combobox>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={closeModal} class="slds-m-right_small"></lightning-button>
+                    <lightning-button label="Save & Recalculate" variant="brand" onclick={handleSaveSpend} disabled={isSaving}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

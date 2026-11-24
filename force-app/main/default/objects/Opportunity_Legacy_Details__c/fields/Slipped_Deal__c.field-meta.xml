@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Slipped_Deal__c</fullName>
+    <label>Slipped Deal</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Q1-2019 Moved To Q2-2019</fullName>
+                <default>false</default>
+                <label>Q1-2019 Moved To Q2-2019</label>
+            </value>
+            <value>
+                <fullName>Q2-2019 Moved To Q3-2019</fullName>
+                <default>false</default>
+                <label>Q2-2019 Moved To Q3-2019</label>
+            </value>
+            <value>
+                <fullName>Q3-2019 Moved To Q4-2019</fullName>
+                <default>false</default>
+                <label>Q3-2019 Moved To Q4-2019</label>
+            </value>
+            <value>
+                <fullName>Q4-2019 Moved To Q1-2020</fullName>
+                <default>false</default>
+                <label>Q4-2019 Moved To Q1-2020</label>
+            </value>
+            <value>
+                <fullName>Q1-2020 Moved To Q2-2020</fullName>
+                <default>false</default>
+                <label>Q1-2020 Moved To Q2-2020</label>
+            </value>
+            <value>
+                <fullName>Q2-2020 Moved To Q3-2020</fullName>
+                <default>false</default>
+                <label>Q2-2020 Moved To Q3-2020</label>
+            </value>
+            <value>
+                <fullName>Q3-2020 Moved To Q4-2020</fullName>
+                <default>false</default>
+                <label>Q3-2020 Moved To Q4-2020</label>
+            </value>
+            <value>
+                <fullName>Q4-2020 Moved To Q1-2021</fullName>
+                <default>false</default>
+                <label>Q4-2020 Moved To Q1-2021</label>
+            </value>
+            <value>
+                <fullName>Q1-2021 Moved To Q2-2021</fullName>
+                <default>false</default>
+                <label>Q1-2021 Moved To Q2-2021</label>
+            </value>
+            <value>
+                <fullName>Q2-2021 Moved To Q3-2021</fullName>
+                <default>false</default>
+                <label>Q2-2021 Moved To Q3-2021</label>
+            </value>
+            <value>
+                <fullName>Q3-2021 Moved To Q4-2021</fullName>
+                <default>false</default>
+                <label>Q3-2021 Moved To Q4-2021</label>
+            </value>
+            <value>
+                <fullName>Q4-2021 Moved To Q1-2022</fullName>
+                <default>false</default>
+                <label>Q4-2021 Moved To Q1-2022</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

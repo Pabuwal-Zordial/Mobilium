@@ -1,0 +1,11 @@
+.THIS .not100 {
+    background-color: #b94a48;
+    color:white;
+}
+.THIS .equalTo100 {
+    background-color: #4BCA81;
+    color:white;
+}
+.THIS .zeroStyleCSS{
+    color: lightgrey !important;
+}

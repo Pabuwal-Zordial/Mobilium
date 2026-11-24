@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFX_Rev_Rec_Template_ID_TC_Split_EqualS__c</fullName>
+    <externalId>false</externalId>
+    <label>Rev_Rec_Template_ID_TC_Split_EqualS</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

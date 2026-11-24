@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Ready for Testing</fullName>
+                <default>false</default>
+                <label>Ready for Testing</label>
+            </value>
+            <value>
+                <fullName>Ready in Sandbox</fullName>
+                <default>false</default>
+                <label>Ready in Sandbox</label>
+            </value>
+            <value>
+                <fullName>Pushed to Production</fullName>
+                <default>false</default>
+                <label>Pushed to Production</label>
+            </value>
+            <value>
+                <fullName>Resolved in Production</fullName>
+                <default>false</default>
+                <label>Resolved in Production</label>
+            </value>
+            <value>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+                <label>Deferred</label>
+            </value>
+            <value>
+                <fullName>Unable to Reproduce</fullName>
+                <default>false</default>
+                <label>Unable to Reproduce</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

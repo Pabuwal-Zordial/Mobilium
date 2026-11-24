@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="ProposalCodesRelatedListController">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:attribute name="listOfProposalCodes" type="Object[]"/>
+	<aura:attribute name="cardTitle" type="String" default="Proposal Code"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}"/>
+
+	<lightning:card iconName="standard:opportunity" title="{!v.cardTitle}" class="slds-card_boundary slds-card__header-link slds-page-header slds-page-header_related-list slds-p-left_none slds-p-left_none slds-p-right_none slds-p-top_none">
+		<div class="slds-card__body_inner slds-p-top_medium slds-p-bottom_medium">
+			<aura:iteration items="{!v.listOfProposalCodes}" var="item">
+				<p class="slds-text-body_regular"><a href="{!item.link}">{!item.name}</a></p>
+			</aura:iteration>
+		</div>
+	</lightning:card>
+</aura:component>

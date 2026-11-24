@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Stage__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Opportunity Stage</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Identify the Opportunity</fullName>
+                <default>false</default>
+                <label>Identify the Opportunity</label>
+            </value>
+            <value>
+                <fullName>Validate the Opportunity</fullName>
+                <default>false</default>
+                <label>Validate the Opportunity</label>
+            </value>
+            <value>
+                <fullName>Qualify the Opportunity</fullName>
+                <default>false</default>
+                <label>Qualify the Opportunity</label>
+            </value>
+            <value>
+                <fullName>Develop Solution</fullName>
+                <default>false</default>
+                <label>Develop Solution</label>
+            </value>
+            <value>
+                <fullName>Secure Agreement</fullName>
+                <default>false</default>
+                <label>Secure Agreement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adhaar_no</fullName>
+    <active>true</active>
+    <errorConditionFormula>If(ISBLANK( Adhaar_Card__c ),false, LEN( Adhaar_Card__c ) &lt;&gt; 12 )</errorConditionFormula>
+    <errorDisplayField>Adhaar_Card__c</errorDisplayField>
+    <errorMessage>adhaar no is of 12 digit</errorMessage>
+</ValidationRule>

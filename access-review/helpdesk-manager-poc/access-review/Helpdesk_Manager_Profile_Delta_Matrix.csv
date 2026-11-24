@@ -1,0 +1,349 @@
+﻿Dimension,Resource,Property,Helpdesk value,Manager value,Classification
+Application visibility,Bank_Application,default,true,false,CONFLICT
+Application visibility,Bank_Application,visible,true,false,CONFLICT
+Application visibility,Contact_Tracing,default,false,false,COMMON
+Application visibility,Contact_Tracing,visible,false,false,COMMON
+Application visibility,Education,default,false,false,COMMON
+Application visibility,Education,visible,true,true,COMMON
+Application visibility,InstituteApp,default,false,false,COMMON
+Application visibility,InstituteApp,visible,false,true,CONFLICT
+Application visibility,Recruiting,default,false,false,COMMON
+Application visibility,Recruiting,visible,false,false,COMMON
+Application visibility,standard__AllTabSet,default,false,false,COMMON
+Application visibility,standard__AllTabSet,visible,true,true,COMMON
+Application visibility,standard__AlmDevops,default,false,false,COMMON
+Application visibility,standard__AlmDevops,visible,true,true,COMMON
+Application visibility,standard__AppLauncher,default,false,false,COMMON
+Application visibility,standard__AppLauncher,visible,false,true,CONFLICT
+Application visibility,standard__Approvals,default,false,false,COMMON
+Application visibility,standard__Approvals,visible,true,true,COMMON
+Application visibility,standard__Chatter,default,false,false,COMMON
+Application visibility,standard__Chatter,visible,false,true,CONFLICT
+Application visibility,standard__Community,default,false,false,COMMON
+Application visibility,standard__Community,visible,false,true,CONFLICT
+Application visibility,standard__Content,default,false,false,COMMON
+Application visibility,standard__Content,visible,false,true,CONFLICT
+Application visibility,standard__DataGovernanceConsole,default,false,false,COMMON
+Application visibility,standard__DataGovernanceConsole,visible,true,true,COMMON
+Application visibility,standard__DataManager,default,false,false,COMMON
+Application visibility,standard__DataManager,visible,true,true,COMMON
+Application visibility,standard__FlowsApp,default,false,false,COMMON
+Application visibility,standard__FlowsApp,visible,true,true,COMMON
+Application visibility,standard__Insights,default,false,false,COMMON
+Application visibility,standard__Insights,visible,false,true,CONFLICT
+Application visibility,standard__LightningBolt,default,false,false,COMMON
+Application visibility,standard__LightningBolt,visible,false,true,CONFLICT
+Application visibility,standard__LightningInstrumentation,default,false,false,COMMON
+Application visibility,standard__LightningInstrumentation,visible,false,true,CONFLICT
+Application visibility,standard__LightningSales,default,false,false,COMMON
+Application visibility,standard__LightningSales,visible,false,true,CONFLICT
+Application visibility,standard__LightningSalesConsole,default,false,false,COMMON
+Application visibility,standard__LightningSalesConsole,visible,false,true,CONFLICT
+Application visibility,standard__LightningScheduler,default,false,false,COMMON
+Application visibility,standard__LightningScheduler,visible,false,false,COMMON
+Application visibility,standard__LightningService,default,false,false,COMMON
+Application visibility,standard__LightningService,visible,false,true,CONFLICT
+Application visibility,standard__Marketing,default,false,false,COMMON
+Application visibility,standard__Marketing,visible,false,true,CONFLICT
+Application visibility,standard__MSJApp,default,false,false,COMMON
+Application visibility,standard__MSJApp,visible,true,true,COMMON
+Application visibility,standard__Platform,default,false,false,COMMON
+Application visibility,standard__Platform,visible,false,false,COMMON
+Application visibility,standard__QueueManagement,default,false,false,COMMON
+Application visibility,standard__QueueManagement,visible,true,true,COMMON
+Application visibility,standard__Sales,default,false,true,CONFLICT
+Application visibility,standard__Sales,visible,false,true,CONFLICT
+Application visibility,standard__SalesCloudMobile,default,false,false,COMMON
+Application visibility,standard__SalesCloudMobile,visible,true,true,COMMON
+Application visibility,standard__SalesforceCMS,default,false,false,COMMON
+Application visibility,standard__SalesforceCMS,visible,false,false,COMMON
+Application visibility,standard__Service,default,false,false,COMMON
+Application visibility,standard__Service,visible,false,true,CONFLICT
+Application visibility,standard__ServiceConsole,default,false,false,COMMON
+Application visibility,standard__ServiceConsole,visible,false,false,COMMON
+Application visibility,standard__Shield,default,false,false,COMMON
+Application visibility,standard__Shield,visible,true,true,COMMON
+Application visibility,standard__Sites,default,false,false,COMMON
+Application visibility,standard__Sites,visible,false,true,CONFLICT
+Field permission,Account__c.Account_Holder_Photo__c,editable,true,true,COMMON
+Field permission,Account__c.Account_Holder_Photo__c,readable,true,true,COMMON
+Field permission,Account__c.Age__c,readable,true,true,COMMON
+Field permission,Account__c.Avg_Deposit__c,readable,true,true,COMMON
+Field permission,Account__c.Avg_Withdraw__c,readable,true,true,COMMON
+Field permission,Account__c.BALANCE_AMOUNT__c,readable,true,true,COMMON
+Field permission,Account__c.Date_Of_Birth__c,editable,true,true,COMMON
+Field permission,Account__c.Date_Of_Birth__c,readable,true,true,COMMON
+Field permission,Account__c.Email_ID__c,editable,true,true,COMMON
+Field permission,Account__c.Email_ID__c,readable,true,true,COMMON
+Field permission,Account__c.Last_Name__c,editable,true,true,COMMON
+Field permission,Account__c.Last_Name__c,readable,true,true,COMMON
+Field permission,Account__c.Notes__c,editable,true,true,COMMON
+Field permission,Account__c.Notes__c,readable,true,true,COMMON
+Field permission,Account__c.Permanent_Address__c,editable,true,true,COMMON
+Field permission,Account__c.Permanent_Address__c,readable,true,true,COMMON
+Field permission,Account__c.Starting_Balance__c,editable,true,true,COMMON
+Field permission,Account__c.Starting_Balance__c,readable,true,true,COMMON
+Field permission,Account__c.Total_deposit__c,readable,true,true,COMMON
+Field permission,Account__c.Total_Deposit_Count__c,readable,true,true,COMMON
+Field permission,Account__c.Total_Withdraw__c,readable,true,true,COMMON
+Field permission,Account__c.Transactions_Limit__c,readable,true,true,COMMON
+Field permission,Account__c.Withdrawal_Count__c,readable,true,true,COMMON
+Field permission,Bank__c.Bank_ID__c,readable,true,true,COMMON
+Field permission,Bank__c.number_of_branches1__c,editable,true,true,COMMON
+Field permission,Bank__c.number_of_branches1__c,readable,true,true,COMMON
+Field permission,Bank__c.Total_Number_Of_Branches__c,readable,true,true,COMMON
+Field permission,Batch__c.Course__c,editable,true,true,COMMON
+Field permission,Batch__c.Course__c,readable,true,true,COMMON
+Field permission,Branch__c.Branch_Contact_number__c,editable,true,true,COMMON
+Field permission,Branch__c.Branch_Contact_number__c,readable,true,true,COMMON
+Field permission,Branch__c.Total_Number_Of_Account__c,readable,true,true,COMMON
+Field permission,Course__c.Batch__c,editable,true,true,COMMON
+Field permission,Course__c.Batch__c,readable,true,true,COMMON
+Field permission,Course__c.Faculty__c,editable,true,true,COMMON
+Field permission,Course__c.Faculty__c,readable,true,true,COMMON
+Field permission,Faculty__c.Course__c,editable,true,true,COMMON
+Field permission,Faculty__c.Course__c,readable,true,true,COMMON
+Field permission,Faculty__c.Faculty_ID__c,readable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Description__c,editable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Description__c,readable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Job_Posting_Site_URL__c,editable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Job_Posting_Site_URL__c,readable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Status__c,editable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Status__c,readable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Technical_Site__c,editable,true,true,COMMON
+Field permission,Job_Posting_Site__c.Technical_Site__c,readable,true,true,COMMON
+Field permission,Litigation_Calender__c.Task__c,editable,true,true,COMMON
+Field permission,Litigation_Calender__c.Task__c,readable,true,true,COMMON
+Field permission,Loan_Detail__c.Loan_Amount__c,editable,true,true,COMMON
+Field permission,Loan_Detail__c.Loan_Amount__c,readable,true,true,COMMON
+Field permission,Loan_Detail__c.Loan_ID__c,readable,true,true,COMMON
+Field permission,Loan_Detail__c.No_of_Installement__c,editable,true,true,COMMON
+Field permission,Loan_Detail__c.No_of_Installement__c,readable,true,true,COMMON
+Field permission,Loan_Detail__c.Rate_Of_interest__c,editable,true,true,COMMON
+Field permission,Loan_Detail__c.Rate_Of_interest__c,readable,true,true,COMMON
+Field permission,Loan_Detail__c.Tenure__c,editable,true,true,COMMON
+Field permission,Loan_Detail__c.Tenure__c,readable,true,true,COMMON
+Field permission,Position__c.Related_Position__c,editable,true,true,COMMON
+Field permission,Position__c.Related_Position__c,readable,true,true,COMMON
+Field permission,Rating__c.Rating__c,editable,true,true,COMMON
+Field permission,Rating__c.Rating__c,readable,true,true,COMMON
+Field permission,Rating__c.Rating_for__c,editable,true,true,COMMON
+Field permission,Rating__c.Rating_for__c,readable,true,true,COMMON
+Field permission,Rating__c.Student_Name__c,readable,true,true,COMMON
+Field permission,Review__c.Core_Competencies__c,editable,true,true,COMMON
+Field permission,Review__c.Core_Competencies__c,readable,true,true,COMMON
+Field permission,Review__c.Core_Competencies_Comments__c,editable,true,true,COMMON
+Field permission,Review__c.Core_Competencies_Comments__c,readable,true,true,COMMON
+Field permission,Review__c.Experience__c,editable,true,true,COMMON
+Field permission,Review__c.Experience__c,readable,true,true,COMMON
+Field permission,Review__c.Experience_Comments__c,editable,true,true,COMMON
+Field permission,Review__c.Experience_Comments__c,readable,true,true,COMMON
+Field permission,Review__c.Interviewer__c,editable,true,true,COMMON
+Field permission,Review__c.Interviewer__c,readable,true,true,COMMON
+Field permission,Review__c.Leadership_Skills__c,editable,true,true,COMMON
+Field permission,Review__c.Leadership_Skills__c,readable,true,true,COMMON
+Field permission,Review__c.Leadership_Skills_Comments__c,editable,true,true,COMMON
+Field permission,Review__c.Leadership_Skills_Comments__c,readable,true,true,COMMON
+Field permission,Review__c.Reason_Recommended__c,editable,true,true,COMMON
+Field permission,Review__c.Reason_Recommended__c,readable,true,true,COMMON
+Field permission,Review__c.Recommend_for_Hire__c,editable,true,true,COMMON
+Field permission,Review__c.Recommend_for_Hire__c,readable,true,true,COMMON
+Field permission,School__c.Fees__c,editable,true,true,COMMON
+Field permission,School__c.Fees__c,readable,true,true,COMMON
+Field permission,School__c.School_Address__c,editable,true,true,COMMON
+Field permission,School__c.School_Address__c,readable,true,true,COMMON
+Field permission,School__c.School_Email__c,editable,true,true,COMMON
+Field permission,School__c.School_Email__c,readable,true,true,COMMON
+Field permission,School__c.School_Phone__c,editable,true,true,COMMON
+Field permission,School__c.School_Phone__c,readable,true,true,COMMON
+Field permission,Student__c.Address__c,editable,true,true,COMMON
+Field permission,Student__c.Address__c,readable,true,true,COMMON
+Field permission,Student__c.Adhaar_Card__c,editable,true,true,COMMON
+Field permission,Student__c.Adhaar_Card__c,readable,true,true,COMMON
+Field permission,Student__c.Age__c,readable,true,true,COMMON
+Field permission,Student__c.Approval_Status__c,editable,true,true,COMMON
+Field permission,Student__c.Approval_Status__c,readable,true,true,COMMON
+Field permission,Student__c.Avg_rating__c,readable,true,true,COMMON
+Field permission,Student__c.Batch_time__c,editable,true,true,COMMON
+Field permission,Student__c.Batch_time__c,readable,true,true,COMMON
+Field permission,Student__c.Class_Enrolled__c,editable,true,true,COMMON
+Field permission,Student__c.Class_Enrolled__c,readable,true,true,COMMON
+Field permission,Student__c.Count_of_rating__c,readable,true,true,COMMON
+Field permission,Student__c.Country__c,editable,true,true,COMMON
+Field permission,Student__c.Country__c,readable,true,true,COMMON
+Field permission,Student__c.Course_start_time__c,editable,true,true,COMMON
+Field permission,Student__c.Course_start_time__c,readable,true,true,COMMON
+Field permission,Student__c.Father_s_Contact_Number__c,editable,true,true,COMMON
+Field permission,Student__c.Father_s_Contact_Number__c,readable,true,true,COMMON
+Field permission,Student__c.Hobbies__c,editable,true,true,COMMON
+Field permission,Student__c.Hobbies__c,readable,true,true,COMMON
+Field permission,Student__c.Linkdin_Profile__c,editable,true,true,COMMON
+Field permission,Student__c.Linkdin_Profile__c,readable,true,true,COMMON
+Field permission,Student__c.Others__c,editable,true,true,COMMON
+Field permission,Student__c.Others__c,readable,true,true,COMMON
+Field permission,Student__c.Proffessional__c,editable,true,true,COMMON
+Field permission,Student__c.Proffessional__c,readable,true,true,COMMON
+Field permission,Student__c.Referred_By__c,editable,true,true,COMMON
+Field permission,Student__c.Referred_By__c,readable,true,true,COMMON
+Field permission,Student__c.Scholarship__c,editable,true,true,COMMON
+Field permission,Student__c.Scholarship__c,readable,true,true,COMMON
+Field permission,Student__c.School__c,editable,true,true,COMMON
+Field permission,Student__c.School__c,readable,true,true,COMMON
+Field permission,Student__c.Student_Contact_Number__c,editable,true,true,COMMON
+Field permission,Student__c.Student_Contact_Number__c,readable,true,true,COMMON
+Field permission,Student__c.Student_Geo_Location__c,editable,true,true,COMMON
+Field permission,Student__c.Student_Geo_Location__c,readable,true,true,COMMON
+Field permission,Student__c.Student_Name__c,editable,true,true,COMMON
+Field permission,Student__c.Student_Name__c,readable,true,true,COMMON
+Field permission,Student__c.student_Remark__c,readable,true,true,COMMON
+Field permission,Student__c.Sum_of_Rating__c,readable,true,true,COMMON
+Field permission,Student__c.X12th_Percentage__c,editable,,true,MANAGER_ONLY
+Field permission,Student__c.X12th_Percentage__c,readable,,true,MANAGER_ONLY
+Object permission,Account__c,allowEdit,true,,HELPDESK_ONLY
+Object permission,Account__c,allowRead,true,,HELPDESK_ONLY
+Object permission,Bank__c,allowRead,true,,HELPDESK_ONLY
+Object permission,Batch__c,allowCreate,,true,MANAGER_ONLY
+Object permission,Batch__c,allowDelete,,true,MANAGER_ONLY
+Object permission,Batch__c,allowEdit,,true,MANAGER_ONLY
+Object permission,Batch__c,allowRead,,true,MANAGER_ONLY
+Object permission,Branch__c,allowRead,true,,HELPDESK_ONLY
+Object permission,Course__c,allowCreate,,true,MANAGER_ONLY
+Object permission,Course__c,allowEdit,,true,MANAGER_ONLY
+Object permission,Course__c,allowRead,,true,MANAGER_ONLY
+Object permission,Faculty__c,allowCreate,,true,MANAGER_ONLY
+Object permission,Faculty__c,allowEdit,,true,MANAGER_ONLY
+Object permission,Faculty__c,allowRead,,true,MANAGER_ONLY
+Object permission,Institute__c,allowCreate,,true,MANAGER_ONLY
+Object permission,Institute__c,allowDelete,,true,MANAGER_ONLY
+Object permission,Institute__c,allowEdit,,true,MANAGER_ONLY
+Object permission,Institute__c,allowRead,,true,MANAGER_ONLY
+Object permission,Loan__c,allowCreate,true,,HELPDESK_ONLY
+Object permission,Loan__c,allowEdit,true,,HELPDESK_ONLY
+Object permission,Loan__c,allowRead,true,,HELPDESK_ONLY
+Object permission,Loan_Detail__c,allowCreate,true,,HELPDESK_ONLY
+Object permission,Loan_Detail__c,allowEdit,true,,HELPDESK_ONLY
+Object permission,Loan_Detail__c,allowRead,true,,HELPDESK_ONLY
+Object permission,Rating__c,allowCreate,,true,MANAGER_ONLY
+Object permission,Rating__c,allowDelete,,true,MANAGER_ONLY
+Object permission,Rating__c,allowEdit,,true,MANAGER_ONLY
+Object permission,Rating__c,allowRead,,true,MANAGER_ONLY
+Object permission,Student__c,allowCreate,,true,MANAGER_ONLY
+Object permission,Student__c,allowDelete,,true,MANAGER_ONLY
+Object permission,Student__c,allowEdit,,true,MANAGER_ONLY
+Object permission,Student__c,allowRead,,true,MANAGER_ONLY
+Object permission,Student_in_Batch__c,allowCreate,,true,MANAGER_ONLY
+Object permission,Student_in_Batch__c,allowDelete,,true,MANAGER_ONLY
+Object permission,Student_in_Batch__c,allowEdit,,true,MANAGER_ONLY
+Object permission,Student_in_Batch__c,allowRead,,true,MANAGER_ONLY
+Page layout,(master),layout,test__c-test Layout,test__c-test Layout,COMMON
+Page layout,Account.Sales_Leadership_Team,layout,Account-Account Layout,Account-Account Layout,COMMON
+Page layout,Account.service,layout,Account-Account %28Marketing%29 Layout,Account-Account %28Marketing%29 Layout,COMMON
+Page layout,Account__c.Employee,layout,Account__c-Employee layout,Account__c-Account Layout,CONFLICT
+Page layout,Account__c.Manager,layout,Account__c-Account Layout,Account__c-Account Layout,COMMON
+Page layout,Event.Showing,layout,Event-Showing Layout,Event-Showing Layout,COMMON
+Page layout,Loan_Detail__c.Cashier,layout,Loan_Detail__c-Loan Detail Layout,Loan_Detail__c-Loan Detail Layout,COMMON
+Page layout,Loan_Detail__c.helpdesk,layout,Loan_Detail__c-helpdesk,Loan_Detail__c-Loan Detail Layout,CONFLICT
+Page layout,Loan_Detail__c.Manager,layout,Loan_Detail__c-Loan Detail Layout,Loan_Detail__c-Loan Detail Layout,COMMON
+Page layout,Student__c.Associate_faculty,layout,Student__c-Admin Student Layout,Student__c-Admin Student Layout,COMMON
+Page layout,Student__c.Director_RT,layout,Student__c-Director,Student__c-Director,COMMON
+Page layout,Student__c.Front_Desk_RT,layout,Student__c-Front Desk page layout,Student__c-Front Desk page layout,COMMON
+Page layout,Student__c.Manager,layout,Student__c-Manager Page layout,Student__c-Manager Page layout,COMMON
+Record type visibility/default,Account.Sales_Leadership_Team,default,true,true,COMMON
+Record type visibility/default,Account.Sales_Leadership_Team,visible,true,true,COMMON
+Record type visibility/default,Account.service,default,false,false,COMMON
+Record type visibility/default,Account.service,visible,true,true,COMMON
+Record type visibility/default,Account__c.Employee,default,true,false,CONFLICT
+Record type visibility/default,Account__c.Employee,visible,true,false,CONFLICT
+Record type visibility/default,Account__c.Manager,default,false,false,COMMON
+Record type visibility/default,Account__c.Manager,visible,false,false,COMMON
+Record type visibility/default,Event.Showing,default,true,true,COMMON
+Record type visibility/default,Event.Showing,visible,true,true,COMMON
+Record type visibility/default,Loan_Detail__c.Cashier,default,false,false,COMMON
+Record type visibility/default,Loan_Detail__c.Cashier,visible,false,false,COMMON
+Record type visibility/default,Loan_Detail__c.helpdesk,default,true,false,CONFLICT
+Record type visibility/default,Loan_Detail__c.helpdesk,visible,true,false,CONFLICT
+Record type visibility/default,Loan_Detail__c.Manager,default,false,false,COMMON
+Record type visibility/default,Loan_Detail__c.Manager,visible,false,false,COMMON
+Record type visibility/default,Student__c.Associate_faculty,default,false,false,COMMON
+Record type visibility/default,Student__c.Associate_faculty,visible,false,false,COMMON
+Record type visibility/default,Student__c.Director_RT,default,false,false,COMMON
+Record type visibility/default,Student__c.Director_RT,visible,false,false,COMMON
+Record type visibility/default,Student__c.Front_Desk_RT,default,true,false,CONFLICT
+Record type visibility/default,Student__c.Front_Desk_RT,visible,true,false,CONFLICT
+Record type visibility/default,Student__c.Manager,default,false,true,CONFLICT
+Record type visibility/default,Student__c.Manager,visible,true,true,COMMON
+System permission,ActivitiesAccess,enabled,true,true,COMMON
+System permission,AddDirectMessageMembers,enabled,true,true,COMMON
+System permission,AllowUniversalSearch,enabled,true,true,COMMON
+System permission,AllowViewKnowledge,enabled,true,true,COMMON
+System permission,ApexRestServices,enabled,true,true,COMMON
+System permission,ApiEnabled,enabled,true,true,COMMON
+System permission,AssignTopics,enabled,true,true,COMMON
+System permission,ChatterEditOwnPost,enabled,true,true,COMMON
+System permission,ChatterFileLink,enabled,true,true,COMMON
+System permission,ChatterInternalUser,enabled,true,true,COMMON
+System permission,ChatterInviteExternalUsers,enabled,true,true,COMMON
+System permission,ChatterOwnGroups,enabled,true,true,COMMON
+System permission,ContentWorkspaces,enabled,true,true,COMMON
+System permission,ConvertLeads,enabled,,true,MANAGER_ONLY
+System permission,CreateCustomizeFilters,enabled,true,true,COMMON
+System permission,CreateCustomizeReports,enabled,true,true,COMMON
+System permission,CreateTopics,enabled,true,true,COMMON
+System permission,DistributeFromPersWksp,enabled,true,true,COMMON
+System permission,EditEvent,enabled,true,true,COMMON
+System permission,EditOppLineItemUnitPrice,enabled,true,true,COMMON
+System permission,EditTask,enabled,true,true,COMMON
+System permission,EditTopics,enabled,true,true,COMMON
+System permission,EmailMass,enabled,true,true,COMMON
+System permission,EmailSingle,enabled,true,true,COMMON
+System permission,EnableCommunityAppLauncher,enabled,true,true,COMMON
+System permission,EnableNotifications,enabled,true,true,COMMON
+System permission,ExportReport,enabled,true,true,COMMON
+System permission,FieldServiceAccess,enabled,true,true,COMMON
+System permission,ImportPersonal,enabled,,true,MANAGER_ONLY
+System permission,LightningConsoleAllowedForUser,enabled,true,true,COMMON
+System permission,LightningExperienceUser,enabled,true,true,COMMON
+System permission,ListEmailSend,enabled,true,true,COMMON
+System permission,MassInlineEdit,enabled,true,true,COMMON
+System permission,OverrideForecasts,enabled,true,true,COMMON
+System permission,RemoveDirectMessageMembers,enabled,true,true,COMMON
+System permission,RunReports,enabled,true,true,COMMON
+System permission,SelectFilesFromSalesforce,enabled,true,true,COMMON
+System permission,SendSitRequests,enabled,true,true,COMMON
+System permission,ShareFilesWithNetworks,enabled,true,true,COMMON
+System permission,ShowCompanyNameAsUserBadge,enabled,true,true,COMMON
+System permission,SubmitMacrosAllowed,enabled,true,true,COMMON
+System permission,SubscribeToLightningReports,enabled,true,true,COMMON
+System permission,TransactionalEmailSend,enabled,true,true,COMMON
+System permission,UseWebLink,enabled,true,true,COMMON
+System permission,ViewHelpLink,enabled,true,true,COMMON
+System permission,ViewRoles,enabled,true,true,COMMON
+System permission,ViewSetup,enabled,,true,MANAGER_ONLY
+System permission,ViewSetupAuditTrail,enabled,,true,MANAGER_ONLY
+Tab visibility,Account__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Bank__c,visibility,Hidden,DefaultOn,CONFLICT
+Tab visibility,Batch__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Branch__c,visibility,Hidden,DefaultOn,CONFLICT
+Tab visibility,Candidate__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,Course__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Faculty__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Interviewer__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,Job_Application__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,Job_Posting_Site__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Knowledge__kav,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Litigation_Calender__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Loan__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Loan_Detail__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Location__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,Location_Tracing__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,People_Tracing__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,Person__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,Position__c,visibility,Hidden,Hidden,COMMON
+Tab visibility,Property__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Rating__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Review__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,School__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Student__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Student_in_Batch__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,test1__c,visibility,DefaultOn,DefaultOn,COMMON
+Tab visibility,Transaction__c,visibility,DefaultOn,DefaultOn,COMMON

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Cust_Acrnoym__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Parent Cust Acrnoym</label>
+    <referenceTo>Customer_Acronym__c</referenceTo>
+    <relationshipLabel>Customer Acronyms</relationshipLabel>
+    <relationshipName>Customer_Acronyms</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

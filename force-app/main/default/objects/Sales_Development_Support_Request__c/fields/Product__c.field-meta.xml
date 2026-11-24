@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <label>Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Unit_BU__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>xAnalyser</fullName>
+                <default>false</default>
+                <label>xAnalyser</label>
+            </value>
+            <value>
+                <fullName>VoLTE Analytics</fullName>
+                <default>false</default>
+                <label>VoLTE Analytics</label>
+            </value>
+            <value>
+                <fullName>Video Streaming Analytics</fullName>
+                <default>false</default>
+                <label>Video Streaming Analytics</label>
+            </value>
+            <value>
+                <fullName>Tracing</fullName>
+                <default>false</default>
+                <label>Tracing</label>
+            </value>
+            <value>
+                <fullName>SuperApps Intelligence</fullName>
+                <default>false</default>
+                <label>SuperApps Intelligence</label>
+            </value>
+            <value>
+                <fullName>Subscriber Care</fullName>
+                <default>false</default>
+                <label>Subscriber Care</label>
+            </value>
+            <value>
+                <fullName>Roaming DNA</fullName>
+                <default>false</default>
+                <label>Roaming DNA</label>
+            </value>
+            <value>
+                <fullName>Mapview</fullName>
+                <default>false</default>
+                <label>Mapview</label>
+            </value>
+            <value>
+                <fullName>IPDR</fullName>
+                <default>false</default>
+                <label>IPDR</label>
+            </value>
+            <value>
+                <fullName>IoT Device Analytics</fullName>
+                <default>false</default>
+                <label>IoT Device Analytics</label>
+            </value>
+            <value>
+                <fullName>Intelligent Triggers</fullName>
+                <default>false</default>
+                <label>Intelligent Triggers</label>
+            </value>
+            <value>
+                <fullName>Home Analytics</fullName>
+                <default>false</default>
+                <label>Home Analytics</label>
+            </value>
+            <value>
+                <fullName>Explorer</fullName>
+                <default>false</default>
+                <label>Explorer</label>
+            </value>
+            <value>
+                <fullName>Event Analytics</fullName>
+                <default>false</default>
+                <label>Event Analytics</label>
+            </value>
+            <value>
+                <fullName>Edge Analytics</fullName>
+                <default>false</default>
+                <label>Edge Analytics</label>
+            </value>
+            <value>
+                <fullName>Digital Leads Generator</fullName>
+                <default>false</default>
+                <label>Digital Leads Generator</label>
+            </value>
+            <value>
+                <fullName>Data Fraud</fullName>
+                <default>false</default>
+                <label>Data Fraud</label>
+            </value>
+            <value>
+                <fullName>Crypto ID</fullName>
+                <default>false</default>
+                <label>Crypto ID</label>
+            </value>
+            <value>
+                <fullName>Crisis Center</fullName>
+                <default>false</default>
+                <label>Crisis Center</label>
+            </value>
+            <value>
+                <fullName>Churn Prediction</fullName>
+                <default>false</default>
+                <label>Churn Prediction</label>
+            </value>
+            <value>
+                <fullName>Alerts</fullName>
+                <default>false</default>
+                <label>Alerts</label>
+            </value>
+            <value>
+                <fullName>Test Call Generator</fullName>
+                <default>false</default>
+                <label>Test Call Generator</label>
+            </value>
+            <value>
+                <fullName>Subscription Fraud</fullName>
+                <default>false</default>
+                <label>Subscription Fraud</label>
+            </value>
+            <value>
+                <fullName>SIM Box Detection</fullName>
+                <default>false</default>
+                <label>SIM Box Detection</label>
+            </value>
+            <value>
+                <fullName>RAID Wholesale Fraud</fullName>
+                <default>false</default>
+                <label>RAID Wholesale Fraud</label>
+            </value>
+            <value>
+                <fullName>RAID Voice Fraud</fullName>
+                <default>false</default>
+                <label>RAID Voice Fraud</label>
+            </value>
+            <value>
+                <fullName>RAID Usage Assurance</fullName>
+                <default>false</default>
+                <label>RAID Usage Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID Revenue Assurance</fullName>
+                <default>false</default>
+                <label>RAID Revenue Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID Rating Validation</fullName>
+                <default>false</default>
+                <label>RAID Rating Validation</label>
+            </value>
+            <value>
+                <fullName>RAID Provisioning Assurance</fullName>
+                <default>false</default>
+                <label>RAID Provisioning Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID Platform</fullName>
+                <default>false</default>
+                <label>RAID Platform</label>
+            </value>
+            <value>
+                <fullName>RAID Partner Incentives Assurance</fullName>
+                <default>false</default>
+                <label>RAID Partner Incentives Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID Partner Collections Assurance</fullName>
+                <default>false</default>
+                <label>RAID Partner Collections Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID Mobile Money</fullName>
+                <default>false</default>
+                <label>RAID Mobile Money</label>
+            </value>
+            <value>
+                <fullName>RAID Margin Assurance</fullName>
+                <default>false</default>
+                <label>RAID Margin Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID IoT Fraud</fullName>
+                <default>false</default>
+                <label>RAID IoT Fraud</label>
+            </value>
+            <value>
+                <fullName>RAID Fraud Management</fullName>
+                <default>false</default>
+                <label>RAID Fraud Management</label>
+            </value>
+            <value>
+                <fullName>RAID Data Fraud</fullName>
+                <default>false</default>
+                <label>RAID Data Fraud</label>
+            </value>
+            <value>
+                <fullName>RAID Custom Module</fullName>
+                <default>false</default>
+                <label>RAID Custom Module</label>
+            </value>
+            <value>
+                <fullName>RAID Business Assurance</fullName>
+                <default>false</default>
+                <label>RAID Business Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID Billing Assurance</fullName>
+                <default>false</default>
+                <label>RAID Billing Assurance</label>
+            </value>
+            <value>
+                <fullName>RAID 9 with Catalogue</fullName>
+                <default>false</default>
+                <label>RAID 9 with Catalogue</label>
+            </value>
+            <value>
+                <fullName>Proactive Revenue Assurance</fullName>
+                <default>false</default>
+                <label>Proactive Revenue Assurance</label>
+            </value>
+            <value>
+                <fullName>Voice Policy Engine</fullName>
+                <default>false</default>
+                <label>Voice Policy Engine</label>
+            </value>
+            <value>
+                <fullName>Voice Firewall</fullName>
+                <default>false</default>
+                <label>Voice Firewall</label>
+            </value>
+            <value>
+                <fullName>VMCC</fullName>
+                <default>false</default>
+                <label>VMCC</label>
+            </value>
+            <value>
+                <fullName>SMS InstaLink</fullName>
+                <default>false</default>
+                <label>SMS InstaLink</label>
+            </value>
+            <value>
+                <fullName>Smart Call Assistant</fullName>
+                <default>false</default>
+                <label>Smart Call Assistant</label>
+            </value>
+            <value>
+                <fullName>Short Codes</fullName>
+                <default>false</default>
+                <label>Short Codes</label>
+            </value>
+            <value>
+                <fullName>RSC-RoamWallet</fullName>
+                <default>false</default>
+                <label>RSC-RoamWallet</label>
+            </value>
+            <value>
+                <fullName>RSC-RoamPolicy</fullName>
+                <default>false</default>
+                <label>RSC-RoamPolicy</label>
+            </value>
+            <value>
+                <fullName>Roaming Replicator</fullName>
+                <default>false</default>
+                <label>Roaming Replicator</label>
+            </value>
+            <value>
+                <fullName>RoamFlow</fullName>
+                <default>false</default>
+                <label>RoamFlow</label>
+            </value>
+            <value>
+                <fullName>Roamer Analytics</fullName>
+                <default>false</default>
+                <label>Roamer Analytics</label>
+            </value>
+            <value>
+                <fullName>RoamActivate</fullName>
+                <default>false</default>
+                <label>RoamActivate</label>
+            </value>
+            <value>
+                <fullName>Roam Filter</fullName>
+                <default>false</default>
+                <label>Roam Filter</label>
+            </value>
+            <value>
+                <fullName>REF</fullName>
+                <default>false</default>
+                <label>REF</label>
+            </value>
+            <value>
+                <fullName>NTR-VoLTE</fullName>
+                <default>false</default>
+                <label>NTR-VoLTE</label>
+            </value>
+            <value>
+                <fullName>NTR-Quality</fullName>
+                <default>false</default>
+                <label>NTR-Quality</label>
+            </value>
+            <value>
+                <fullName>NTR-IoT</fullName>
+                <default>false</default>
+                <label>NTR-IoT</label>
+            </value>
+            <value>
+                <fullName>NTR-Base</fullName>
+                <default>false</default>
+                <label>NTR-Base</label>
+            </value>
+            <value>
+                <fullName>NTR-Analytics</fullName>
+                <default>false</default>
+                <label>NTR-Analytics</label>
+            </value>
+            <value>
+                <fullName>NTR-5G</fullName>
+                <default>false</default>
+                <label>NTR-5G</label>
+            </value>
+            <value>
+                <fullName>MVNO Roaming Control Center (CRCC)</fullName>
+                <default>false</default>
+                <label>MVNO Roaming Control Center (CRCC)</label>
+            </value>
+            <value>
+                <fullName>IRTA</fullName>
+                <default>false</default>
+                <label>IRTA</label>
+            </value>
+            <value>
+                <fullName>IoT Packet Printing</fullName>
+                <default>false</default>
+                <label>IoT Packet Printing</label>
+            </value>
+            <value>
+                <fullName>iCampaign</fullName>
+                <default>false</default>
+                <label>iCampaign</label>
+            </value>
+            <value>
+                <fullName>HomePolicy</fullName>
+                <default>false</default>
+                <label>HomePolicy</label>
+            </value>
+            <value>
+                <fullName>GTP Proxy</fullName>
+                <default>false</default>
+                <label>GTP Proxy</label>
+            </value>
+            <value>
+                <fullName>eSIM Detection</fullName>
+                <default>false</default>
+                <label>eSIM Detection</label>
+            </value>
+            <value>
+                <fullName>eCaller ID</fullName>
+                <default>false</default>
+                <label>eCaller ID</label>
+            </value>
+            <value>
+                <fullName>Cloud Roaming VAS</fullName>
+                <default>false</default>
+                <label>Cloud Roaming VAS</label>
+            </value>
+            <value>
+                <fullName>BRG</fullName>
+                <default>false</default>
+                <label>BRG</label>
+            </value>
+            <value>
+                <fullName>URL Scanner</fullName>
+                <default>false</default>
+                <label>URL Scanner</label>
+            </value>
+            <value>
+                <fullName>SS7 Firewall</fullName>
+                <default>false</default>
+                <label>SS7 Firewall</label>
+            </value>
+            <value>
+                <fullName>SMS Firewall</fullName>
+                <default>false</default>
+                <label>SMS Firewall</label>
+            </value>
+            <value>
+                <fullName>Security Edge Protection Proxy</fullName>
+                <default>false</default>
+                <label>Security Edge Protection Proxy</label>
+            </value>
+            <value>
+                <fullName>Penetration Testing Services</fullName>
+                <default>false</default>
+                <label>Penetration Testing Services</label>
+            </value>
+            <value>
+                <fullName>GTP Firewall</fullName>
+                <default>false</default>
+                <label>GTP Firewall</label>
+            </value>
+            <value>
+                <fullName>Diameter Firewall</fullName>
+                <default>false</default>
+                <label>Diameter Firewall</label>
+            </value>
+            <value>
+                <fullName>5G Firewall</fullName>
+                <default>false</default>
+                <label>5G Firewall</label>
+            </value>
+            <value>
+                <fullName>VoLTE</fullName>
+                <default>false</default>
+                <label>VoLTE</label>
+            </value>
+            <value>
+                <fullName>Smartphone Experience</fullName>
+                <default>false</default>
+                <label>Smartphone Experience</label>
+            </value>
+            <value>
+                <fullName>SITE</fullName>
+                <default>false</default>
+                <label>SITE</label>
+            </value>
+            <value>
+                <fullName>SiC</fullName>
+                <default>false</default>
+                <label>SiC</label>
+            </value>
+            <value>
+                <fullName>Lab Testing (dsTest)</fullName>
+                <default>false</default>
+                <label>Lab Testing (dsTest)</label>
+            </value>
+            <value>
+                <fullName>IOT</fullName>
+                <default>false</default>
+                <label>IOT</label>
+            </value>
+            <value>
+                <fullName>ICQT</fullName>
+                <default>false</default>
+                <label>ICQT</label>
+            </value>
+            <value>
+                <fullName>Global Roamer</fullName>
+                <default>false</default>
+                <label>Global Roamer</label>
+            </value>
+            <value>
+                <fullName>eSIM</fullName>
+                <default>false</default>
+                <label>eSIM</label>
+            </value>
+            <value>
+                <fullName>Core Network Testing</fullName>
+                <default>false</default>
+                <label>Core Network Testing</label>
+            </value>
+            <value>
+                <fullName>Benchmarking</fullName>
+                <default>false</default>
+                <label>Benchmarking</label>
+            </value>
+            <value>
+                <fullName>5G</fullName>
+                <default>false</default>
+                <label>5G</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>xAnalyser</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>VoLTE Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Video Streaming Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Tracing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>SuperApps Intelligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Subscriber Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Roaming DNA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Mapview</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>IPDR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>IoT Device Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Intelligent Triggers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Home Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Explorer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Event Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Edge Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Digital Leads Generator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Data Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Crypto ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Crisis Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Churn Prediction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engagement and Experience</controllingFieldValue>
+            <valueName>Alerts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>Test Call Generator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>Subscription Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>SIM Box Detection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Wholesale Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Voice Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Usage Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Revenue Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Rating Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Provisioning Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Platform</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Partner Incentives Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Partner Collections Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Mobile Money</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Margin Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID IoT Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Fraud Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Data Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Custom Module</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Business Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID Billing Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>RAID 9 with Catalogue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Risk</controllingFieldValue>
+            <valueName>Proactive Revenue Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Voice Policy Engine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Voice Firewall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>VMCC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>SMS InstaLink</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Smart Call Assistant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Short Codes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>RSC-RoamWallet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>RSC-RoamPolicy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Roaming Replicator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>RoamFlow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Roamer Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>RoamActivate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Roam Filter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>REF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>NTR-VoLTE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>NTR-Quality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>NTR-IoT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>NTR-Base</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>NTR-Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>NTR-5G</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>MVNO Roaming Control Center (CRCC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>IRTA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>IoT Packet Printing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>iCampaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>HomePolicy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>GTP Proxy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>eSIM Detection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>eCaller ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>Cloud Roaming VAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Roaming</controllingFieldValue>
+            <valueName>BRG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>URL Scanner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>SS7 Firewall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>SMS Firewall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Security Edge Protection Proxy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Penetration Testing Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>GTP Firewall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Diameter Firewall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>5G Firewall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>VoLTE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>Smartphone Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>SITE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>SiC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>Lab Testing (dsTest)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>IOT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>ICQT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>Global Roamer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>eSIM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>Core Network Testing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>Benchmarking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Testing</controllingFieldValue>
+            <valueName>5G</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

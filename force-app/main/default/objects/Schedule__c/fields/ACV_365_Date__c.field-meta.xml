@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_365_Date__c</fullName>
+    <formula>IF(
+AND( Billing_Frequency__c = &quot;Monthly&quot;,
+ ISPICKVAL(Type__c,&quot;Billing&quot;),
+ Day_Sequence__c &lt;364 )
+,
+ ACV_Start_Date__c + Day_Sequence__c,
+ Scheduled_Date__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV (365) Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

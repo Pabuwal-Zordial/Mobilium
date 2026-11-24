@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Run_ERP_Async</name>
+        <label>Run ERP Async</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <actionName>fferpcore__MessagingActionDeliverLater</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>publicationIdentifier</name>
+            <value>
+                <stringValue>PSA/Region Dim1 Pub</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>fferpcore__MessagingActionDeliverLater</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Run_ERP_Synchronously</name>
+        <label>Run ERP Synchronously</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <actionName>fferpcore__MessagingActionDeliverNow</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>publicationIdentifier</name>
+            <value>
+                <stringValue>PSA/Region Dim1 Pub</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>fferpcore__MessagingActionDeliverNow</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Run_Dim1_Creation_Synchronously</name>
+        <label>Run Dim1 Creation Synchronously</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Run_ERP_Async</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>NO</defaultConnectorLabel>
+        <rules>
+            <name>YES</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CreateDim1ImmediatelyTRUE</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Run_ERP_Synchronously</targetReference>
+            </connector>
+            <label>YES</label>
+        </rules>
+    </decisions>
+    <description>ERP Integration - PSA Region to Dim1 (Process previously configured in PSA - DEPRECATED Dimension 1 Creation Process Builder).</description>
+    <formulas>
+        <name>CreateDim1ImmediatelyTRUE</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Setup.FFX_PSAtoFFAIntegrationCustomSetting__c.FFX_Create_Dimension_1_Immediately__c} = TRUE</expression>
+    </formulas>
+    <interviewLabel>PSA - Region - Master AFTER Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA - Region - Master AFTER Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Run_Dim1_Creation_Synchronously</targetReference>
+        </connector>
+        <object>pse__Region__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

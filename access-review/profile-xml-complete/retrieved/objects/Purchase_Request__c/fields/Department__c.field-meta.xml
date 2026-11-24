@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department__c</fullName>
+    <label>Department</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PSO NASA</fullName>
+                <default>false</default>
+                <label>PSO NASA</label>
+            </value>
+            <value>
+                <fullName>PSO MENA</fullName>
+                <default>false</default>
+                <label>PSO MENA</label>
+            </value>
+            <value>
+                <fullName>PSO NAMR</fullName>
+                <default>false</default>
+                <label>PSO NAMR</label>
+            </value>
+            <value>
+                <fullName>PSO LATAM</fullName>
+                <default>false</default>
+                <label>PSO LATAM</label>
+            </value>
+            <value>
+                <fullName>PSO SEAO</fullName>
+                <default>false</default>
+                <label>PSO SEAO</label>
+            </value>
+            <value>
+                <fullName>PSO EUROPE</fullName>
+                <default>false</default>
+                <label>PSO EUROPE</label>
+            </value>
+            <value>
+                <fullName>PSO EECIS</fullName>
+                <default>false</default>
+                <label>PSO EECIS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

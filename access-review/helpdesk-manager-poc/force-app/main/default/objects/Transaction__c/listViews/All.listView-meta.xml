@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Transaction_Amount__c</columns>
+    <columns>Transaction_Name__c</columns>
+    <columns>Type_of_Transaction__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

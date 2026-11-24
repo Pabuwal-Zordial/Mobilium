@@ -1,0 +1,24 @@
+<template>
+    <lightning-modal-header label="Approve Request"></lightning-modal-header>
+    <lightning-modal-body>
+        <div class="slds-form-element slds-p-around_medium">
+            <label class="slds-form-element__label" for="approveComments">Comments</label>
+            <div class="slds-form-element__control">
+                <textarea
+                    id="approveComments"
+                    class="slds-textarea"
+                    rows="8"
+                    placeholder="Add a comment..."
+                    onchange={handleCommentChange}>
+                </textarea>
+            </div>
+            <template if:true={errorMessage}>
+                <p class="slds-text-color_error slds-m-top_x-small">{errorMessage}</p>
+            </template>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="Cancel" onclick={handleCancel} disabled={isLoading}></lightning-button>
+        <lightning-button variant="brand" label="Approve" onclick={handleApprove} disabled={isLoading} class="slds-m-left_small"></lightning-button>
+    </lightning-modal-footer>
+</template>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sage_Run_Full_Load__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>If checked, Sage inbound batch will fetch and process all Employee records from Sage People.</description>
+    <label>Sage Run Full Load</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

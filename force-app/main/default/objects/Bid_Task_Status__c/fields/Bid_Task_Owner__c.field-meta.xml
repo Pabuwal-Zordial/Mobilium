@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid_Task_Owner__c</fullName>
+    <label>Bid Task Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amal.Madhu</fullName>
+                <default>false</default>
+                <label>Amal.Madhu</label>
+            </value>
+            <value>
+                <fullName>Deep.Basu</fullName>
+                <default>false</default>
+                <label>Deep.Basu</label>
+            </value>
+            <value>
+                <fullName>Nitin.Kundargi</fullName>
+                <default>false</default>
+                <label>Nitin.Kundargi</label>
+            </value>
+            <value>
+                <fullName>Ravi.GV</fullName>
+                <default>false</default>
+                <label>Ravi.GV</label>
+            </value>
+            <value>
+                <fullName>Suchita.Chowdhury</fullName>
+                <default>false</default>
+                <label>Suchita.Chowdhury</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

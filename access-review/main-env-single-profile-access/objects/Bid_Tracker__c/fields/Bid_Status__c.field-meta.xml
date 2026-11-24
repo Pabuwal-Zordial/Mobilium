@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid_Status__c</fullName>
+    <label>Bid Status</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Submitted (1)</fullName>
+                <default>false</default>
+                <label>Submitted (1)</label>
+            </value>
+            <value>
+                <fullName>Resubmitted (P)</fullName>
+                <default>false</default>
+                <label>Resubmitted (P)</label>
+            </value>
+            <value>
+                <fullName>ON HOLD</fullName>
+                <default>false</default>
+                <label>ON HOLD</label>
+            </value>
+            <value>
+                <fullName>Closed_Without_Action</fullName>
+                <default>false</default>
+                <label>Closed Without Action</label>
+            </value>
+            <value>
+                <fullName>NO BID</fullName>
+                <default>false</default>
+                <label>NO BID</label>
+            </value>
+            <value>
+                <fullName>Bid Defense</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bid Defense</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lost</label>
+            </value>
+            <value>
+                <fullName>Post Submission</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Post Submission</label>
+            </value>
+            <value>
+                <fullName>Won</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Won</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

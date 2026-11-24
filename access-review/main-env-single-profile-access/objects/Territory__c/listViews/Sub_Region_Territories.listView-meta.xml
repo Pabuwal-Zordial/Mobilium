@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Region_Territories</fullName>
+    <columns>NAME</columns>
+    <columns>Parent_Territory__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Territory__c.Sub_Region</value>
+    </filters>
+    <label>Sub-Region Territories</label>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>min_Balance_current</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( ISPICKVAL( Account_Type__c , &apos;Current Account&apos;),         BALANCE_AMOUNT__c   &lt; 25000, false)</errorConditionFormula>
+    <errorDisplayField>Minimum_Balance1__c</errorDisplayField>
+    <errorMessage>Minimum Balance  for current account is 25000/-</errorMessage>
+</ValidationRule>

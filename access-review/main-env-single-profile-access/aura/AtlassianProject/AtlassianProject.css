@@ -1,0 +1,16 @@
+.THIS .initialLoader {
+	position: initial;
+	min-height: 45vh;
+}
+
+.THIS .spinner-custom {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 300%;
+	margin-left: -100%;
+}
+
+.THIS .slds-spinner--large {
+	position: sticky;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limits_must_be_correctly_set</fullName>
+    <active>true</active>
+    <description>This validation rule is to ensure that the Upper Limit is above the Lower limit and visa versa. All other validation rules operate under this assumption of relativity.</description>
+    <errorConditionFormula>VSOE_Upper_Limit__c &lt;= VSOE_Lower_Limit__c</errorConditionFormula>
+    <errorMessage>VSOE Upper Limit must be greater than Lower Limit</errorMessage>
+</ValidationRule>

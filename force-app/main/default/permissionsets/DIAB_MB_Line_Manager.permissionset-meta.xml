@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>DIAB_MB_View_Resource_Request</name>
+    </customPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.pse__Default_Cost_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>DIAB_MB_Line_Manager</label>
+</PermissionSet>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VSOE_Region</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>VSOE_Percentage__c</columns>
+    <columns>NAME</columns>
+    <columns>Services_Withholding_Tax__c</columns>
+    <columns>Software_Tax_Withholding__c</columns>
+    <columns>Maintenance_Tax_Withholding__c</columns>
+    <columns>Parent_Territory__c</columns>
+    <columns>VSOE_Lower_Limit__c</columns>
+    <columns>VSOE_Upper_Limit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Territory__c.VSOE_Region</value>
+    </filters>
+    <label>VSOE Region</label>
+</ListView>

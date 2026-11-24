@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES( Opportunity__r.Business_Unit__c ,&quot;TESTING&quot;),&quot;Testing&quot;,
+IF(INCLUDES(Opportunity__r.Business_Unit__c,&quot;SECURITY&quot;),&quot;Security&quot;,
+IF(INCLUDES(Opportunity__r.Business_Unit__c,&quot;RISK&quot;),&quot;Risk&quot;,
+IF(INCLUDES(Opportunity__r.Business_Unit__c,&quot;ROAMING&quot;),&quot;Roaming&quot;,
+IF(INCLUDES(Opportunity__r.Business_Unit__c,&quot;Engagement and Experience&quot;),&quot;Engagement and Experience&quot;,&quot;&quot;)
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

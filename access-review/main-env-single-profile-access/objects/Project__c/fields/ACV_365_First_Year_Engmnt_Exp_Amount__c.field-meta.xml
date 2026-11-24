@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_365_First_Year_Engmnt_Exp_Amount__c</fullName>
+    <description>created for new BU implementation</description>
+    <formula>(Engmnt_Exp_Adj__c/Total_BU_Adj_Amount__c ) * ACV_365_First_Year_Amount__c</formula>
+    <label>ACV (365) First Year Engmnt&amp;Exp Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<template>
+    <div class="Slds-box">
+        <ul>
+            <template iterator:it={allCourseDetails}>
+                <div if:true={it.first} key={it.value.courseName}> this is the first couse {it.value.courseName}</div>
+                <li key={it.value.courseName}> this {it.value.courseName} and {it.value.CourseDuration}</li>
+                <div if:true={it.last} key={it.value.courseName}> this is the last couse {it.value.courseName}</div>
+
+            </template>
+        </ul>
+         
+    </div>
+    
+</template>

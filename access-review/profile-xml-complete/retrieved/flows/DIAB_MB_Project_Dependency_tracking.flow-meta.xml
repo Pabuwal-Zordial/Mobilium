@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Cannot_close_project1</name>
+        <label>Cannot close project</label>
+        <locationX>314</locationX>
+        <locationY>611</locationY>
+        <customErrorMessages>
+            <errorMessage>Project can&apos;t be closed until child projects are all closed</errorMessage>
+            <fieldSelection>pse__Stage__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Cannot_close_project_0</name>
+        <label>Cannot close project</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <customErrorMessages>
+            <errorMessage>Only finance should be able to close the project.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_Is_Active</name>
+        <label>Check Is Active</label>
+        <locationX>710</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Is Active False</defaultConnectorLabel>
+        <rules>
+            <name>Is_Active_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Is_Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Make_Project_In_Active</targetReference>
+            </connector>
+            <label>Is Active True</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Child_projects_Exist</name>
+        <label>Child projects Exist</label>
+        <locationX>512</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Check_Is_Active</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_child_projects</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_close_project1</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Finance_User</name>
+        <label>Finance User</label>
+        <locationX>281</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Get_child_projects</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_Finance_User</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_close_project_0</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <description>1. Validation to allow only Finance users to close Project
+2. Validation to let project be closed only after child projects are closed
+3. Update pse__Is_Active__c = False after project is closed</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>For_Finance_User</name>
+        <dataType>Boolean</dataType>
+        <expression>Not({!$Profile.Name} == &apos;Mobileum- Finance Full Access&apos;)</expression>
+    </formulas>
+    <interviewLabel>Project Dependency tracking {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project Dependency tracking</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_child_projects</name>
+        <label>Get child projects</label>
+        <locationX>512</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Child_projects_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DIAB_MB_Parent_Change_Request__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Stage__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closure</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Proj__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Make_Project_In_Active</name>
+        <label>Make Project In Active</label>
+        <locationX>578</locationX>
+        <locationY>719</locationY>
+        <inputAssignments>
+            <field>pse__Is_Active__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>155</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Finance_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closure</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Stage__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>pse__Proj__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

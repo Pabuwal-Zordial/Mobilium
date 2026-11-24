@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MonthYearCombo__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(MONTH(Period_Date__c)) + &apos;-&apos; + TEXT(YEAR(Period_Date__c))+&apos;-&apos;+TEXT( Business_Line__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>MonthYearBusinessLineCombo</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

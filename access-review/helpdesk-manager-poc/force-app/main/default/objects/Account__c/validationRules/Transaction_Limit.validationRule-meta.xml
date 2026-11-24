@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Limit</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(  TODAY() =  LastActivityDate   ,  Transactions_Limit__c  &lt; 3, false )</errorConditionFormula>
+    <errorMessage>transaction limit</errorMessage>
+</ValidationRule>

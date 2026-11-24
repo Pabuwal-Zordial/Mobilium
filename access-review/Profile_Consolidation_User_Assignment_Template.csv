@@ -1,0 +1,1 @@
+UserId,Username,Name,IsActive,CurrentProfile,Department,UserRole,TargetRole,RoleDecision,ExistingPermissionSets,ExistingPermissionSetGroups,ApprovedAccessCohort,TargetProfile,TargetPermissionSet,TargetPermissionSetGroup,ApprovalStatus,MigrationBatch,ValidationResult,Notes

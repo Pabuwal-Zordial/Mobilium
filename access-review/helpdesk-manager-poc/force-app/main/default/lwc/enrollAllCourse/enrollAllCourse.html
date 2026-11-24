@@ -1,0 +1,8 @@
+<template>
+    <div class="slds-grid slds-gutters slds-wrap">
+<template for:each={courseDetailInfo} for:item="course">
+    <c-enrol-course key={course.courseName} course-detail-info={course} class="slds-col">
+    </c-enrol-course>
+</template>
+</div> 
+</template>

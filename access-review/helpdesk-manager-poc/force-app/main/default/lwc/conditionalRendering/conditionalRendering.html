@@ -1,0 +1,19 @@
+<template>
+    <lightning-input type = "checkbox" label = "show Div" onchange ={divChangeHandler}>
+       <div>
+    my name is {divChange}
+</div>
+    </lightning-input> 
+    <template if:true={displayDiv}>
+<div>
+    my name is 
+</div>
+</template>
+
+<template for:each={cityList} for:item="city">
+   <p key = {city}>
+    {city[3]}
+   </p>
+</template>
+
+</template>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upper_Balance_Limit__c</fullName>
+    <label>Upper Balance Limit</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Package_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100%</fullName>
+                <default>true</default>
+                <label>100%</label>
+            </value>
+            <value>
+                <fullName>200%</fullName>
+                <default>false</default>
+                <label>200%</label>
+            </value>
+            <value>
+                <fullName>Other (use comment)</fullName>
+                <default>false</default>
+                <label>Other (use comment)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Flatrate (FLP)</controllingFieldValue>
+            <valueName>100%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Flatrate (FLP)</controllingFieldValue>
+            <valueName>200%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Flatrate (FLP)</controllingFieldValue>
+            <valueName>Other (use comment)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

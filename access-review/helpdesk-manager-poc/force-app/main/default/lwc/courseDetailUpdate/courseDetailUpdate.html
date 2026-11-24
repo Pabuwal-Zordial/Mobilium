@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Course Name" value={courseName}  placeholder="type here..."></lightning-input>
+        <lightning-input type="text" label="Enter Course fee" value={courseFee} onchange={changeCourseFee} placeholder="type here..."></lightning-input>
+    </div>
+    <div>
+   <lightning-button label="Enroll" title="enroll" onclick={updateFee} class="slds-p-around_medium"></lightning-button> 
+</div>
+<!--<div class='slds-box'>
+    total value is {courseFee}
+   
+</div>    -->     
+<slot name="pname">
+    
+</slot>               
+</template>

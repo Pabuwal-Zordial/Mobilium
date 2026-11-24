@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Account_rocky_sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Account rocky sharing</label>
+        <sharedTo>
+            <role>Help_desk</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Bank_Manager</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>share_with_paul_loan</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>share with paul loan</label>
+        <sharedTo>
+            <role>Cashier</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Bank_Manager</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

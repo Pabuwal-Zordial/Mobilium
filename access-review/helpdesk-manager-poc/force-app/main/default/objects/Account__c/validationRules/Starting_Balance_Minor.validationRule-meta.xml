@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Starting_Balance_Minor</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( ISPICKVAL( Minimum_Balance1__c , &apos;2500&apos;),        Starting_Balance__c  &lt; 2500, false)</errorConditionFormula>
+    <errorDisplayField>Starting_Balance__c</errorDisplayField>
+    <errorMessage>Starting balance for Minor account is 2500/-</errorMessage>
+</ValidationRule>

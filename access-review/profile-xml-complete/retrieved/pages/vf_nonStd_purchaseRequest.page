@@ -1,0 +1,268 @@
+<!--
+/*************************************************************************************
+Name                    vf_nonStd_purchaseRequest
+Developed By            West Monroe Partners
+Purpose                The page will display the quote template (custom) developed for
+                       Mobileum in non standard format
+Created date           4/5/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0		SS		4/5/2017		Refer component header
+2.0     SS      6/5/2017        Added new fields to support Sridhar's request
+*************************************************************************************/
+-->
+<apex:page showHeader="true" 
+          sidebar="false"
+          standardController="Project__c"
+          extensions="ctrlExt_purchaseReq_template"
+          title="Mobileum Project"
+          applyBodyTag="false" 
+          contentType="application/vnd.ms-excel# {!Project__c.Name}- PR Extract.xls"
+           >
+     <apex:slds /> 
+     
+     <!-- so there are 2 sections 
+     # 1 - for quotes with groups 
+     # 2 - for quotes without groups 
+     -->
+     <!-- Part 1 - handling the group part -->
+     <apex:outputPanel >
+          <br/>
+
+          <!-- Group name -->
+          <div style="page-break-inside:avoid;">
+               <!-- Displaying the table headers and field -->
+               <table width="100%" style="border:1px solid black;border-collapse:collapse;">
+                    <tr>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> PART# </b>
+                         </td>
+                         <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> DESCRIPTION </b>
+                         </td>
+                         <td width="3%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> QTY </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> UNIT PRICE </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> DISCOUNT </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> TOTAL </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b>UNIT COST (USD)</b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b>PACKAGE COST (USD)</b>
+                         </td>
+                         <td width="7%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> GROUP </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> SALES PERSON </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> QUOTE CURRENCY </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> EMAIL </b>
+                         </td>
+                          <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> DELIVERY METHOD </b>
+                         </td>
+                          <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> PAYMENT METHOD </b>
+                         </td>
+                          <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> GP PROJECT CODE </b>
+                         </td>
+                          <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> SFDC OPPORTUNITY ID</b>
+                         </td>
+                          <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> SFDC PROJECT NAME </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> BILL TO </b>
+                         </td>
+                         <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b>SHIP TO</b>
+                         </td>
+                         <!-- Changes to include the following 
+                            [ ] End User Address will be a new set of text fields for Sales to fill out to allow independence of Ship To
+                            [ ] Incoterms
+                            [ ] Generic SKU
+                            [ ] TAM
+                            [ ] Shipping & Handling Cost
+                            [ ] TP Services cost
+                            [ ] Support Start Date (start date from quote)
+                            [ ] Subscription Terms (length in months)
+                            [ ] AMC Margin (%) (AMC Maintenance Margin from Quote)
+                         -->
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> INCOTERMS</b>
+                         </td>
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> GENERIC SKU</b>
+                         </td>
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> SHIPPING AND HANDLING COSTS</b>
+                         </td>
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> 3P SERVICES COSTS</b>
+                         </td>
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> SUPPORT START DATE</b>
+                         </td>
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> SUBSCRIPTION TERMS</b>
+                         </td>
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> AMC MARGIN(%)</b>
+                         </td>
+                         <td style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                <b> TAM(s)</b>
+                         </td>
+                          <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b>END USER ADDRESS</b>
+                         </td>
+                        <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b>SLA</b>
+                        </td>
+                        <td width="5%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b>Support type</b>
+                         </td>
+
+                    </tr>
+                    
+                    <apex:repeat value="{!map_groupToLineItemMapping}" var="groupName"> 
+                         <apex:repeat value="{!map_groupToLineItemMapping[groupName]}" var="lineItem">
+                         <tr>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!lineItem.SBQQ__ProductCode__c}" escape="false" />
+                              </td>
+                              <td width="10%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                        <apex:outputText value="{!lineItem.SBQQ__Description__c}" escape="false" />
+                              </td>
+                              <td width="3%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                        <apex:outputText value="{!lineItem.SBQQ__Quantity__c}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{0, number, ###,##0.00}">
+                                        <apex:param value="{!lineItem.QL_Unit_Price_Selected_Currency__c}"/>
+                                   </apex:outputText>
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{0, number, ###,##0.00}" >
+                                        <apex:param value="{!lineItem.Additional_Disc_Selected_Currency__c}"/>
+                                   </apex:outputText>
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{0, number, ###,##0.00}">
+                                        <apex:param value="{!lineItem.Quote_Line_Total_Selected_Currency__c}"/>
+                                   </apex:outputText>
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{0, number, ###,##0.00}">
+                                        <apex:param value="{!lineItem.SBQQ__UnitCost__c}"/>
+                                   </apex:outputText>
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{0, number, ###,##0.00}">
+                                        <apex:param value="{!lineItem.SBQQ__PackageCost__c}"/>
+                                   </apex:outputText>
+                              </td>
+                               <td width="7%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!groupName}" rendered="{!bln_isGrouped}"/>
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!sbqq_quote.SBQQ__SalesRep__r.Name}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!sbqq_quote.Selected_Currency__c}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!sbqq_quote.SBQQ__SalesRep__r.Email}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!sbqq_quote.SBQQ__DeliveryMethod__c}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!sbqq_quote.SBQQ__PaymentTerms__c}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!Project__c.Opportunity__r.OLD_GP_Project_Code__c}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!UPPER(Project__c.Opportunity__c)}" />
+                              </td>
+                              <td width="10%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                   <apex:outputText value="{!Project__c.Name}" />
+                              </td>
+                               <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.name))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.name} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingName__c))}" >{!sbqq_quote.SBQQ__ShippingName__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingStreet__c))}" >{!sbqq_quote.SBQQ__ShippingStreet__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingCity__c))}" >{!sbqq_quote.SBQQ__ShippingCity__c}, {!sbqq_quote.SBQQ__ShippingState__c} {!sbqq_quote.SBQQ__ShippingPostalCode__c}<br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingCountry__c))}" >{!sbqq_quote.SBQQ__ShippingCountry__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.Phone))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.Phone} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.Fax))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.Fax} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.Email))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.Email} </apex:outputText>
+                              </td>
+                               <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingName__c))}" >{!sbqq_quote.SBQQ__BillingName__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingStreet__c))}" >{!sbqq_quote.SBQQ__BillingStreet__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingCity__c))}" >{!sbqq_quote.SBQQ__BillingCity__c}, {!sbqq_quote.SBQQ__BillingState__c} {!sbqq_quote.SBQQ__BillingPostalCode__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingCountry__c))}" >{!sbqq_quote.SBQQ__BillingCountry__c} </apex:outputText>
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!sbqq_quote.SBQQ__Opportunity2__r.OLD_Incoterms__c}" />
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!lineItem.Generic_SKU__c }" />
+                              </td> 
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!sbqq_quote.Shipping_Handling_Costs__c}" />
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!sbqq_quote.X3P_Services_Costs__c}" />
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                        <apex:param value="{!sbqq_quote.SBQQ__StartDate__c}"  /> 
+                                    </apex:outputText>
+                                    <!--<apex:outputText value="{!sbqq_quote.SBQQ__StartDate__c}" />-->
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!lineItem.SBQQ__SubscriptionTerm__c}" />
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!sbqq_quote.Annual_Maintenance_AMC_Margin__c}" />
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!str_TAMNames}" />
+                              </td>
+                              <td width="5%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.End_User_Name__c))}" >{!sbqq_quote.End_User_Name__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.End_User_Street__c))}" >{!sbqq_quote.End_User_Street__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.End_User_City__c))}" >{!sbqq_quote.End_User_City__c}, {!sbqq_quote.End_User_State__c} {!sbqq_quote.End_User_Zip__c} <br/> </apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingCountry__c))}" >{!sbqq_quote.End_User_Country__c} </apex:outputText>
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                              </td>
+                              <td  style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                              </td>
+                         </tr>
+                    </apex:repeat>
+                    </apex:repeat>
+               </table>
+               <br/>
+               <br/>
+          </div>
+          
+     </apex:outputPanel>
+</apex:page>

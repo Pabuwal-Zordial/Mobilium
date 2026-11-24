@@ -1,0 +1,20 @@
+<!--
+/*************************************************************************************
+Name                    vf_updateCPQPriceFromOpportunity
+Developed By            West Monroe Partners
+Purpose                The page will invoke the CPQ refresh prices class
+Created date           5/23/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0		SS		5/23/2017		    Refer component header
+*************************************************************************************/
+-->
+<apex:page showHeader="false" 
+           sidebar="false"
+           standardController="Opportunity"
+           extensions="clsHandler_updateCPQPrices"
+           action="{!refreshAction}"
+           >
+	<apex:pageMessages />
+</apex:page>

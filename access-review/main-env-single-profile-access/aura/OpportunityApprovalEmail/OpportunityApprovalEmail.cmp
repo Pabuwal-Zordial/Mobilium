@@ -1,0 +1,51 @@
+<aura:component 
+                implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,flexipage:availableForRecordHome"
+                access="global">
+
+    <aura:attribute name="recordId"  type="Id" />
+    <aura:attribute name="isLoading" type="Boolean" default="false" />
+
+    <!-- Spinner while email is being sent -->
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-p-around_large">
+            <lightning:spinner alternativeText="Sending approval email..." size="medium" variant="brand" />
+            <p class="slds-m-top_medium slds-text-align_center slds-text-color_weak">
+                Sending approval email, please wait...
+            </p>
+        </div>
+    </aura:if>
+
+    <!-- Confirmation view -->
+    <aura:if isTrue="{!not(v.isLoading)}">
+        <div class="slds-p-around_medium">
+            <div class="slds-media slds-media_center slds-m-bottom_medium">
+                <div class="slds-media__figure">
+                    <lightning:icon iconName="utility:email" size="medium" />
+                </div>
+                <div class="slds-media__body">
+                    <p class="slds-text-body_regular slds-m-bottom_small">
+                        Click <strong>Send Approval Email</strong> to notify the configured
+                        approvers for this Opportunity.
+                    </p>
+                    <p class="slds-text-body_small slds-text-color_weak">
+                        Recipients are resolved dynamically from the
+                        <strong>Approval Emails</strong> metadata based on
+                        Business Unit and Region.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-grid_align-end slds-m-top_medium">
+                <lightning:button label="Cancel"
+                                  onclick="{!c.handleCancel}"
+                                  class="slds-m-right_x-small" />
+                <lightning:button variant="brand"
+                                  label="Send Approval Email"
+                                  iconName="utility:send"
+                                  iconPosition="left"
+                                  onclick="{!c.handleSend}" />
+            </div>
+        </div>
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OLD_Competitor__c</fullName>
+    <label>Competitor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Atos</fullName>
+                <default>false</default>
+                <label>Atos</label>
+            </value>
+            <value>
+                <fullName>Ericsson</fullName>
+                <default>false</default>
+                <label>Ericsson</label>
+            </value>
+            <value>
+                <fullName>Globitel</fullName>
+                <default>false</default>
+                <label>Globitel</label>
+            </value>
+            <value>
+                <fullName>Huawei</fullName>
+                <default>false</default>
+                <label>Huawei</label>
+            </value>
+            <value>
+                <fullName>In-house</fullName>
+                <default>false</default>
+                <label>In-house</label>
+            </value>
+            <value>
+                <fullName>OpenCloud</fullName>
+                <default>false</default>
+                <label>OpenCloud</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pyro</fullName>
+                <default>false</default>
+                <label>Pyro</label>
+            </value>
+            <value>
+                <fullName>Starhome</fullName>
+                <default>false</default>
+                <label>Starhome</label>
+            </value>
+            <value>
+                <fullName>Symsoft</fullName>
+                <default>false</default>
+                <label>Symsoft</label>
+            </value>
+            <value>
+                <fullName>Syniverse</fullName>
+                <default>false</default>
+                <label>Syniverse</label>
+            </value>
+            <value>
+                <fullName>Tango</fullName>
+                <default>false</default>
+                <label>Tango</label>
+            </value>
+            <value>
+                <fullName>Tata / Atos</fullName>
+                <default>false</default>
+                <label>Tata / Atos</label>
+            </value>
+            <value>
+                <fullName>Telefonica Spain</fullName>
+                <default>false</default>
+                <label>Telefonica Spain</label>
+            </value>
+            <value>
+                <fullName>Unified Communications</fullName>
+                <default>false</default>
+                <label>Unified Communications</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

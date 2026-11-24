@@ -1,0 +1,413 @@
+<!--
+/*************************************************************************************
+Name                    vf_quoteTemplate
+Developed By            West Monroe Partners
+Purpose                The page will display the quote template (custom) developed for
+                       Mobileum
+Created date           3/16/2017
+History
+*************************************************************************************
+VERSION     AUTHOR  DATE            DETAIL
+1.0     SS      3/16/2017       Refer component header
+*************************************************************************************/
+-->
+<apex:page showHeader="true" 
+          sidebar="true"
+          standardController="SBQQ__Quote__c"
+          extensions="ctrlExt_quoteTemplate"
+          title="Mobileum Quote"
+          applyBodyTag="false" 
+          renderAs="pdf"
+          >
+    
+     <head>
+          <style type="text/css" media="print">
+               @page {
+                    @bottom-center {
+                         content: element(footer);
+                    }
+               } 
+               div.footer {
+                    display: block;
+                    padding: 5px;
+                    position: running(footer);
+               }
+               .pagenumber:before {
+                    content: counter(page);
+               }
+               .pagecount:before {
+                    content: counter(pages);
+               }
+          </style>
+     </head>
+     <!-- Code to display page numbers -->
+      <div class="footer" style="text-align:right;font-famiy:Helvetica; font-size: 10pt">
+          <div>Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+     </div>
+     <!-- Look and feel matches the existing quote template found -->
+     <div width="100%" style="align:left">
+          <!-- only the top row of the template -->
+          <table width="100%" >
+               <tr>
+                    <td width="50%">
+                         <!-- Left corner logo -->
+                         <apex:image url="{!$Resource.MobileumLogo}" />
+                    </td>
+                    <td width="25%">
+                    </td>
+                    <td width="25%">
+                         <!-- Quotatation  - Right corner  -->
+                         <div style="text-align:center;font-weight:300;font-size:1.75rem">
+                              <span style="font-famiy:Helvetica; font-size: 18pt;">
+                                   <b>Quotation</b>
+                              </span>
+                         </div>
+                    </td>
+               </tr>
+          </table>
+     </div>
+     <!-- line breaks to make it look good -->
+     <br/>
+     <br/>
+     <!-- Next rows display company information and some basic quote information -->
+     <div width="100%" style="align:left">
+          <!--next few rows of the template -->
+          <table width="100%">
+               <!-- Row 1 - Mobileum text and the quote number -->
+               <tr>
+                    <td width="50%">
+                          <span style="font-famiy:Helvetica; font-size: 14pt;">
+                              <b>Mobileum</b>
+                          </span>
+                    </td>
+                    <td width="25%" style="text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                         <b> Quote #: </b>
+                    </td>
+                    <td width="25%" style="text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                         {!sbqq_quote.Name} - {!newQuoteDocumentVersion}
+                    </td>
+               </tr>
+               <!-- Row 2 - Placeholder and the quote created date-->
+               <tr>
+                    <td width="50%">
+                    </td>
+                    <td width="25%" style="text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                         <b> Date: </b>
+                    </td>
+                    <td width="25%" style="text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                         <apex:outputText value="{0,date,MM/dd/yyyy}"> 
+                              <apex:param value="{!sbqq_quote.CreatedDate}" /> 
+                         </apex:outputText>
+                    </td>
+              </tr>
+              <!-- Row 3 - Mobileum address info from custom setting and the expiration date from quote-->
+               <tr>
+                    <td width="50%">
+                         <span style="font-famiy:Helvetica; font-size: 10pt;">
+                              {!quoteTemplate.Address__c}<br/>
+                              {!quoteTemplate.Address1__c}<br/>
+                              {!quoteTemplate.Address2__c}<br/>
+                         </span>
+                    </td>
+                    <td width="25%" style="text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                         <b> Expires On: </b>
+                    </td>
+                    <td width="25%" style="text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                         <apex:outputText value="{0,date,MM/dd/yyyy}"> 
+                              <apex:param value="{!sbqq_quote.SBQQ__ExpirationDate__c}" /> 
+                         </apex:outputText>
+                    </td>
+              </tr>
+              <!-- dummy rows for the gap -->
+              <br/>
+              <!-- Row 4 - display the contact information -->
+              <tr>
+                   <td width="50%">
+                        <span style="font-famiy:Helvetica; font-size: 10pt">
+                              Phone: {!quoteTemplate.Phone__c}<br/> 
+                              Fax:    {!quoteTemplate.Fax__c}<br/>
+                              Email:  {!quoteTemplate.Contact_Information__c}<br/>
+                         </span>
+                   </td> 
+                   <td width="25%">
+                   </td>
+                   <td width="25%">
+                   </td>
+              </tr>
+              <!-- dummy rows for the gap -->
+              <br/>
+              <!-- Row 5 - to display the ship to and bill to headers -->
+              <tr>
+                   <td width="50%" style="text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                        <b> Ship To </b>
+                   </td>
+                   <td width="25%" style="text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                        <b> Bill To </b>
+                   </td>
+                   <!-- Dummy header -->
+                   <td width="25%">
+                   </td>
+              </tr>
+              <tr>
+                   <td width="50%">
+                        <span style="font-famiy:Helvetica; font-size: 10pt">
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.name))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.name} <br/> </apex:outputText>
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingName__c))}" >{!sbqq_quote.SBQQ__ShippingName__c} <br/> </apex:outputText>
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingStreet__c))}" >{!sbqq_quote.SBQQ__ShippingStreet__c} <br/> </apex:outputText>
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingCity__c))}" >{!sbqq_quote.SBQQ__ShippingCity__c}, {!sbqq_quote.SBQQ__ShippingState__c} {!sbqq_quote.SBQQ__ShippingPostalCode__c}<br/> </apex:outputText>
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__ShippingCountry__c))}" >{!sbqq_quote.SBQQ__ShippingCountry__c} <br/> </apex:outputText>
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.Phone))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.Phone} <br/> </apex:outputText>
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.Fax))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.Fax} <br/> </apex:outputText>
+                              <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__PrimaryContact__r.Email))}" >{!sbqq_quote.SBQQ__PrimaryContact__r.Email} </apex:outputText>
+                        </span>
+                   </td>
+                   <td>
+                        <span style="font-famiy:Helvetica; font-size: 10pt">
+                             <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingName__c))}" >{!sbqq_quote.SBQQ__BillingName__c} <br/> </apex:outputText>
+                             <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingStreet__c))}" >{!sbqq_quote.SBQQ__BillingStreet__c} <br/> </apex:outputText>
+                             <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingCity__c))}" >{!sbqq_quote.SBQQ__BillingCity__c}, {!sbqq_quote.SBQQ__BillingState__c} {!sbqq_quote.SBQQ__BillingPostalCode__c} <br/> </apex:outputText>
+                             <apex:outputText rendered="{!NOT(ISNULL(sbqq_quote.SBQQ__BillingCountry__c))}" >{!sbqq_quote.SBQQ__BillingCountry__c} </apex:outputText>
+                        </span>
+                   </td>
+              </tr>
+          </table>
+          <br/>
+          <!-- table to display sales info and delivery method -->
+          <table width="100%" style="border:1px solid black;border-collapse:collapse;">
+               <!-- displaying the header information -->
+               <tr>
+                    <td width="25%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt"> <b>SALESPERSON </b></td>
+                    <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt"> <b>QUOTE CURRENCY </b></td>
+                    <td width="35%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt"> <b>EMAIL </b></td>
+                    <td width="15%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt"> <b>DELIVERY METHOD </b></td>
+                    <td width="15%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 8pt"> <b>PAYMENT  METHOD </b></td>
+               </tr>
+               <tr>
+                    <td width="25%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt">
+                         {!sbqq_quote.SBQQ__SalesRep__r.Name}
+                    </td>
+                    <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt">
+                         {!sbqq_quote.Selected_Currency__c}
+                    </td>
+                    <td width="35%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt">
+                         {!sbqq_quote.SBQQ__SalesRep__r.Email}
+                    </td>
+                    <td width="15%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt">
+                         {!sbqq_quote.SBQQ__DeliveryMethod__c}
+                    </td>
+                    <td width="15%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 9pt">
+                         {!sbqq_quote.SBQQ__PaymentTerms__c}
+                    </td>
+               </tr>
+          </table>
+     </div>
+     <br/>
+     <br/>
+     <!-- so there are 2 sections 
+     # 1 - for quotes with groups 
+     # 2 - for quotes without groups 
+     -->
+     <!-- Part 1 - handling the group part -->
+     <apex:outputPanel rendered="{!bln_isGrouped}">
+          <br/>
+          <!-- repeating the map of groups to line items -->
+          <apex:repeat value="{!list_quoteGroup}" var="groupName"> 
+               <!-- Group name -->
+               <div style="page-break-inside:avoid;">
+                    <!-- Displaying the table headers and field -->
+                    <table width="100%" style="border:1px solid black;border-collapse:collapse;">
+                         <tr>
+                               <td width="100%" colspan="6" style="background-color:#547d8f;border:1px solid black;text-align:left;">
+                                    <div style="text-align:left;font-famiy:Helvetica;font-size: 12pt;padding:2px">
+                                       <b><apex:outputtext value="{!groupName}" style="color:white;padding:10px;"/></b>
+                                   </div>
+                               </td>
+                         </tr> 
+                         <tr>
+                              <td width="20%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                   <b> PART# </b>
+                              </td>
+                              <td width="35%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                   <b> DESCRIPTION </b>
+                              </td>
+                              <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                   <b> QTY </b>
+                              </td>
+                              <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                   <b> UNIT PRICE </b>
+                              </td>
+                              <td width="15%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                   <b> DISCOUNT </b>
+                              </td>
+                              <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                                   <b> TOTAL </b>
+                              </td>
+                         </tr>
+                         
+                         <apex:repeat value="{!map_groupToLineItemMapping[groupName]}" var="lineItem"> 
+                              <tr>
+                                   <td width="20%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                        <apex:outputText value="{!lineItem.SBQQ__ProductCode__c}" escape="false" />
+                                   </td>
+                                   <td width="35%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                         <apex:outputText value="{!lineItem.SBQQ__Description__c}" escape="false" />
+                                   </td>
+                                   <td width="10%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                         <apex:outputText value="{!lineItem.SBQQ__Quantity__c}" />
+                                   </td>
+                                   <td width="10%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                        <apex:outputText value="{0, number, ###,##0.00}">
+                                             <apex:param value="{!lineItem.QL_Unit_Price_Selected_Currency__c}"/>
+                                        </apex:outputText>
+                                   </td>
+                                   <td width="15%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                        <apex:outputText value="({0, number, ###,##0.00})" rendered="{!lineItem.Additional_Disc_Selected_Currency__c >0}">
+                                             <apex:param value="{!lineItem.Additional_Disc_Selected_Currency__c}"/>
+                                        </apex:outputText>
+                                        <apex:outputText value="{0, number, ###,##0.00}" rendered="{!lineItem.Additional_Disc_Selected_Currency__c ==0}">
+                                             <apex:param value="{!lineItem.Additional_Disc_Selected_Currency__c}"/>
+                                        </apex:outputText>
+                                   </td>
+                                   <td width="10%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                        <apex:outputText value="{0, number, ###,##0.00}">
+                                             <apex:param value="{!lineItem.Quote_Line_Total_Selected_Currency__c}"/>
+                                        </apex:outputText>
+                                   </td>
+                              </tr>
+                         </apex:repeat>
+                         <tr>
+                               <td width="100%" colspan="6" style="background-color:#9CB8C4;border:1px solid black;text-align:right;">
+                                    <div style="text-align:right;font-famiy:Helvetica;font-size: 10pt;padding:2px">
+                                       <b>{!groupName} Total : &nbsp;<apex:outputText value="{!sbqq_quote.Selected_Currency__c} "/>  <apex:outputtext value="{0, number, ###,##0.00}" style="padding:5px;"><apex:param value="{!map_groupToTotals[groupName]}"/></apex:outputText></b>
+                                   </div>
+                               </td>
+                         </tr> 
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <br/>
+               </div>
+          </apex:repeat>
+          
+     </apex:outputPanel>
+     <!-- Part 2 - handling the individual part -->
+     <apex:outputPanel rendered="{!!bln_isGrouped}">
+          <!-- non grouped items -->
+          <!-- repeating the map of groups to line items -->
+            <table width="100%" style="border:1px solid black;border-collapse:collapse;">
+                        <tr>
+                        <td width="20%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> PART# </b>
+                        </td>
+                        <td width="35%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> DESCRIPTION </b>
+                        </td>
+                        <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> QTY </b>
+                        </td>
+                        <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> UNIT PRICE </b>
+                        </td>
+                        <td width="15%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> DISCOUNT </b>
+                        </td>
+                        <td width="10%" style="border:1px solid black;text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                              <b> TOTAL </b>
+                        </td>
+                        </tr>
+                        <apex:repeat value="{!list_nonGroupedItems}" var="lineItem"> 
+                        <tr>
+                              <td width="20%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!lineItem.SBQQ__ProductCode__c}" escape="false" />
+                              </td>
+                              <td width="35%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!lineItem.SBQQ__Description__c}" escape="false" />
+                              </td>
+                              <td width="10%" style="padding:5px;border:1px solid black;text-align:left;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{!lineItem.SBQQ__Quantity__c}"/>
+                              </td>
+                              <td width="10%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{0, number, ###,##0.00}">
+                                          <apex:param value="{!lineItem.QL_Unit_Price_Selected_Currency__c}"/>
+                                    </apex:outputText>
+                              </td>
+                              <td width="15%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                           
+                                    <apex:outputText value="{0, number, ###,##0.00}">
+                                          <!--<apex:outputText value="(" rendered="{!IF(lineItem.Additional_Disc_Selected_Currency__c > 0.00, true, false)}" />-->
+                                          <apex:param value="{!lineItem.Additional_Disc_Selected_Currency__c}"/>
+                                          <!--<apex:outputText value=")" rendered="{!IF(lineItem.Additional_Disc_Selected_Currency__c > 0.00, true, false)}" />-->
+                                    </apex:outputText>
+                                    
+                              </td>
+                              <td width="10%" style="padding:5px;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 10pt">
+                                    <apex:outputText value="{0, number, ###,##0.00}">
+                                          <apex:param value="{!lineItem.Quote_Line_Total_Selected_Currency__c}"/>
+                                    </apex:outputText>
+                              </td>
+                        </tr>
+                        </apex:repeat>
+            </table>
+            <br/>
+            <br/>
+     </apex:outputPanel>
+     <!-- the row to display the quote total -->
+     <div style="page-break-inside:avoid;">
+            <table width="100%"  style="border:1px solid black;border-collapse:collapse;">
+               <tr>
+                  <td width="10%" style="color:white;background-color:#547d8f;border:1px solid black;text-align:right;font-famiy:Helvetica; font-size: 12pt">
+                  <!-- quote total is displayed here -->
+                        <b> <apex:outputText value="TOTAL:  {!sbqq_quote.Selected_Currency__c}  {0, number, ###,##0.00}">
+                                          <apex:param value="{!sbqq_quote.Quote_Total_Selected_Currency__c}"/>
+                                   </apex:outputText>
+                        </b> 
+                  </td>
+               </tr>
+            </table>
+     </div>
+     <br/>
+      <br/>
+      <br/>
+     <!-- to display the final part of the quote -->
+     <div style="page-break-inside:avoid;">
+          <br/>
+          <br/>
+          <div style="text-align:left;font-famiy:Helvetica; font-size: 10pt">
+              <b> <u>Acknowledgment </u> </b>
+          </div>
+          <br/>
+          <br/>
+          <table width="100%">
+               <tr>
+                    <td width="15%" style="text-align:left;font-famiy:Helvetica; font-size: 10pt"><b>Signature:</b></td>
+                    <td width="35%">_____________________________</td>
+                    <td width="15%" style="text-align:left;font-famiy:Helvetica; font-size: 10pt"><b>Date:</b></td>
+                     <td width="35%">______/______/______</td>
+               </tr>
+               <br/> 
+               <tr>
+                    <td width="15%" style="text-align:left;font-famiy:Helvetica; font-size: 10pt"><b>Name (Print):</b></td>
+                    <td width="35%">_____________________________</td>
+                    <td width="15%" style="text-align:left;font-famiy:Helvetica; font-size: 10pt"><b>Title:</b></td>
+                     <td width="35%">______________________________</td>
+               </tr>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+            </table>
+            <div width="100%" style="text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                         {!quoteTemplate.Footer_Note_1__c}  {!sbqq_quote.SBQQ__SalesRep__r.Name} at {!sbqq_quote.SBQQ__SalesRep__r.Email}
+            </div>
+            <br/>
+               <br/>
+            <div width="100%" style="text-align:center;font-famiy:Helvetica; font-size: 10pt">
+                          {!quoteTemplate.Foot_Note_2__c} 
+            </div>
+     </div>
+</apex:page>

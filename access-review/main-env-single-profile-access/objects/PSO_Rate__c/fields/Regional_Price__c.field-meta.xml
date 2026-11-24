@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Price__c</fullName>
+    <inlineHelpText>The price for each role, within this particular PSO region. The number in this field, in relation to the List Price field, will be used to calculate the list price of the quote line items populated by the price rule.</inlineHelpText>
+    <label>Regional Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

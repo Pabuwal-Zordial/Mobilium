@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFX_Rev_Rec_Template_ID_Expenses_Del__c</fullName>
+    <description>Holds the Record ID for the Rev Rec Actuals Template for Expenses - Deliverable</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Holds the Record ID for the Rev Rec Actuals Template for Expenses - Deliverable</inlineHelpText>
+    <label>Rev Rec Template ID - Expenses - Del</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

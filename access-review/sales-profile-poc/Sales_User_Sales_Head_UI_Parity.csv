@@ -1,0 +1,241 @@
+﻿Category,Component,Assignment or Literal,Details,Present for Sales User,Present for Sales Head,Exact Match
+Custom app profile action override,Sales,action=Tab; target=standard-home; type=Flexipage; content=Mobileum_User_Home_Page; formFactor=Large,Profile-specific action/page override,True,True,True
+Custom app profile action override,Sales,action=View; target=Opportunity; type=Flexipage; content=OpportunityCPQLayout; formFactor=Large,Profile-specific action/page override,True,True,True
+Custom app profile action override,standard__LightningSales,action=Tab; target=standard-home; type=Flexipage; content=Mobileum_User_Home_Page; formFactor=Large,Profile-specific action/page override,True,True,True
+Custom app profile action override,standard__LightningSales,action=View; target=Opportunity; type=Flexipage; content=OpportunityCPQLayout; formFactor=Large,Profile-specific action/page override,True,True,True
+Custom app profile action override,standard__LightningSales,action=View; target=Opportunity; type=Flexipage; content=OpportunityCPQLayout; formFactor=Small,Profile-specific action/page override,True,True,True
+Custom app profile action override,standard__LightningSalesConsole,action=Tab; target=standard-home; type=Flexipage; content=Mobileum_User_Home_Page; formFactor=Large,Profile-specific action/page override,True,True,True
+Custom app profile action override,standard__OnlineSales,action=Tab; target=standard-home; type=Flexipage; content=Mobileum_User_Home_Page; formFactor=Large,Profile-specific action/page override,True,True,True
+Custom app profile action override,standard__Optimizer,action=Tab; target=standard-home; type=Flexipage; content=Mobileum_User_Home_Page; formFactor=Large,Profile-specific action/page override,True,True,True
+Profile application visibility,Profile metadata,FFX_Accounts_Payable,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,FFX_Accounts_Receivable,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,FFX_FFA_Organization_Setup,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,FFX_Month_End_Close,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,FFX_UAT_Tracking,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,Sales,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__AllTabSet,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__AppLauncher,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Approvals,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Chatter,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Community,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__DataGovernanceConsole,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__DataManager,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__ExpressionSetConsole,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__FlowsApp,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Insights,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__LightningSales,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__LightningSalesConsole,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__LightningService,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Marketing,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__MSJApp,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__OnlineSales,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Optimizer,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Platform,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Sales,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__SalesCloudMobile,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__SalesforceCMS,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__Service,visible=true; default=false,True,True,True
+Profile application visibility,Profile metadata,standard__ServiceConsole,visible=false; default=false,True,True,True
+Profile application visibility,Profile metadata,SubContractor_Services_Delivery,visible=false; default=false,True,True,True
+Profile layout assignment,Profile metadata,Account-Account Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Account_Integration_Log__c-Account Integration Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AccountTeamMember-Account Team Member Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ActionPlan-Action Plan Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ActionPlanItemDependency-Action Plan Item Dependency Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ActionPlanTemplate-Action Plan Template Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ActionPlanTemplateItem-Action Plan Template Item Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ActionPlanTemplateItemValue-Action Plan Template Item Value Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ActionPlanTemplateVersion-Action Plan Template Version Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ActionPlnTmplItmDependency-Action Plan Template Item Dependency Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Address-Address Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Approver_Mapping__mdt-Approver Mapping Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Asset-Asset Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AssetAction-Asset Action Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AssetActionSource-Asset Action Source Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AssetRelationship-Asset Relationship Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AssetStatePeriod-Asset State Period Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AssociatedLocation-Associated Location Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Atlassian_Page_Permission__mdt-Atlassian Page Permission Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Atlassian_Project__c-Atlassian Project Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Atlassian_Space_Permission__mdt-Atlassian Space Permission Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Attainment__c-Attainment Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AuthorizationForm-Authorization Form Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,AuthorizationFormConsent-Authorization Form Consent Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Bid_Task_Status__c-Bid Task Status Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Bid_Tracker__c-Bid Tracker Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Billing_Details__c-Billing Details Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Billing_Invoice_Details__c-Billing Invoice Details Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Bug__c-Bug %26 Enhancement Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,BusinessBrand-Business Brand Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,c2g__codaDimension2__c-FFX Dimension 2 Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,c2g__codaDimension3__c-FFX Dimension 3 Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,c2g__codaDimension4__c-FFX Dimension 4 Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalcMatrixColumnRange-Decision Matrix Column Range Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalcProcStepRelationship-Expression Set Step Relationship Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationMatrix-Decision Matrix Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationMatrixColumn-Decision Matrix Column Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationMatrixRow-Decision Matrix Row Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationMatrixVersion-Decision Matrix Version Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationProcedure-Calculation Procedure Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationProcedureStep-Calculation Procedure Step Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationProcedureVariable-Calculation Procedure Variable Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CalculationProcedureVersion-Calculation Procedure Version Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Campaign-Campaign Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CampaignInfluenceModel-Campaign Influence Model Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CampaignMember-Campaign Member Page Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CampaignMemberStatus-Campaign Member Status Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Case-Case Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CaseClose-Close Case Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CaseInteraction-Case Feed Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Churn_Opportunity_Details__c-Last Year Opportunity Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Churned_Product__c-Churn from Descope Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CollaborationGroup-Group Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Commission_Type_Details__c-Commission Type Details Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,CommunityMemberLayout-Community Member Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ConsumptionRate-Consumption Rate Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ConsumptionSchedule-Consumption Schedule Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Contact-Contact Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Contact_Integration_Log__c-Contact Integration Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ContactPointAddress-Contact Point Address Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ContactPointEmail-Contact Point Email Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ContactPointPhone-Contact Point Phone Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ContactPointTypeConsent-Contact Point Type Consent Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ContentVersion-Content Version,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Contract-Contract Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Currency_Table__c-Currency Table Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Customer-Customer Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Customer_Acronym__c-Customer Acronym Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Diab_Exception_Log__c-Diab Exception Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Diab_Integration_Inbound_Queue__c-Diab Integration Inbound Queue Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Diab_Integration_Log__c-Diab Integration Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,DIAB_MB_Project_Version__c-Project Version Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,DIAB_MB_Resource_Role_Mappings__mdt-Resource Role Mappings Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,DuplicateRecordItem-Duplicate Record Item Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,DuplicateRecordSet-Duplicate Record Set Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Dynamic_Approvals_Fsys__mdt-Dynamic Approvals Fsys Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,EmailMessage-Email Message Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Employee-Employee Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,EmpUserProvisioningProcess-Employee User Provisioning Process Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,EmpUserProvisionProcessErr-Employee User Provisioning Process Error Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,EngagementInteraction-Engagement Interaction Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,EngagementTopic-Engagement Topic Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,EnhancedLetterhead-Enhanced Letterhead Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Event-Event Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ExpressionSet-Expression Set Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ExpressionSetVersion-Expression Set Version Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FeedItem-Feed Item Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FFX_UAT_Log__c-UAT Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FlowInterview-Flow Interview Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FlowOrchestrationInstance-Orchestration Run Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FlowOrchestrationLog-Orchestration Run Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FlowOrchestrationStageInstance-Orchestration Stage Run Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FlowOrchestrationStepInstance-Orchestration Step Run Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FlowOrchestrationWorkItem-Orchestration Work Item Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,FlowRecord-Flow Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Global-Global Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Hardware_Purchase_Request__c-Hardware Purchase Request Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Idea-Idea Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Inactivate_Trigger_On_Object__mdt-Inactivate Trigger On Object Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Individual-Individual Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,InternalOrganizationUnit-Internal Organization Unit Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Item_Request__c-Item Request Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Lead-Lead Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ListEmail-List Email Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Location-Location Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,LoE_Calculator__mdt-LoE Calculator Setting Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,LoE_Phases__mdt-LoE Phase Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Macro-Macro Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ManagedContent-Managed Content Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ManagedContentVariant-Managed Content Variant Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Milestone__c-Milestone Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Milestone_master__mdt-Milestone master Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ob1__Output_Template__c-FFX Output Template Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Opportunity-Opportunity Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Opportunity_Approval_Item__c-Opportunity Approval Item Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Opportunity_Approval_Matrix_Fsys__mdt-Opportunity Approval Matrix Fsys Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Opportunity_Dynamic_Approvals__c-Opportunity Dynamic Approval Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Opportunity_Integration_Log__c-Opportunity Integration Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Opportunity_Legacy_Details__c-Opportunity Details Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,OpportunityContactRole-Opportunity Contact Role Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,OpportunityLineItem-Opportunity Product Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,OpportunityLineItemSchedule-Line Item Schedule Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,OpportunityLineItemSplit-Opportunity Product Split Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,OpportunitySplit-Opportunity Split Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,OpportunityTeamMember-Opportunity Team Member Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Order-Order Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,OrderItem-Order Product Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Partner__c-Partner Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,PPO_Details__c-PPO Details Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,PPO_Sales_Governance__c-PPO Sales Governance Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Pricebook2-Price Book Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,PricebookEntry-Price Book Entry Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Probability_to_Close_History__c-Probability to Close Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ProcessException-Process Exception Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Product2-Product Layout New,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Product_Category_Master__mdt-Product Category Master Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ProductConsumptionSchedule-Product Consumption Schedule Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ProfileSkill-Skill Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ProfileSkillEndorsement-Endorsement Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ProfileSkillUser-Skill User Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Project__c-Project Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Proposal_Code__c-Proposal Code Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Assignment__c-FFX PSA Assignment Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Billing_Event__c-FFX PSA Billing Event Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Billing_Event_Item__c-FFX PSA Billing Event Item Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Budget__c-FFX PSA Budget Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Grp__c-FFX PSA Group Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Milestone__c-FFX PSA Milestone Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Miscellaneous_Adjustment__c-FFX Miscellaneous Adjustment Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Permission_Control__c-FFX PSA Permission Control Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Practice__c-FFX PSA Practice Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Proj__c-FFX PSA Project Detail Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Project_Task__c-FFX PSA Project Task Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Region__c-FFX PSA Region Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Resource_Request__c-FFX PSA Resource Request Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Time_Period__c-FFX PSA Time Period Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Timecard__c-FFX PSA Timecard Split Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Timecard_Header__c-FFX PSA Timecard Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,pse__Vendor_Invoice__c-FFX Vendor Invoice Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,PSO_Rate__c-PSO Rate Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Purchase_Order__c-Purchase Order Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Purchase_Request__c-Purchase Request Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,QuickText-Quick Text Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Quota__c-Quota by Business Line Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Quota_by_Business_Line_Mgmt__mdt-Quota by Business Line Mgmt Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Quote-Quote Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Quote_template__mdt-Quote template Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,QuoteLineItem-Quote Line Item Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Recommendation-Recommendation Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Related_Approver__c-Related Approver Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Revenue_Profile__c-Revenue Profile Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Sales_Campaign__c-Raid9 Campaign Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Sales_Campaign__c-Raid9 Campaign Layout,recordType=Sales_Campaign__c.RAID_9,True,True,True
+Profile layout assignment,Profile metadata,Sales_Campaign__c-ROAMING DNA Pagelayout,recordType=Sales_Campaign__c.ROAMING_DNA,True,True,True
+Profile layout assignment,Profile metadata,Sales_Development_Support_Request__c-Sales Development Support Request Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Schedule__c-Billing Schedule Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Scorecard-Scorecard Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ScorecardAssociation-Scorecard Association Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,ScorecardMetric-Scorecard Metric Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Seller-Seller Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,SocialPersona-Social Persona Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Solution-Solution Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Task-Task Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Technical_Service_Request__c-TSA Technical Service Requests Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Territory__c-Country Layout,recordType=Territory__c.Country,True,True,True
+Profile layout assignment,Profile metadata,Territory__c-Region Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Territory__c-Region Layout,recordType=Territory__c.Region,True,True,True
+Profile layout assignment,Profile metadata,Territory__c-Sub-Region Layout,recordType=Territory__c.Sub_Region,True,True,True
+Profile layout assignment,Profile metadata,Territory__c-VSOE Region,recordType=Territory__c.VSOE_Region,True,True,True
+Profile layout assignment,Profile metadata,User-User Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,UserAlt-User Profile Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,UserAppMenuItem-Application Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,UserProvAccount-User Provisioning Account Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,UserProvisioningLog-User Provisioning Log Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,UserProvisioningRequest-User Provisioning Request Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Vendor__c-Vendor Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,Version_Item_Project__c-Version Item Project Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,VoiceCall-Voice Call Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,WorkAccess-Access Layout,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,WorkBadge-Badge Received Layout 192,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,WorkBadgeDefinition-Badge Layout 192,No record-type-specific mapping,True,True,True
+Profile layout assignment,Profile metadata,WorkThanks-Thanks Layout,No record-type-specific mapping,True,True,True

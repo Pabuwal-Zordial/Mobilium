@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project__c</fullName>
+    <description>Master is a project.. to which the products are associated to .. allows reparenting</description>
+    <label>Project</label>
+    <referenceTo>Project__c</referenceTo>
+    <relationshipLabel>Billing Schedules</relationshipLabel>
+    <relationshipName>Billing_Schedules</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

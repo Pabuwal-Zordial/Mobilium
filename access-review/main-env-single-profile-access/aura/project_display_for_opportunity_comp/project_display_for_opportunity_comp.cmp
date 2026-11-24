@@ -1,0 +1,51 @@
+<!--
+/*************************************************************************************
+Name                    project_display_for_opportunity_comp
+Developed By            West Monroe Partners
+Purpose                 The component will contain the following:
+                         Will get the opportunity Id and fetch the project name
+                         and project Id related to the opportunity
+
+Created date            2/1/2017
+History
+*************************************************************************************
+VERSION  	AUTHOR 	DATE      		DETAIL
+1.0			SS		2/21/2017		Refer component header
+*************************************************************************************/
+-->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId"
+                controller="clshandler_milestone_schedule"
+>
+     <!-- registering the event which will fire on project change -->
+     <aura:registerEvent name="projectSelect"
+                         type="c:projectSelectionEvent" />
+     <!-- creating the attributes for the component -->
+     <!-- #1 we need a placeholder for the list of projects that we will recieve -->
+     <aura:attribute name="projects"
+                     type="Project__c[]" />
+     <!-- Handler to call the init function  -->
+     <aura:handler name="init"
+                   value="{!this}"
+                   action="{!c.doInit}" />
+     <!-- Displaying the value of the projects in a picklist -->
+     <ui:inputSelect class="picklist"
+                     aura:id="projectSelections"
+                     label="Project Name"
+                     change="{!c.onSelectChange}">
+           <!-- Defaulting the value to None -->
+           <ui:inputSelectOption class="slds-dropdown__item"
+                                 text="--None--"
+                                 label="--None--"
+                                 value="true"/>
+           <!--Iterating through values set by the apex controller -->
+           <aura:iteration items="{!v.projects}"
+                           var="proj"
+                           indexVar="index">
+                <ui:inputSelectOption class="slds--dropdown"
+                                      text="{!proj.Id}"
+                                      label="{!proj.Name}"/>
+           </aura:iteration>
+     </ui:inputSelect>
+     <!-- Displaying the component, which shows the header and the date fields -->
+     <c:milestoneTable_display_for_opportunity_comp />
+</aura:component>

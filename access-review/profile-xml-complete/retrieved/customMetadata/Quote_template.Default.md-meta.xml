@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default</label>
+    <protected>false</protected>
+    <values>
+        <field>Address1__c</field>
+        <value xsi:type="xsd:string">Cupertino, CA 95014</value>
+    </values>
+    <values>
+        <field>Address2__c</field>
+        <value xsi:type="xsd:string">US</value>
+    </values>
+    <values>
+        <field>Address__c</field>
+        <value xsi:type="xsd:string">20813 Stevens Creek Blvd #200</value>
+    </values>
+    <values>
+        <field>Contact_Information__c</field>
+        <value xsi:type="xsd:string">info@mobileum.com</value>
+    </values>
+    <values>
+        <field>Fax__c</field>
+        <value xsi:type="xsd:string">(999) 000-9999</value>
+    </values>
+    <values>
+        <field>Foot_note_2__c</field>
+        <value xsi:type="xsd:string">THANK YOU FOR YOUR BUSINESS!</value>
+    </values>
+    <values>
+        <field>Footer_Note_1__c</field>
+        <value xsi:type="xsd:string">Please sign and email to</value>
+    </values>
+    <values>
+        <field>Phone__c</field>
+        <value xsi:type="xsd:string">777444888</value>
+    </values>
+    <values>
+        <field>QuoteDocChildRelationship__c</field>
+        <value xsi:type="xsd:string">R00N70000001lX7YEAU</value>
+    </values>
+</CustomMetadata>

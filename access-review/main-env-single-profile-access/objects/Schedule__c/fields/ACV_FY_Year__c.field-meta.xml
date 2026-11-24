@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_FY_Year__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ACV_FY_Year_1__c = TRUE, &quot;1 - First Year&quot;, 
+IF( ACV_FY_Year_2__c = TRUE, &quot;2 - Second Year&quot;, 
+IF( ACV_FY_Year_3__c = TRUE, &quot;3 - Third Year&quot;, 
+IF(  ACV_FY_Future__c = TRUE, &quot;Future&quot;,
+&quot;Not Applicable&quot;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV (FY) Year</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,1662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Custom_Hrs</name>
+        <label>Assign Custom Hrs</label>
+        <locationX>996</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MaxHrs_Custom</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_User_Custom_Setting.DIAB_MB_Maximum_Resource_Hours_Per_Day__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MinHrs_Custom</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_User_Custom_Setting.DIAB_MB_Minimum_Resource_Hours_Per_Week__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_all_Timecards</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Default_Hrs</name>
+        <label>Assign Default Hrs</label>
+        <locationX>1524</locationX>
+        <locationY>971</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MaxHrs_Custom</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Default_Custom_Setting.DIAB_MB_Maximum_Resource_Hours_Per_Day__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MinHrs_Custom</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Default_Custom_Setting.DIAB_MB_Minimum_Resource_Hours_Per_Week__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_all_Timecards</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Hrs</name>
+        <label>Assign Hrs</label>
+        <locationX>1207</locationX>
+        <locationY>1655</locationY>
+        <assignmentItems>
+            <assignToReference>Var_Sunday</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Sunday_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_Monday</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Monday_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_Tuesday</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Tuesday_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_Wednesday</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Wednesday_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_Thursday</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Thursday_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_Friday</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Friday_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_Saturday</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Saturday_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_TotalHrs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Timecards.pse__Total_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_TotalHrsLastWk</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_LastWk</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Timecards</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Assign_Custom_Hrs</name>
+        <label>Assign Custom Hrs</label>
+        <locationX>1260</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MaxHrs_Custom</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Profile_Custom_Setting.DIAB_MB_Maximum_Resource_Hours_Per_Day__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MinHrs_Custom</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Profile_Custom_Setting.DIAB_MB_Minimum_Resource_Hours_Per_Week__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_all_Timecards</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_of_Holidays</name>
+        <label>Count of Holidays</label>
+        <locationX>3086</locationX>
+        <locationY>3671</locationY>
+        <assignmentItems>
+            <assignToReference>Var_HolidaysFirstWkCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_EnteredHolidayFWKHrs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_EnteredHolidayFWKHrs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Holidays_FW</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_of_Holidays_0</name>
+        <label>Count of Holidays</label>
+        <locationX>3086</locationX>
+        <locationY>2471</locationY>
+        <assignmentItems>
+            <assignToReference>Var_HolidaysCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_EnteredHolidayHrs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_EnteredHolidayHrs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Holidays</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_of_Holidays_1</name>
+        <label>Count of Holidays</label>
+        <locationX>3086</locationX>
+        <locationY>3071</locationY>
+        <assignmentItems>
+            <assignToReference>Var_HolidaysLastWkCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_EnteredHolidayLWKHrs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_EnteredHolidayLWKHrs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Holidays_LW</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Error</name>
+        <label>Error</label>
+        <locationX>50</locationX>
+        <locationY>2039</locationY>
+        <customErrorMessages>
+            <errorMessage>Maximum number of hours for a day is {!Var_MaxHrs_Custom}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Min_Hrs_First_Wk_Validation</name>
+        <label>Min Hrs First Wk Validation</label>
+        <locationX>3042</locationX>
+        <locationY>4055</locationY>
+        <customErrorMessages>
+            <errorMessage>Minimum number of hours in the first week ({!For_FirstDate} to {!$Record.pse__End_Date__c}) is {!For_FirstWkValidation} ({!Var_MinHrs_Custom}% of work calendar hours)</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Min_Hrs_Last_Wk_Validation</name>
+        <label>Min Hrs Last Wk Validation</label>
+        <locationX>2778</locationX>
+        <locationY>4055</locationY>
+        <customErrorMessages>
+            <errorMessage>Minimum number of hours in the last week ({!$Record.pse__Start_Date__c} to {!For_WorkingDate}) is {!For_LastwkValidation} ({!Var_MinHrs_Custom}% of work calendar hours)</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Min_Hrs_Validation</name>
+        <label>Min Hrs Validation</label>
+        <locationX>2514</locationX>
+        <locationY>4055</locationY>
+        <customErrorMessages>
+            <errorMessage>Minimum number of hours for a week is {!For_MinWCHrs} ({!Var_MinHrs_Custom}% of work calendar hours)</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Not_allowed</name>
+        <label>Not allowed</label>
+        <locationX>2404</locationX>
+        <locationY>4439</locationY>
+        <customErrorMessages>
+            <errorMessage>You were not allowed to enter the timecard for the entire week because the week spans two different months. Please enter two separate timecards, one for each month.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_null</name>
+        <label>Check null</label>
+        <locationX>1227</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Get_Profile_Custom_Setting</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Null</defaultConnectorLabel>
+        <rules>
+            <name>Not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User_Custom_Setting</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Custom_Hrs</targetReference>
+            </connector>
+            <label>Not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Null_0</name>
+        <label>Check Null</label>
+        <locationX>1458</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Get_Default_Custom_Setting</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Null</defaultConnectorLabel>
+        <rules>
+            <name>Not_Null_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Profile_Custom_Setting</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Assign_Custom_Hrs</targetReference>
+            </connector>
+            <label>Not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Null_1</name>
+        <label>Check Null</label>
+        <locationX>1227</locationX>
+        <locationY>1439</locationY>
+        <defaultConnector>
+            <targetReference>More_Hrs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Null</defaultConnectorLabel>
+        <rules>
+            <name>Have_Timecards</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_all_Timecards</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Timecards</targetReference>
+            </connector>
+            <label>Have Timecards</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_null_2</name>
+        <label>Check null</label>
+        <locationX>1656</locationX>
+        <locationY>863</locationY>
+        <defaultConnectorLabel>Null</defaultConnectorLabel>
+        <rules>
+            <name>Not_Null_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Default_Custom_Setting</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Default_Hrs</targetReference>
+            </connector>
+            <label>Not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Week_ends</name>
+        <label>Check Week ends</label>
+        <locationX>2998</locationX>
+        <locationY>2363</locationY>
+        <defaultConnector>
+            <targetReference>Count_of_Holidays_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not a Week End</defaultConnectorLabel>
+        <rules>
+            <name>Week_End</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_WeekEndHoliday</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Holidays</targetReference>
+            </connector>
+            <label>Week End</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Week_ends_0</name>
+        <label>Check Week ends</label>
+        <locationX>2998</locationX>
+        <locationY>2963</locationY>
+        <defaultConnector>
+            <targetReference>Count_of_Holidays_1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not a Week End</defaultConnectorLabel>
+        <rules>
+            <name>Week_End_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_HolidayLWK</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Holidays_LW</targetReference>
+            </connector>
+            <label>Week End</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Week_ends_1</name>
+        <label>Check Week ends</label>
+        <locationX>2998</locationX>
+        <locationY>3563</locationY>
+        <defaultConnector>
+            <targetReference>Count_of_Holidays</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not a Week End</defaultConnectorLabel>
+        <rules>
+            <name>Week_End_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_HolidayFWK</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Holidays_FW</targetReference>
+            </connector>
+            <label>Week End</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Min_Hrs_or_No_Hrs</name>
+        <label>Min Hrs or No Hrs</label>
+        <locationX>2822</locationX>
+        <locationY>3947</locationY>
+        <defaultConnectorLabel>Within the limit</defaultConnectorLabel>
+        <rules>
+            <name>Same_Timecard</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_StMonth</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>For_EndMonth</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_LastWk_Record</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_FirstWk_Record</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Not_allowed</targetReference>
+            </connector>
+            <label>Same Timecard</label>
+        </rules>
+        <rules>
+            <name>Min_Hrs_same_month</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_MinHrs_Custom</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Resource__r.pse__Work_Calendar__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_StMonth</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>For_EndMonth</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var_MinHrs_Custom</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_TotalHrs</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>For_MinWCHrs</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Min_Hrs_Validation</targetReference>
+            </connector>
+            <label>Min Hrs same month</label>
+        </rules>
+        <rules>
+            <name>Min_Hrs_last_week_in_different_month</name>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND (6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>For_StMonth</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>For_EndMonth</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var_MinHrs_Custom</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Resource__r.pse__Work_Calendar__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var_MinHrs_Custom</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_TotalHrsLastWk</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>For_LastwkValidation</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_LastWk</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_LastWk_Record</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Min_Hrs_Last_Wk_Validation</targetReference>
+            </connector>
+            <label>Min Hrs last week in different month</label>
+        </rules>
+        <rules>
+            <name>Min_Hrs_First_week_in_different_month</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_StMonth</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>For_EndMonth</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var_MinHrs_Custom</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Resource__r.pse__Work_Calendar__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var_MinHrs_Custom</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_TotalHrsFirstWk</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>For_FirstWkValidation</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_LastWk_Record</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_FirstWkNoValidation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Min_Hrs_First_Wk_Validation</targetReference>
+            </connector>
+            <label>Min Hrs First week in different month</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>More_Hrs</name>
+        <label>More Hrs?</label>
+        <locationX>1227</locationX>
+        <locationY>1931</locationY>
+        <defaultConnector>
+            <targetReference>No_Minimum_hour_validations</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Under the limit</defaultConnectorLabel>
+        <rules>
+            <name>Sunday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Sunday</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Var_MaxHrs_Custom</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>Sunday</label>
+        </rules>
+        <rules>
+            <name>Monday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Monday</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Var_MaxHrs_Custom</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>Monday</label>
+        </rules>
+        <rules>
+            <name>Tuesday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Tuesday</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Var_MaxHrs_Custom</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>Tuesday</label>
+        </rules>
+        <rules>
+            <name>Wednesday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Wednesday</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Var_MaxHrs_Custom</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>Wednesday</label>
+        </rules>
+        <rules>
+            <name>Thursday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Thursday</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Var_MaxHrs_Custom</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>Thursday</label>
+        </rules>
+        <rules>
+            <name>Friday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Friday</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Var_MaxHrs_Custom</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>Friday</label>
+        </rules>
+        <rules>
+            <name>Saturday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Saturday</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Var_MaxHrs_Custom</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>Saturday</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>No_Minimum_hour_validations</name>
+        <label>No Minimum hour validations</label>
+        <locationX>2404</locationX>
+        <locationY>2039</locationY>
+        <defaultConnector>
+            <targetReference>Get_Holidays</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Validation</defaultConnectorLabel>
+        <rules>
+            <name>No_Validation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Total_Hours__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SameTimecard_0</targetReference>
+            </connector>
+            <label>No Validation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SameTimecard_0</name>
+        <label>Same Timecard</label>
+        <locationX>1986</locationX>
+        <locationY>2147</locationY>
+        <defaultConnectorLabel>Within the limit</defaultConnectorLabel>
+        <rules>
+            <name>Same_Timecard_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_StMonth</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>For_EndMonth</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_LastWk_Record</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_FirstWk_Record</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Not_allowed</targetReference>
+            </connector>
+            <label>Same Timecard</label>
+        </rules>
+    </decisions>
+    <description># Updated two formulas
+For_HolidaysFirstWkCount
+For_HolidayHrsFirstWk
+to fix First week validation when the week start date is Monday and week is having holidays (to fix Apr First Week 2026 issue for users having calendars Colombia - Standard; Mexico-Standard; Argentina-Standard)</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>For_currentTimeCard</name>
+        <dataType>Number</dataType>
+        <expression>IF(MONTH({!$Record.pse__Start_Date__c} + 0) = MONTH({!$Record.pse__Start_Date__c}), 1, 0) +
+  IF(MONTH({!$Record.pse__Start_Date__c} + 1) = MONTH({!$Record.pse__Start_Date__c}), 1, 0) +
+  IF(MONTH({!$Record.pse__Start_Date__c} + 2) = MONTH({!$Record.pse__Start_Date__c}), 1, 0) +
+  IF(MONTH({!$Record.pse__Start_Date__c}+ 3) = MONTH({!$Record.pse__Start_Date__c}), 1, 0) +
+  IF(MONTH({!$Record.pse__Start_Date__c} + 4) = MONTH({!$Record.pse__Start_Date__c}), 1, 0) +
+  IF(MONTH({!$Record.pse__Start_Date__c} + 5) = MONTH({!$Record.pse__Start_Date__c}), 1, 0) +
+  IF(MONTH({!$Record.pse__Start_Date__c} + 6) = MONTH({!$Record.pse__Start_Date__c}), 1, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_EndMonth</name>
+        <dataType>Number</dataType>
+        <expression>MONTH({!$Record.pse__End_Date__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_EnteredHolidayFWKHrs</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+WEEKDAY({!Loop_Holidays_FW.pse__Date__c}),
+1,{!Var_Sunday},
+2,{!Var_Monday},
+3,{!Var_Tuesday},
+4,{!Var_Wednesday},
+5,{!Var_Thursday},
+6,{!Var_Friday},
+7,{!Var_Saturday},0
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_EnteredHolidayHrs</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+WEEKDAY({!Loop_Holidays.pse__Date__c}),
+1,{!Var_Sunday},
+2,{!Var_Monday},
+3,{!Var_Tuesday},
+4,{!Var_Wednesday},
+5,{!Var_Thursday},
+6,{!Var_Friday},
+7,{!Var_Saturday},0
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_EnteredHolidayLWKHrs</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+WEEKDAY({!Loop_Holidays_LW.pse__Date__c}),
+1,{!Var_Sunday},
+2,{!Var_Monday},
+3,{!Var_Tuesday},
+4,{!Var_Wednesday},
+5,{!Var_Thursday},
+6,{!Var_Friday},
+7,{!Var_Saturday},0
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_FirstDate</name>
+        <dataType>Date</dataType>
+        <expression>ADDMONTHS(DATE(YEAR({!$Record.pse__Start_Date__c}),MONTH({!$Record.pse__Start_Date__c}),1),1)</expression>
+    </formulas>
+    <formulas>
+        <name>For_FirstWk_Record</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.pse__Total_Hours__c}-{!For_LastWk_Record}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_FirstWkNoValidation</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    OR(
+        AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Monday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 7,
+            DAY({!$Record.pse__End_Date__c}) - 1 = {!For_HolidayHrsFirstWk}
+        ),
+	AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Sunday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 6,
+            DAY({!$Record.pse__End_Date__c}) - 1 = {!For_HolidayHrsFirstWk}
+        ),
+     AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Monday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 1,
+            DAY({!$Record.pse__End_Date__c}) - 2 = {!For_HolidayHrsFirstWk}
+        ),        
+        AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Sunday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 7,
+            DAY({!$Record.pse__End_Date__c}) - 2 = {!For_HolidayHrsFirstWk}
+        )),
+   0,1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_FirstWkValidation</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    OR(
+        AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Monday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 7,
+            DAY({!$Record.pse__End_Date__c}) - 1 &gt; {!For_HolidayHrsFirstWk}
+        ),
+	AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Sunday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 6,
+            DAY({!$Record.pse__End_Date__c}) - 1 &gt; {!For_HolidayHrsFirstWk}
+        )),
+    (DAY({!$Record.pse__End_Date__c}) - {!For_HolidayHrsFirstWk} - 1) *
+        ({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c} * {!Var_MinHrs_Custom}) / 100,
+        IF(
+     OR(
+        AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Monday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 1,
+            DAY({!$Record.pse__End_Date__c}) - 2 &gt; {!For_HolidayHrsFirstWk}
+        ),        
+        AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Sunday&apos;,
+            WEEKDAY({!$Record.pse__End_Date__c}) = 7,
+            DAY({!$Record.pse__End_Date__c}) - 2 &gt; {!For_HolidayHrsFirstWk}
+        )),
+    (DAY({!$Record.pse__End_Date__c}) - {!For_HolidayHrsFirstWk} - 2) *
+        ({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c} * {!Var_MinHrs_Custom}) / 100,(DAY({!$Record.pse__End_Date__c}) - {!For_HolidayHrsFirstWk}) *
+        ({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c} * {!Var_MinHrs_Custom}) / 100
+    ))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_HolidayFWK</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(AND(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;,OR(WEEKDAY({!Loop_Holidays_FW.pse__Date__c})=1,WEEKDAY({!Loop_Holidays_FW.pse__Date__c})=7)),TRUE,IF(AND(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;,OR(WEEKDAY({!Loop_Holidays_FW.pse__Date__c})=6,WEEKDAY({!Loop_Holidays_FW.pse__Date__c})=7)),TRUE,FALSE))</expression>
+    </formulas>
+    <formulas>
+        <name>For_HolidayHrs</name>
+        <dataType>Number</dataType>
+        <expression>CASE({!Var_HolidaysCount},
+1,{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c},
+2,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*2),
+3,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*3),
+4,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*4),
+5,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*5),
+6,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*6),
+7,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*7),0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_HolidayHrsFirstWk</name>
+        <dataType>Number</dataType>
+        <expression>IF(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;, 
+(CASE({!For_HolidaysFirstWkCount},
+1,{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c},
+2,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*2),
+3,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*3),
+4,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*4),
+5,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*5),
+6,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*6),
+7,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*7),
+-2,2,-1,1,-3,3,-4,4,-5,5,0)),(CASE({!For_HolidaysFirstWkCount},
+1,{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c},
+2,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*2),
+3,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*3),
+4,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*4),
+5,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*5),
+6,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*6),
+7,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*7),
+-2,2,-1,1,0)))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_HolidayHrsLastWk</name>
+        <dataType>Number</dataType>
+        <expression>IF(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;, 
+(CASE({!For_HolidaysLastWkCount},
+1,{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c},
+2,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*2),
+3,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*3),
+4,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*4),
+5,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*5),
+6,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*6),
+7,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*7),
+-2,2,-1,1,-3,3,-4,4,-5,5,0)),(CASE({!For_HolidaysLastWkCount},
+1,{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c},
+2,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*2),
+3,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*3),
+4,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*4),
+5,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*5),
+6,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*6),
+7,({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*7),
+-2,2,-1,1,0)))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_HolidayLWK</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(AND(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;,OR(WEEKDAY({!Loop_Holidays_LW.pse__Date__c})=1,WEEKDAY({!Loop_Holidays_LW.pse__Date__c})=7)),TRUE,IF(AND(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;,OR(WEEKDAY({!Loop_Holidays_LW.pse__Date__c})=6,WEEKDAY({!Loop_Holidays_LW.pse__Date__c})=7)),TRUE,FALSE))</expression>
+    </formulas>
+    <formulas>
+        <name>For_HolidaysFirstWkCount</name>
+        <dataType>Number</dataType>
+        <expression>IF(AND(WEEKDAY({!For_LastDate})=1,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!Var_HolidaysFirstWkCount}-2,IF(AND(WEEKDAY({!For_LastDate})=7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!Var_HolidaysFirstWkCount}*-1,IF(AND(WEEKDAY({!For_LastDate})&lt;&gt;7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!Var_HolidaysFirstWkCount}*-1,IF(AND(WEEKDAY({!For_LastDate})=7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;),{!Var_HolidaysFirstWkCount}-2,IF(AND(WEEKDAY({!For_LastDate})=6,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;),{!Var_HolidaysFirstWkCount}-1,{!Var_HolidaysFirstWkCount})))))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_HolidaysLastWkCount</name>
+        <dataType>Number</dataType>
+        <expression>IF(AND(WEEKDAY({!For_LastDate})=1,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!Var_HolidaysLastWkCount}-2,IF(AND(WEEKDAY({!For_LastDate})=7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!Var_HolidaysLastWkCount}*-1,IF(AND(WEEKDAY({!For_LastDate})&lt;&gt;7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!Var_HolidaysLastWkCount}*-1,IF(AND(WEEKDAY({!For_LastDate})=7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;),{!Var_HolidaysLastWkCount}-2,IF(AND(WEEKDAY({!For_LastDate})=6,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;),{!Var_HolidaysLastWkCount}-1,{!Var_HolidaysLastWkCount})))))</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_LastDate</name>
+        <dataType>Date</dataType>
+        <expression>ADDMONTHS(DATE(YEAR({!$Record.pse__Start_Date__c}),MONTH({!$Record.pse__Start_Date__c}),1),1)-1</expression>
+    </formulas>
+    <formulas>
+        <name>For_LastWk</name>
+        <dataType>Number</dataType>
+        <expression>IF(TEXT({!Loop_Timecards.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;,(CASE({!For_NoOfdaysInLastWkColl},
+1,{!Loop_Timecards.pse__Monday_Hours__c},
+2,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}),
+3,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}),
+4,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Thursday_Hours__c}),
+5,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Thursday_Hours__c}+{!Loop_Timecards.pse__Friday_Hours__c}),
+6,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Thursday_Hours__c}+{!Loop_Timecards.pse__Friday_Hours__c}+{!Loop_Timecards.pse__Saturday_Hours__c}),
+7,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Thursday_Hours__c}+{!Loop_Timecards.pse__Friday_Hours__c}+{!Loop_Timecards.pse__Saturday_Hours__c}+{!Loop_Timecards.pse__Sunday_Hours__c}),0
+)),IF(TEXT({!Loop_Timecards.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;,(CASE({!For_NoOfdaysInLastWkColl},
+1,{!Loop_Timecards.pse__Sunday_Hours__c},
+2,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Sunday_Hours__c}),
+3,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Sunday_Hours__c}),
+4,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Sunday_Hours__c}),
+5,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Thursday_Hours__c}+{!Loop_Timecards.pse__Sunday_Hours__c}),
+6,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Thursday_Hours__c}+{!Loop_Timecards.pse__Friday_Hours__c}+{!Loop_Timecards.pse__Sunday_Hours__c}),
+7,({!Loop_Timecards.pse__Monday_Hours__c}+{!Loop_Timecards.pse__Tuesday_Hours__c}+{!Loop_Timecards.pse__Wednesday_Hours__c}+{!Loop_Timecards.pse__Thursday_Hours__c}+{!Loop_Timecards.pse__Friday_Hours__c}+{!Loop_Timecards.pse__Saturday_Hours__c}+{!Loop_Timecards.pse__Sunday_Hours__c}),0
+)),0))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_LastWk_Record</name>
+        <dataType>Number</dataType>
+        <expression>IF(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;,(CASE({!For_NoOfdaysInLastWkColl},
+1,{!$Record.pse__Monday_Hours__c},
+2,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}),
+3,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}),
+4,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}),
+5,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}),
+6,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Saturday_Hours__c}),
+7,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Saturday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),0
+)),IF(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;,(CASE({!For_NoOfdaysInLastWkColl},
+1,{!$Record.pse__Sunday_Hours__c},
+2,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+3,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+4,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+5,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+6,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+7,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Saturday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),0
+)),0))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_LastwkValidation</name>
+        <dataType>Number</dataType>
+        <expression>(({!For_NoOfdaysInLastWkColl}-{!For_HolidayHrsLastWk})*({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}*({!Var_MinHrs_Custom}/100)))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_MinWCHrs</name>
+        <dataType>Number</dataType>
+        <expression>((({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Sunday_Hours__c}+{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Monday_Hours__c}+{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Tuesday_Hours__c}+{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Wednesday_Hours__c}+{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Thursday_Hours__c}+{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Friday_Hours__c}+{!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Saturday_Hours__c})*{!Var_MinHrs_Custom})/100)-{!For_HolidayHrs}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_NoOfdaysInLastWkColl</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    OR(
+        AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Monday&apos;,
+            WEEKDAY({!For_LastDate}) = 7,
+            DAY({!For_LastDate}) - 1 &gt; {!For_HolidayHrsLastWk}
+        ),
+	AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Sunday&apos;,
+            WEEKDAY({!For_LastDate}) = 6,
+            DAY({!For_LastDate}) - 1 &gt; {!For_HolidayHrsLastWk}
+        )),
+DAY({!For_LastDate})-DAY({!$Record.pse__Start_Date__c}),
+IF(
+          OR(
+               AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Monday&apos;,
+            WEEKDAY({!For_LastDate}) = 1,
+            DAY({!For_LastDate}) - 2 &gt; {!For_HolidayHrsLastWk}
+        ),        
+              AND(
+            TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c}) = &apos;Sunday&apos;,
+            WEEKDAY({!For_LastDate}) = 7,
+            DAY({!For_LastDate}) - 2 &gt; {!For_HolidayHrsLastWk}
+        )),
+DAY({!For_LastDate})-DAY({!$Record.pse__Start_Date__c})-1,DAY({!For_LastDate})-DAY({!$Record.pse__Start_Date__c})+1
+    ))</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_StMonth</name>
+        <dataType>Number</dataType>
+        <expression>MONTH({!$Record.pse__Start_Date__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_TotalHrs</name>
+        <dataType>Number</dataType>
+        <expression>{!Var_TotalHrs}+IF({!$Record.pse__Sunday_Hours__c}!=null,{!$Record.pse__Sunday_Hours__c},0)+IF({!$Record.pse__Monday_Hours__c}!=null,{!$Record.pse__Monday_Hours__c},0)+IF({!$Record.pse__Tuesday_Hours__c}!=null,{!$Record.pse__Tuesday_Hours__c},0)+IF({!$Record.pse__Wednesday_Hours__c}!=null,{!$Record.pse__Wednesday_Hours__c},0)+IF({!$Record.pse__Thursday_Hours__c}!=null,{!$Record.pse__Thursday_Hours__c},0)+IF({!$Record.pse__Friday_Hours__c}!=null,{!$Record.pse__Friday_Hours__c},0)+IF({!$Record.pse__Saturday_Hours__c}!=null,{!$Record.pse__Saturday_Hours__c},0)-{!Var_EnteredHolidayHrs}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_TotalHrsFirstWk</name>
+        <dataType>Number</dataType>
+        <expression>{!Var_TotalHrs}-{!Var_TotalHrsLastWk}-{!For_LastWk_Record}-{!Var_EnteredHolidayFWKHrs}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_TotalHrsLastWk</name>
+        <dataType>Number</dataType>
+        <expression>{!Var_TotalHrsLastWk}+{!For_LastWk_Record}-{!Var_EnteredHolidayLWKHrs}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_WeekEndHoliday</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(AND(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;,OR(WEEKDAY({!Loop_Holidays.pse__Date__c})=1,WEEKDAY({!Loop_Holidays.pse__Date__c})=7)),TRUE,IF(AND(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;,OR(WEEKDAY({!Loop_Holidays.pse__Date__c})=6,WEEKDAY({!Loop_Holidays.pse__Date__c})=7)),TRUE,FALSE))</expression>
+    </formulas>
+    <formulas>
+        <name>For_WorkingDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(AND(WEEKDAY({!For_LastDate})=1,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!For_LastDate}-2,IF(AND(WEEKDAY({!For_LastDate})=7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;),{!For_LastDate}-1,IF(AND(WEEKDAY({!For_LastDate})=7,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;),{!For_LastDate}-2,IF(AND(WEEKDAY({!For_LastDate})=6,TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;),{!For_LastDate}-1,{!For_LastDate}))))</expression>
+    </formulas>
+    <interviewLabel>DIAB MB Minimum Hrs Last Week Validation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>DIAB MB Minimum Hrs Last Week Validation</label>
+    <loops>
+        <name>Loop_Holidays</name>
+        <label>Loop Holidays</label>
+        <locationX>2822</locationX>
+        <locationY>2255</locationY>
+        <collectionReference>Get_Holidays</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Week_ends</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Holidays_Last_Week</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Holidays_FW</name>
+        <label>Loop Holidays FW</label>
+        <locationX>2822</locationX>
+        <locationY>3455</locationY>
+        <collectionReference>Get_Holidays_First_Week</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Week_ends_1</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Min_Hrs_or_No_Hrs</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Holidays_LW</name>
+        <label>Loop Holidays LW</label>
+        <locationX>2822</locationX>
+        <locationY>2855</locationY>
+        <collectionReference>Get_Holidays_Last_Week</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Week_ends_0</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Holidays_First_Week</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Timecards</name>
+        <label>Loop Timecards</label>
+        <locationX>1119</locationX>
+        <locationY>1547</locationY>
+        <collectionReference>Get_all_Timecards</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Hrs</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>More_Hrs</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_all_Timecards</name>
+        <label>Get all Timecards</label>
+        <locationX>1227</locationX>
+        <locationY>1331</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Null_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Resource__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Resource__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Resource__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Rejected</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Start_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Start_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__End_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__End_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>pse__Timecard_Header__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Default_Custom_Setting</name>
+        <label>Get Default Custom Setting</label>
+        <locationX>1656</locationX>
+        <locationY>755</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_null_2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SetupOwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Organization.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>DIAM_MB_Timecard_Validations__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Holidays</name>
+        <label>Get Holidays</label>
+        <locationX>2822</locationX>
+        <locationY>2147</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Holidays</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Date__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Start_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Date__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__End_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Work_Calendar__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Resource__r.pse__Work_Calendar__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>pse__HolidayObj__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Holidays_First_Week</name>
+        <label>Get Holidays First Week</label>
+        <locationX>2822</locationX>
+        <locationY>3347</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Holidays_FW</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Date__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>For_FirstDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Date__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__End_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Work_Calendar__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Resource__r.pse__Work_Calendar__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>pse__HolidayObj__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Holidays_Last_Week</name>
+        <label>Get Holidays Last Week</label>
+        <locationX>2822</locationX>
+        <locationY>2747</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Holidays_LW</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Date__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Start_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Date__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>For_LastDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Work_Calendar__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Resource__r.pse__Work_Calendar__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>pse__HolidayObj__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Profile_Custom_Setting</name>
+        <label>Get Profile Custom Setting</label>
+        <locationX>1458</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Null_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SetupOwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Resource__r.pse__Salesforce_User__r.ProfileId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>DIAM_MB_Timecard_Validations__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_User_Custom_Setting</name>
+        <label>Get User Custom Setting</label>
+        <locationX>1227</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_null</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SetupOwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Resource__r.pse__Salesforce_User__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>DIAM_MB_Timecard_Validations__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>1101</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_User_Custom_Setting</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Submitted</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DIAB_MB_AdjustedTimecard_for_past_period__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DIAB_MB_AdjustedTimecard_forAdvanceEntry__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>pse__Timecard_Header__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>Var_EnteredHolidayFWKHrs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_EnteredHolidayHrs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_EnteredHolidayLWKHrs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_Friday</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Friday_Hours__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_HolidaysCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>Var_HolidaysFirstWkCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>Var_HolidaysLastWkCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>Var_MaxHrs_Custom</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>Var_MinHrs_Custom</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>Var_Monday</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Monday_Hours__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_Saturday</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Saturday_Hours__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_Sunday</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Sunday_Hours__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_Thursday</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Thursday_Hours__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_TotalHrs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Total_Hours__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_TotalHrsLastWk</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_Tuesday</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Tuesday_Hours__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Var_Wednesday</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>$Record.pse__Wednesday_Hours__c</elementReference>
+        </value>
+    </variables>
+</Flow>

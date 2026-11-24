@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Cannot_save_Timecard_0</name>
+        <label>Cannot Save Timecard</label>
+        <locationX>842</locationX>
+        <locationY>1247</locationY>
+        <customErrorMessages>
+            <errorMessage>Timecard cannot be saved as the corresponding Time Period is closed for time entry, you can try entering time after {!EndofMonth}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Cannot_Save_Timecard_1</name>
+        <label>Cannot Save Timecard</label>
+        <locationX>578</locationX>
+        <locationY>1247</locationY>
+        <customErrorMessages>
+            <errorMessage>Timecard cannot be saved as the corresponding Time Periods are closed for time entry.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Cannot_Save_Timecard_2</name>
+        <label>Cannot Save Timecard</label>
+        <locationX>1106</locationX>
+        <locationY>1247</locationY>
+        <customErrorMessages>
+            <errorMessage>Timecard cannot be saved as the corresponding Time Period is closed for time entry.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>CannotsaveTimecard</name>
+        <label>Cannot Save Timecard</label>
+        <locationX>50</locationX>
+        <locationY>1139</locationY>
+        <customErrorMessages>
+            <errorMessage>Timecard cannot be saved as the corresponding Time Period is closed for time entry.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_if_Week_is_Split</name>
+        <label>Check if Week is Split</label>
+        <locationX>578</locationX>
+        <locationY>815</locationY>
+        <defaultConnector>
+            <targetReference>Get_time_period_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Split</defaultConnectorLabel>
+        <rules>
+            <name>Not_Split</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_StartMonth</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>For_EndMonth</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Time_Period</targetReference>
+            </connector>
+            <label>Not Split</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Time_Period_Closed</name>
+        <label>Is Time Period Closed</label>
+        <locationX>182</locationX>
+        <locationY>1031</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Time_Period.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CannotsaveTimecard</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Time_Period_Closed_0</name>
+        <label>Is Time Period Closed</label>
+        <locationX>974</locationX>
+        <locationY>1139</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Both_Time_Periods_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_time_period_0.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Time_Period_2.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Time_Period_2.DIAB_MB_Closed_for_Time_Entry__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_Save_Timecard_1</targetReference>
+            </connector>
+            <label>Both Time Periods Closed</label>
+        </rules>
+        <rules>
+            <name>Yes_0</name>
+            <conditionLogic>1 AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_time_period_0.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_HasTimeCardLastWk</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_save_Timecard_0</targetReference>
+            </connector>
+            <label>Time Period 1 Closed</label>
+        </rules>
+        <rules>
+            <name>Time_Period_2_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Time_Period_2.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Time_Period_2.DIAB_MB_Closed_for_Time_Entry__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_HasTimeThisWk</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_Save_Timecard_2</targetReference>
+            </connector>
+            <label>Time Period 2 Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsNew</name>
+        <label>IsNew?</label>
+        <locationX>578</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Status_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Updated</defaultConnectorLabel>
+        <rules>
+            <name>Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_if_Week_is_Split</targetReference>
+            </connector>
+            <label>Created</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Status_Changed</name>
+        <label>Status Changed?</label>
+        <locationX>732</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_Week_is_Split</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other updates</defaultConnectorLabel>
+        <rules>
+            <name>Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Approver__r.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>For_UserId</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Rejected</label>
+        </rules>
+    </decisions>
+    <description>To prevent users from entering time for a time period that is already closed</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>EndofMonth</name>
+        <dataType>Date</dataType>
+        <expression>IF( MONTH( {!$Record.pse__Start_Date__c}) = 12, 
+DATE( YEAR({!$Record.pse__Start_Date__c} ), 12, 31 ),
+DATE( YEAR({!$Record.pse__Start_Date__c}), MONTH({!$Record.pse__Start_Date__c})+1, 1) - 1)</expression>
+    </formulas>
+    <formulas>
+        <name>ErrorLogic</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND({!$Record.pse__Start_Date__c}={!EndofMonth},{!$Record.pse__Monday_Hours__c}&gt;0),
+AND({!Weekday}=7, {!$Record.pse__Total_Hours__c}&gt;{!$Record.pse__Sunday_Hours__c}),
+AND({!Weekday}=2, OR({!$Record.pse__Sunday_Hours__c}&gt;0, {!$Record.pse__Monday_Hours__c}&gt;0)),
+AND({!Weekday}=3, OR({!$Record.pse__Monday_Hours__c}&gt;0, {!$Record.pse__Tuesday_Hours__c}&gt;0)),
+AND({!Weekday}=4, OR({!$Record.pse__Monday_Hours__c}&gt;0, {!$Record.pse__Tuesday_Hours__c}&gt;0, {!$Record.pse__Wednesday_Hours__c}&gt;0)),
+AND({!Weekday}=5, OR({!$Record.pse__Monday_Hours__c}&gt;0, {!$Record.pse__Tuesday_Hours__c}&gt;0, {!$Record.pse__Wednesday_Hours__c}&gt;0, {!$Record.pse__Thursday_Hours__c}&gt;0)),
+AND({!Weekday}=6, OR({!$Record.pse__Monday_Hours__c}&gt;0, {!$Record.pse__Tuesday_Hours__c}&gt;0, {!$Record.pse__Wednesday_Hours__c}&gt;0, {!$Record.pse__Thursday_Hours__c}&gt;0, {!$Record.pse__Friday_Hours__c}&gt;0))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>ErrorLogic_0</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND({!$Record.pse__End_Date__c}={!StartofMonth},{!$Record.pse__Sunday_Hours__c}&gt;0),
+AND({!Weekday_0}=3, {!$Record.pse__Total_Hours__c}&gt;{!$Record.pse__Monday_Hours__c}),
+AND({!Weekday_0}=7, OR({!$Record.pse__Saturday_Hours__c}&gt;0, {!$Record.pse__Sunday_Hours__c}&gt;0)),
+
+AND({!Weekday_0}=6, OR({!$Record.pse__Friday_Hours__c}&gt;0, {!$Record.pse__Saturday_Hours__c}&gt;0, {!$Record.pse__Sunday_Hours__c}&gt;0)),
+
+AND({!Weekday_0}=5, OR({!$Record.pse__Friday_Hours__c}&gt;0, {!$Record.pse__Saturday_Hours__c}&gt;0, {!$Record.pse__Sunday_Hours__c}&gt;0, {!$Record.pse__Thursday_Hours__c}&gt;0)),
+
+AND({!Weekday_0}=4, OR({!$Record.pse__Saturday_Hours__c}&gt;0, {!$Record.pse__Sunday_Hours__c}&gt;0, {!$Record.pse__Wednesday_Hours__c}&gt;0, {!$Record.pse__Thursday_Hours__c}&gt;0, {!$Record.pse__Friday_Hours__c}&gt;0))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>For_EndMonth</name>
+        <dataType>Number</dataType>
+        <expression>MONTH({!$Record.pse__End_Date__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_FirstDate</name>
+        <dataType>Date</dataType>
+        <expression>ADDMONTHS(DATE(YEAR({!$Record.pse__Start_Date__c}),MONTH({!$Record.pse__Start_Date__c}),1),1)</expression>
+    </formulas>
+    <formulas>
+        <name>For_HasTimeCardLastWk</name>
+        <dataType>Number</dataType>
+        <expression>IF(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Monday&apos;,(CASE({!For_NoOfdaysInLastWkColl},
+1,{!$Record.pse__Monday_Hours__c},
+2,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}),
+3,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}),
+4,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}),
+5,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}),
+6,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Saturday_Hours__c}),
+7,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Saturday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),0
+)),IF(TEXT({!$Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c})=&apos;Sunday&apos;,(CASE({!For_NoOfdaysInLastWkColl},
+1,{!$Record.pse__Sunday_Hours__c},
+2,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+3,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+4,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+5,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+6,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),
+7,({!$Record.pse__Monday_Hours__c}+{!$Record.pse__Tuesday_Hours__c}+{!$Record.pse__Wednesday_Hours__c}+{!$Record.pse__Thursday_Hours__c}+{!$Record.pse__Friday_Hours__c}+{!$Record.pse__Saturday_Hours__c}+{!$Record.pse__Sunday_Hours__c}),0
+)),0))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_HasTimeThisWk</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    TEXT($Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c) = &apos;Monday&apos;,
+    CASE(
+        For_NoOfDaysThisMonth,
+        1, $Record.pse__Sunday_Hours__c,
+        2, $Record.pse__Sunday_Hours__c + $Record.pse__Saturday_Hours__c,
+        3, $Record.pse__Sunday_Hours__c + $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c,
+        4, $Record.pse__Sunday_Hours__c + $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Thursday_Hours__c,
+        5, $Record.pse__Sunday_Hours__c + $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Thursday_Hours__c + $Record.pse__Wednesday_Hours__c,
+        6, $Record.pse__Sunday_Hours__c + $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Thursday_Hours__c + $Record.pse__Wednesday_Hours__c + $Record.pse__Tuesday_Hours__c,
+        7, $Record.pse__Monday_Hours__c + $Record.pse__Tuesday_Hours__c + $Record.pse__Wednesday_Hours__c + $Record.pse__Thursday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Saturday_Hours__c + $Record.pse__Sunday_Hours__c,
+        0
+    ),
+    IF(
+        TEXT($Record.pse__Resource__r.pse__Work_Calendar__r.pse__Week_Start_Day__c) = &apos;Sunday&apos;,
+        CASE(
+            For_NoOfDaysThisMonth,
+            1, $Record.pse__Saturday_Hours__c,
+            2, $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c,
+            3, $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Thursday_Hours__c,
+            4, $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Thursday_Hours__c + $Record.pse__Wednesday_Hours__c,
+            5, $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Thursday_Hours__c + $Record.pse__Wednesday_Hours__c + $Record.pse__Tuesday_Hours__c,
+            6, $Record.pse__Saturday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Thursday_Hours__c + $Record.pse__Wednesday_Hours__c + $Record.pse__Tuesday_Hours__c + $Record.pse__Monday_Hours__c,
+            7, $Record.pse__Monday_Hours__c + $Record.pse__Tuesday_Hours__c + $Record.pse__Wednesday_Hours__c + $Record.pse__Thursday_Hours__c + $Record.pse__Friday_Hours__c + $Record.pse__Saturday_Hours__c + $Record.pse__Sunday_Hours__c,
+            0
+        ),
+        0
+    )
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>For_LastDate</name>
+        <dataType>Date</dataType>
+        <expression>ADDMONTHS(DATE(YEAR({!$Record.pse__Start_Date__c}),MONTH({!$Record.pse__Start_Date__c}),1),1)-1</expression>
+    </formulas>
+    <formulas>
+        <name>For_NoOfdaysInLastWkColl</name>
+        <dataType>Number</dataType>
+        <expression>DAY({!For_LastDate})-DAY({!$Record.pse__Start_Date__c})+1</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_NoOfDaysThisMonth</name>
+        <dataType>Number</dataType>
+        <expression>DAY({!$Record.pse__End_Date__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>For_StartMonth</name>
+        <dataType>Number</dataType>
+        <expression>MONTH({!$Record.pse__Start_Date__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>For_UserId</name>
+        <dataType>String</dataType>
+        <expression>CASESAFEID({!$User.Id})</expression>
+    </formulas>
+    <formulas>
+        <name>StartofMonth</name>
+        <dataType>Date</dataType>
+        <expression>DATE( YEAR({!$Record.pse__End_Date__c}), MONTH({!$Record.pse__End_Date__c}), 1)</expression>
+    </formulas>
+    <formulas>
+        <name>Test</name>
+        <dataType>String</dataType>
+        <expression>CASESAFEID({!$User.Id})</expression>
+    </formulas>
+    <formulas>
+        <name>Weekday</name>
+        <dataType>Number</dataType>
+        <expression>WEEKDAY({!EndofMonth})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>Weekday_0</name>
+        <dataType>Number</dataType>
+        <expression>WEEKDAY({!StartofMonth})</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Lock Time Entry After Period Closure {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lock Time Entry After Period Closure</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Time_Period</name>
+        <label>Get Time Period</label>
+        <locationX>182</locationX>
+        <locationY>923</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Time_Period_Closed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DIAB_MB_Closed_for_Time_Entry__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Month</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Start_Date__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Start_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__End_Date__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__End_Date__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Time_Period__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_time_period_0</name>
+        <label>Get Time Period 1</label>
+        <locationX>974</locationX>
+        <locationY>923</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Time_Period_2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DIAB_MB_Closed_for_Time_Entry__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Month</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Start_Date__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Start_Date__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__End_Date__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Start_Date__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Time_Period__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Time_Period_2</name>
+        <label>Get Time Period 2</label>
+        <locationX>974</locationX>
+        <locationY>1031</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Time_Period_Closed_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Month</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Start_Date__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>Get_time_period_0.pse__End_Date__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Time_Period__c</object>
+        <sortField>pse__Start_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>IsNew</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DIAB_MB_AdjustedTimecard_for_past_period__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DIAB_MB_AdjustedTimecard_forAdvanceEntry__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>pse__Timecard_Header__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>RunningUserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_UserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

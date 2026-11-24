@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Data Manager</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>FFX_Milestone_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>pse__Milestone__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>FFX_Milestone_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>pse__Milestone__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Mobileum - Finance Full Access</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>FFX_Milestone_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>pse__Milestone__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Mobileum - Finance User Limited</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Budget_Finance_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>pse__Budget__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Mobileum - Finance Full Access</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Budget_Finance_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>pse__Budget__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Mobileum - Finance User Limited</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Budget_Finance_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>pse__Budget__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <tabs>standard-AnalyticsDataManager</tabs>
+    <tabs>Technical_Service_Request__c</tabs>
+    <tabs>Opportunity_Dynamic_Approvals__c</tabs>
+    <tabs>Partner__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

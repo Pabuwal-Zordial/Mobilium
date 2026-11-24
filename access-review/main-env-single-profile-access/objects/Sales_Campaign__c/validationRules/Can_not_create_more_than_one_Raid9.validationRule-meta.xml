@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_not_create_more_than_one_Raid9</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNEW() &amp;&amp; (Customer_Name__r.No_of_Raid_9_Campaign__c =1 &amp;&amp; RecordType.DeveloperName =&apos;RAID_9&apos;)</errorConditionFormula>
+    <errorMessage>Can not create more than one Raid 9 Campaign for the existing customer</errorMessage>
+</ValidationRule>

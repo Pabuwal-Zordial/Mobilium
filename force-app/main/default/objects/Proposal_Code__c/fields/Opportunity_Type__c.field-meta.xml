@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Type__c</fullName>
+    <label>Opportunity Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MR-Maintenance Renewal</fullName>
+                <default>false</default>
+                <label>MR-Maintenance Renewal</label>
+            </value>
+            <value>
+                <fullName>TL_Term_License</fullName>
+                <default>false</default>
+                <label>TL-Term License</label>
+            </value>
+            <value>
+                <fullName>UP-Upgrade to Perpetual Lic</fullName>
+                <default>false</default>
+                <label>UP-Upgrade to Perpetual Lic</label>
+            </value>
+            <value>
+                <fullName>R-Recurring Revenue</fullName>
+                <default>false</default>
+                <label>R-Recurring Revenue</label>
+            </value>
+            <value>
+                <fullName>CR-Change Request</fullName>
+                <default>false</default>
+                <label>CR-Change Request</label>
+            </value>
+            <value>
+                <fullName>PL-Perpetual License</fullName>
+                <default>false</default>
+                <label>PL-Perpetual License</label>
+            </value>
+            <value>
+                <fullName>RS-Rev Share or Rec Rev</fullName>
+                <default>false</default>
+                <label>RS-Rev Share or Rec Rev</label>
+            </value>
+            <value>
+                <fullName>POC-Proof of Concept</fullName>
+                <default>false</default>
+                <label>POC-Proof of Concept</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

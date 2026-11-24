@@ -1,0 +1,102 @@
+<aura:component controller="ProjectController" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome">
+	<aura:html tag="style">
+		.cuf-content {
+			padding: 0 0rem !important;
+		}
+
+		.slds-p-around--medium {
+			padding: 0rem !important;
+		}
+
+		.slds-modal__content {
+			height:unset !important;
+			max-height:unset !important;
+		}
+	</aura:html>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<aura:attribute name="data" type="Object" access="PRIVATE" default="{}"/>
+	<aura:attribute name="processing" type="Boolean" access="PRIVATE" default="true"/>
+	<aura:attribute name="customerSpace" type="Object" access="PRIVATE" default="{}"/>
+	<aura:attribute name="eidSpace" type="Object" access="PRIVATE" default="{}"/>
+	<aura:attribute name="project" type="Object" access="PRIVATE" default="{}"/>
+	<aura:attribute name="projectTemplate" type="Object" access="PRIVATE" default="{}"/>
+	<aura:attribute name="integrationContext" type="Object" access="PRIVATE" default="{}"/>
+	<aura:attribute name="currentStep" type="Integer" access="PRIVATE" default="0"/>
+	<aura:attribute name="wizardStep" type="String" access="PRIVATE" default="searchUsers"/>
+	<aura:attribute name="backLabel" type="String" access="PRIVATE" default="Cancel"/>
+	<aura:attribute name="initialDataLoaded" type="Boolean" access="PRIVATE" default="false"/>
+	<aura:attribute name="selectedUsers" type="Object" access="PRIVATE" default="{}"/>
+
+	<div>
+		<div class="modal-header slds-modal__header slds-size_1-of-1">
+			<h4 class="slds-modal__title slds-hyphenate">Publish Project</h4>
+		</div>
+		<aura:if isTrue="{!v.processing}">
+			<div>
+				<lightning:spinner class="spinner-custom" alternativeText="Loading" size="large"/>
+			</div>
+		</aura:if>
+		<aura:if isTrue="{! v.initialDataLoaded }">
+			<aura:if isTrue="{! v.wizardStep == 'searchUsers' }">
+				<div class="slds-modal__content slds-align_absolute-center slds-size_1-of-1 slds-is-relative">
+					<div class="slds-p-around_small slds-size_1-of-1">
+						<c:AtlassianUserSearch
+							aura:id="usersSearch"
+							isUpdate="{! v.integrationContext.projectRecord.Id != null }"
+							projectDirectorName="{! v.integrationContext.projectRecord.Project_Director_Name__c }"
+							projectDirectorUsername="{! v.integrationContext.projectRecord.Project_Director_Username__c }"
+							projectDirectorEmail="{! v.integrationContext.projectRecord.Project_Director_Email__c }"
+							projectManagerName="{! v.integrationContext.projectRecord.Project_Manager_Name__c }"
+							projectManagerUsername="{! v.integrationContext.projectRecord.Project_Manager_Username__c }"
+							projectManagerEmail="{! v.integrationContext.projectRecord.Project_Manager_Email__c }">
+						</c:AtlassianUserSearch>
+					</div>
+				</div>
+				<div class="modal-footer slds-modal__footer slds-size_1-of-1">
+					<lightning:button variant="neutral" label="{! v.backLabel }" title="{! v.backLabel }" onclick="{! c.cancel }"/>
+					<lightning:button variant="brand" label="Next" title="Next" onclick="{! c.next }"/>
+				</div>
+			</aura:if>
+			<aura:if isTrue="{! v.wizardStep == 'pageDetails' }">
+				<lightning:recordEditForm aura:id="recordEditForm" objectApiName="Atlassian_Project__c" onsubmit="{! c.save }">
+					<div class="slds-modal__content slds-align_absolute-center slds-size_1-of-1 slds-is-relative">
+						<form class="slds-form_stacked slds-size_1-of-1">
+							<div class="slds-grid slds-gutters slds-wrap slds-m-around_xx-small">
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:inputField fieldName="Project_Name__c" aura:id="projectNameInput" disabled="{!v.integrationContext.projectRecord.Published_in_Confluence__c}"/>
+								</div>
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:input name="eid" disabled="true" value="{!v.data.eid}" label="EID"/>
+								</div>
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:input name="accountName" disabled="true" value="{!v.data.accountName}" label="Account"/>
+								</div>
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:input name="acronym" disabled="true" value="{!v.data.acronym}" label="Acronym"/>
+								</div>
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:input class="{! if(or(empty(v.selectedUsers.projectDirectorUsername), empty(v.selectedUsers.projectManagerUsername)),'slds-hide','') }" name="projectDirectorName" disabled="true" label="Project Director" value="{! v.selectedUsers.projectDirectorName }"/>
+								</div>
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:input class="{! if(or(empty(v.selectedUsers.projectDirectorUsername), empty(v.selectedUsers.projectManagerUsername)),'slds-hide','') }" name="projectManagerName" disabled="true" label="Project Manager" value="{! v.selectedUsers.projectManagerName }"/>
+								</div>
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:inputField fieldName="Project_Classifications__c" aura:id="projectClassificationInput"/>
+								</div>
+								<div class="slds-col slds-size_1-of-2">
+									<lightning:inputField fieldName="Project_Status__c" aura:id="projectStatusInput"/>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer slds-modal__footer slds-size_1-of-1">
+						<lightning:button variant="neutral" label="{! v.backLabel }" title="{! v.backLabel }" onclick="{! c.cancel }"/>
+						<lightning:button variant="brand" type="submit" label="Publish" title="Publish"/>
+					</div>
+				</lightning:recordEditForm>
+			</aura:if>
+		</aura:if>
+	</div>
+</aura:component>

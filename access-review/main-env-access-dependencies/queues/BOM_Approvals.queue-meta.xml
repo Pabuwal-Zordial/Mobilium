@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>BOM Approvals</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>BOM_Approvers</publicGroup>
+        </publicGroups>
+        <users>
+            <user>agniswar.das@sfdc.mobileum.com</user>
+            <user>ranjith.shetty@sfdc.mobileum.com</user>
+            <user>suchita.chowdhury@sfdc.mobileum.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>SBQQ__Quote__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Salesforce Profile Compare</title>
+  <link rel="stylesheet" href="app.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">SF</div>
+    <div>
+      <p class="eyebrow">ACCESS REVIEW WORKBENCH</p>
+      <h1>Compare two Salesforce profiles</h1>
+    </div>
+    <span class="privacy-badge"><span class="privacy-dot"></span>Private on this device</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <h2>See what they share and what differs</h2>
+        <p>Load two Salesforce Profile XML files. The comparison separates shared grants, profile-specific grants, and settings that should stay on a profile.</p>
+      </div>
+      <div class="local-note"><strong>Files stay in your browser.</strong><br>Nothing is uploaded or sent to an org.</div>
+    </section>
+
+    <section class="multi-mode-callout" aria-label="Multi-profile comparison">
+      <div><strong>Need to compare more than two profiles?</strong><span>Analyze 2–18 profiles together, find access-based groups, and download draft Permission Set and Group XML for review.</span></div>
+      <a class="button button-primary" href="multi-profile.html">Open multi-profile analysis <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="input-grid" aria-label="Choose profile files">
+      <article class="profile-card" data-side="a">
+        <div class="card-heading"><span class="step-number">1</span><div><h2>First profile</h2><p>Choose a file or paste its XML</p></div></div>
+        <label class="file-drop" for="file-a" id="drop-a">
+          <span class="upload-icon" aria-hidden="true">↑</span>
+          <span><strong>Choose Profile XML</strong><small>or drop the file here</small></span>
+          <input id="file-a" type="file" accept=".xml,application/xml,text/xml">
+        </label>
+        <p class="file-name" id="name-a">No file selected</p>
+        <label class="paste-label" for="label-a">Name shown in the comparison (optional)</label>
+        <input class="profile-label-input" id="label-a" type="text" placeholder="Example: Sales User">
+        <label class="paste-label" for="xml-a">Or paste XML</label>
+        <textarea id="xml-a" spellcheck="false" placeholder="Paste the complete Profile XML here"></textarea>
+      </article>
+
+      <article class="profile-card" data-side="b">
+        <div class="card-heading"><span class="step-number">2</span><div><h2>Second profile</h2><p>Choose a file or paste its XML</p></div></div>
+        <label class="file-drop" for="file-b" id="drop-b">
+          <span class="upload-icon" aria-hidden="true">↑</span>
+          <span><strong>Choose Profile XML</strong><small>or drop the file here</small></span>
+          <input id="file-b" type="file" accept=".xml,application/xml,text/xml">
+        </label>
+        <p class="file-name" id="name-b">No file selected</p>
+        <label class="paste-label" for="label-b">Name shown in the comparison (optional)</label>
+        <input class="profile-label-input" id="label-b" type="text" placeholder="Example: Sales Head">
+        <label class="paste-label" for="xml-b">Or paste XML</label>
+        <textarea id="xml-b" spellcheck="false" placeholder="Paste the complete Profile XML here"></textarea>
+      </article>
+    </section>
+
+    <div class="actions">
+      <p id="input-message" class="input-message" role="status">Select or paste two profile XML files to begin.</p>
+      <div class="button-row">
+        <button id="clear-button" class="button button-secondary" type="button">Clear</button>
+        <button id="compare-button" class="button button-primary" type="button">Compare profiles <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+
+    <section id="results" class="results" hidden aria-live="polite">
+      <div id="license-alert" class="alert" hidden></div>
+      <div id="summary" class="summary-grid"></div>
+
+      <section class="plan-panel">
+        <div class="panel-title-row"><div><p class="eyebrow">SUGGESTED ACCESS MODEL</p><h2>What could move to Permission Sets?</h2></div><span class="review-pill">Draft for review</span></div>
+        <div id="plan-content"></div>
+      </section>
+
+      <section class="detail-panel">
+        <div class="panel-title-row detail-heading"><div><p class="eyebrow">PERMISSION-BY-PERMISSION</p><h2>Comparison details</h2></div><button id="download-button" class="button button-secondary" type="button">Download CSV</button></div>
+        <div class="filter-bar">
+          <label>Show <select id="view-filter"><option value="all">All findings</option><option value="shared">Shared grants</option><option value="a-only">First profile grants</option><option value="b-only">Second profile grants</option><option value="conflicts">Conflicts and special settings</option></select></label>
+          <label>Category <select id="category-filter"><option value="all">All categories</option></select></label>
+          <label class="search-label">Search <input id="search-input" type="search" placeholder="Object, field, permission…"></label>
+        </div>
+        <p id="result-count" class="result-count"></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Category</th><th>Permission or setting</th><th id="head-a">First profile</th><th id="head-b">Second profile</th><th>Comparison</th><th>Recommendation</th></tr></thead>
+            <tbody id="comparison-rows"></tbody>
+          </table>
+        </div>
+        <div class="pagination"><button class="button button-secondary" id="prev-page" type="button">Previous</button><span id="page-label"></span><button class="button button-secondary" id="next-page" type="button">Next</button></div>
+      </section>
+
+      <section class="guardrails">
+        <h2>Read this before planning a merge</h2>
+        <ul>
+          <li>A Permission Set adds access. It cannot remove access granted by the base profile or preserve a denial by itself.</li>
+          <li>A missing XML entry is shown as <em>Not specified</em>, not automatically treated as a denial.</li>
+          <li>Layouts, login hours, and IP ranges are profile settings; the tool flags them to keep on the profile for review.</li>
+          <li>Permission Set Groups bundle Permission Sets for a stable user persona. XML differences alone are not enough to decide which users or business functions belong in a group.</li>
+          <li>This compares the two files only. It does not inspect user assignments, existing Permission Sets, role hierarchy, sharing, validation rules, flows, or other org references.</li>
+        </ul>
+      </section>
+    </section>
+
+    <footer><span>Salesforce Profile Compare</span><span>Local browser tool · No deployment actions</span></footer>
+  </main>
+</body>
+</html>

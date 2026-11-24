@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classic_Submit_PPO_for_Approval</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Classic Submit  PPO for Approval</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+var jsonOfferID = sforce.apex.execute(&quot;cls_PPOApprovalHandler&quot;,&quot;submitApproval&quot;,{ppoId:{!PPO_Sales_Governance__c.Id}});
+
+if(jsonOfferID ==&quot;Success&quot;){
+alert(&apos;Submitted PPO for Approval&apos;);
+window.location.reload();
+}else{
+alert(jsonOfferID);
+window.location.reload();
+}</url>
+</WebLink>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attainment_Overlay__c</fullName>
+    <label>Attainment Overlay</label>
+    <summarizedField>Attainment__c.Business_Line_Split_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Attainment__c.Split_type__c</field>
+        <operation>equals</operation>
+        <value>Overlay</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Attainment__c.Quota__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

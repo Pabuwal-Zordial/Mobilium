@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSO_Regional_Discount__c</fullName>
+    <formula>(List_Price__c - Regional_Price__c)/List_Price__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The calculated value of the effective regional discount for this region and role. This discount percentage will be used to calculate the list price on the quote line item.</inlineHelpText>
+    <label>PSO Regional Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>5</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>
